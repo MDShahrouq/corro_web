@@ -47,7 +47,7 @@ session_start();
 $pk="1";
 $trip_id="558";
 
-  $url_get_a_user = 'http://127.0.0.1:8000/get_details_of_org_user/';
+  $url_get_a_user = 'https://reimburse.herokuapp.com/get_details_of_org_user/';
   $options_get_a_user = array(
     'http' => array(
       'header'  => array(

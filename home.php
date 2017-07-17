@@ -27,6 +27,26 @@
     </style>
   </head>
   <body>
+
+<?php
+session_start();
+
+  $url_get_a_org = 'https://reimburse.herokuapp.com/get_details_of_org/';
+  $options_get_a_org = array(
+    'http' => array(
+      'header'  => array(
+                  'ACCOUNT-TOKEN: '.$_SESSION['account_token']
+                ),
+      'method'  => 'GET',
+    ),
+  );
+  $context_get_a_org = stream_context_create($options_get_a_org);
+  $output_get_a_org = file_get_contents($url_get_a_org, false,$context_get_a_org);
+  /*echo $output_get_a_org;*/
+  $arr_get_a_org = json_decode($output_get_a_org,true);
+/*  echo $arr_get_a_org;*/
+  
+?>
      <!-- Always shows a header, even in smaller screens. -->
   
     <div class="demo-layout-transparent mdl-layout mdl-js-layout">
