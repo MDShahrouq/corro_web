@@ -6,6 +6,14 @@
     <!-- Material Design icon font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   </head>
+  <!-- <style type="text/css">
+    td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+  </style> -->
+
   <body>
 
 <?php
@@ -87,7 +95,7 @@ if(isset($_POST['submit'])){
     <main class="mdl-layout__content">
       <div class="page-content">
       <div class="container">
-      <div class="row" style="margin-top:6%">
+      <div class="row" style="margin-top:-2%">
        <center>
       <div class="col-sm-5" style="width:32%">
     <!-- Textfield with Floating Label -->
@@ -161,27 +169,27 @@ if(isset($_POST['submit'])){
 /*  echo $arr_get_all_users;*/
   
 ?>
-<table align="center">
+<table align="center" class="mdl-data-table mdl-js-data-table">
         <thead>
             <tr>
-                <th>Name</th> 
-                <th>Designation</th>
-                <th>Department</th>
-                <th>Email</th>
-                <th>Phone</th>
+                <th class="mdl-data-table__cell--non-numeric">Name</th> 
+                <th class="mdl-data-table__cell--non-numeric">Designation</th>
+                <th class="mdl-data-table__cell--non-numeric">Department</th>
+                <th class="mdl-data-table__cell--non-numeric">Email</th>
+                <th class="mdl-data-table__cell--non-numeric">Phone</th>
                 <!-- <th>Edit</th> -->
-                <th>Delete</th>
+                <th class="mdl-data-table__cell--non-numeric">Delete</th>
             </tr>
         </thead>
         <tbody>
         <?php for($x=0;$x<count($arr_get_all_users);$x++){?>
           <?php for($y=0;$y<count($arr_get_all_users[$x]['profile']);$y++){?>
 
-              <td><?php echo $arr_get_all_users[$x]['profile'][$y]['name'] ?></td>
-              <td><?php echo $arr_get_all_users[$x]['profile'][$y]['designation'] ?></td>
-              <td><?php echo $arr_get_all_users[$x]['profile'][$y]['department'] ?></td>
-              <td><?php echo $arr_get_all_users[$x]['profile'][$y]['email'] ?></td>
-              <td><?php echo $arr_get_all_users[$x]['profile'][$y]['mobile'] ?></td>
+              <td class="mdl-data-table__cell--non-numeric"><?php echo $arr_get_all_users[$x]['profile'][$y]['name'] ?></td>
+              <td class="mdl-data-table__cell--non-numeric"><?php echo $arr_get_all_users[$x]['profile'][$y]['designation'] ?></td>
+              <td class="mdl-data-table__cell--non-numeric"><?php echo $arr_get_all_users[$x]['profile'][$y]['department'] ?></td>
+              <td class="mdl-data-table__cell--non-numeric"><?php echo $arr_get_all_users[$x]['profile'][$y]['email'] ?></td>
+              <td class="mdl-data-table__cell--non-numeric"><?php echo $arr_get_all_users[$x]['profile'][$y]['mobile'] ?></td>
              <!--  <td>
                 <form method="post" action="edit_account.php">
                   <input type="hidden" name="pk_value" value="<?php echo $arr_get_all_users[$x]['profile'][$y]['pk'] ?>">

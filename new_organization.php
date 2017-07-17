@@ -3,6 +3,9 @@
     <!-- Material Design Lite -->
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <link rel="stylesheet" href="css/material.min.css">
+    <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/dataTables.material.min.js"></script>
     <!-- Material Design icon font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   </head>
@@ -129,15 +132,15 @@ if(isset($_POST['submit'])){
 /*  echo $arr_get_all_accounts;*/
   
 ?>
-<table align="center">
+<table align="center" class="mdl-data-table mdl-js-data-table">
         <thead>
             <tr>
-                <th>Organization</th> 
-                <th>Role</th>
-                <th>Username</th>
-                <th>Password</th>
-                <th>Edit</th>
-                <th>Delete</th>
+                <th class="mdl-data-table__cell--non-numeric">Organization</th> 
+                <th class="mdl-data-table__cell--non-numeric">Role</th>
+                <th class="mdl-data-table__cell--non-numeric">Username</th>
+                <th class="mdl-data-table__cell--non-numeric">Password</th>
+                <th class="mdl-data-table__cell--non-numeric">Edit</th>
+                <th class="mdl-data-table__cell--non-numeric">Delete</th>
             </tr>
         </thead>
         <tbody>
