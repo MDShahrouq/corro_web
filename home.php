@@ -149,7 +149,12 @@ session_start();
               <td>Pending</td>
               <td><?php echo $arr_get_a_org['user and trip details'][$x]['total']; ?></td>
               <td><?php echo $arr_get_a_org['user and trip details'][$x]['trip_details']['status']; ?></td>
-              <td><button>View</button></td>
+              <td>
+              <form method="post" action="profile.php?pk=<?php echo $arr_get_a_org['user and trip details'][$x]['user details']['pk']; ?>&trip_id=<?php echo $arr_get_a_org['user and trip details'][$x]['trip_details']['pk']; ?>">
+              <button type="submit">View</button>
+              </form>
+
+              </td>
             </tr>
         <?php }?>
         </tbody>

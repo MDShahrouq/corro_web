@@ -55,8 +55,8 @@ if($_SESSION['login_reimburse_app'] == 1){
 
 <?php
 session_start();
-$pk="1";
-$trip_id="558";
+$pk=$_GET['pk'];
+$trip_id=$_GET['trip_id'];
 
   $url_get_a_user = 'https://reimburse.herokuapp.com/get_details_of_org_user/';
   $options_get_a_user = array(
