@@ -4,6 +4,7 @@
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <link rel="stylesheet" href="css/material.min.css">
     <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/table.css">
     <!-- Material Design icon font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   </head>
@@ -79,6 +80,32 @@
     <p>PENDING</p>
 </div>
         <!-- Your content goes here --></div>
+        <div class="row">
+  <div id="admin" class="col s12">
+    <div class="cards material-table">
+      <div class="table-header">
+        <span class="table-title">Material Datatable</span>
+        <div class="actions">
+          <a href="#" class="search-toggle waves-effect btn-flat nopadding"><i class="material-icons">search</i></a>
+        </div>
+      </div>
+      <table id="datatable">
+        <thead>
+          <tr>
+            <th>Employee ID</th>
+            <th>Employee Name</th>
+            <th>Dept</th>
+            <th>Travel Date</th>
+            <th>Pending Days</th>
+            <th>Total Claim</th>
+            <th>Status</th>
+            <th>View</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+  </div>
+</div>
       </main>
     </div>
   </body>
