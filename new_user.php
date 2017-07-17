@@ -7,6 +7,59 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   </head>
   <body>
+
+<?php
+if(isset($_POST['delete_btn'])){
+  $url_delete_user = 'https://reimburse.herokuapp.com/delete_user/';
+  $options_delete_user = array(
+    'http' => array(
+      'header'  => array(
+                  'USER-ID: '.$_POST['pk_delete'],
+                ),
+      'method'  => 'GET',
+    ),
+  );
+  $context_delete_user = stream_context_create($options_delete_user);
+  $output_delete_user = file_get_contents($url_delete_user, false,$context_delete_user);
+  /*echo $output_get_all_accounts;*/
+  $arr_delete_user = json_decode($output_delete_user,true);
+/*  echo $arr_get_all_accounts;*/
+}?> 
+
+<?php
+
+session_start();
+if(isset($_POST['submit'])){
+  $url = 'https://reimburse.herokuapp.com/organization_users/';
+  $data = array(
+              'name' => $_POST['name'],
+              'designation' => $_POST['designation'],
+              'department' => $_POST['department'],
+              'mobile' => $_POST['phone'],
+              'email' => $_POST['email'],
+              'username' => $_POST['username'],
+              'password' => $_POST['password'],
+              'account_token' => $_SESSION['account_token']
+            );
+
+    // use key 'http' even if you send the request to https://...
+    $options = array(
+      'http' => array(
+        'header'  => "Content-Type: application/json\r\n" .
+                     "Accept: application/json\r\n",
+        'method'  => 'POST',
+        'content' => json_encode( $data ),
+      ),
+    );
+    $context  = stream_context_create($options);
+    $result = file_get_contents($url, false, $context);
+    /*echo $result8;*/
+    $arr = json_decode($result,true);
+    /*if($arr != ''){
+      echo "<script>alert('New Account Added')</script>";
+    }*/
+}
+?>
      <!-- Always shows a header, even in smaller screens. -->
   
     <div class="demo-layout-transparent mdl-layout mdl-js-layout">
@@ -39,7 +92,7 @@
       <div class="col-sm-5" style="width:32%">
     <!-- Textfield with Floating Label -->
    
-    <form action="#" style="margin-top: 32px;">
+    <form action="#" style="margin-top: 32px;" method="post">
 
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
         <input class="mdl-textfield__input" type="text" id="name" name="name">
@@ -84,15 +137,70 @@
       <br>
 
         <!-- Accent-colored raised button with ripple -->
-    <button style="background-color: #5cb85c;width:7em" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
+    <button name="submit" id="submit" style="background-color: #5cb85c;width:7em" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
       Save
     </button>
 
-     <button style="background-color:#d9534f" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
+<!--      <button style="background-color:#d9534f" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
       Delete
-    </button>
+    </button> -->
     </form>
     </center>
+
+<?php
+  $url_get_all_users = 'https://reimburse.herokuapp.com/get_all_users/';
+  $options_get_all_users = array(
+    'http' => array(
+      'method'  => 'GET',
+    ),
+  );
+  $context_get_all_users = stream_context_create($options_get_all_users);
+  $output_get_all_users = file_get_contents($url_get_all_users, false,$context_get_all_users);
+  /*echo $output_get_all_users;*/
+  $arr_get_all_users = json_decode($output_get_all_users,true);
+/*  echo $arr_get_all_users;*/
+  
+?>
+<table align="center">
+        <thead>
+            <tr>
+                <th>Name</th> 
+                <th>Designation</th>
+                <th>Department</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <!-- <th>Edit</th> -->
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+        <?php for($x=0;$x<count($arr_get_all_users);$x++){?>
+          <?php for($y=0;$y<count($arr_get_all_users[$x]['profile']);$y++){?>
+
+              <td><?php echo $arr_get_all_users[$x]['profile'][$y]['name'] ?></td>
+              <td><?php echo $arr_get_all_users[$x]['profile'][$y]['designation'] ?></td>
+              <td><?php echo $arr_get_all_users[$x]['profile'][$y]['department'] ?></td>
+              <td><?php echo $arr_get_all_users[$x]['profile'][$y]['email'] ?></td>
+              <td><?php echo $arr_get_all_users[$x]['profile'][$y]['mobile'] ?></td>
+             <!--  <td>
+                <form method="post" action="edit_account.php">
+                  <input type="hidden" name="pk_value" value="<?php echo $arr_get_all_users[$x]['profile'][$y]['pk'] ?>">
+                  <button style="width:55px;height:30px" type="submit" name="edit_btn">Edit</button>
+                </form>
+              </td> -->
+                     <td>
+                        <form method="post" action="new_user.php">
+                          <input type="hidden" name="pk_delete" value="<?php echo $arr_get_all_users[$x]['profile'][$y]['pk'] ?>">
+                          <button onclick="return confirm('Are you sure you want to delete?');" style="width:55px;height:30px" type="submit" name="delete_btn">Delete</button>
+                         </form>
+                     </td>
+             
+            </tr>
+
+          <?php }?>
+          <?php }?>
+        </tbody>
+    </table>
     </div>
     </div>
     </div>
