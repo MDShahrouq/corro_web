@@ -14,6 +14,7 @@
   <head>
     <!-- Material Design Lite -->
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script type="text/javascript" src="table.js"></script>
     <link rel="stylesheet" href="css/material.min.css">
     <!-- Material Design icon font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -92,6 +93,7 @@
       <table id="datatable">
         <thead>
           <tr>
+
             <th>Employee ID</th>
             <th>Employee Name</th>
             <th>Dept</th>

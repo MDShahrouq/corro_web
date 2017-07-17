@@ -1,5 +1,4 @@
 
-
 div.material-table {
   padding: 0;
 }
@@ -234,6 +233,7 @@ div.material-table table td:first-child {
 div.material-table table th:last-child,
 div.material-table table td:last-child {
   padding: 0 14px 0 0;
+
 }
 
 
@@ -7762,3 +7762,6 @@ select {
     height: 48px
 }
 
+=======
+}
+>>>>>>> 4ee0763ab7c0659edf1db935f79785bca1bcaf82
