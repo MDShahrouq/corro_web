@@ -1,3 +1,14 @@
+<?php
+/*ob_start("ob_gzhandler");*/  //Enables Gzip compression 
+
+session_start();
+if($_SESSION['login_reimburse_app'] == 1){
+
+}else{
+  echo "<script>location='index.php'</script>";
+}
+
+?>
 <html>
   <head>
     <!-- Material Design Lite -->
@@ -42,7 +53,7 @@ session_start();
   );
   $context_get_a_org = stream_context_create($options_get_a_org);
   $output_get_a_org = file_get_contents($url_get_a_org, false,$context_get_a_org);
-  /*echo $output_get_a_org;*/
+ /* echo $output_get_a_org;*/
   $arr_get_a_org = json_decode($output_get_a_org,true);
 /*  echo $arr_get_a_org;*/
   
@@ -81,24 +92,24 @@ session_start();
 
   <div class="card">
     <p>TOTAL</p>
-    <p>B-TRIPS 180</p>
+    <p>B-TRIPS <span style="font-weight:bold;font-size:21px"><?php echo $arr_get_a_org['total_trips']; ?></span></p>
     <p>MADE</p>
   </div>
 
 <div class="card card-1">
   <p>TOTAL</p>
-    <p>REIMBURSEMENT</p>
+    <p>REIMBURSEMENT <span style="font-weight:bold;font-size:21px"><?php echo $arr_get_a_org['reimbursed_trips']; ?></span></p>
     <p>FIELD</p>
 </div>
 
 <div class="card card-2">
   <p>TOTAL</p>
-    <p>APPROVED</p>
+    <p>APPROVED <span style="font-weight:bold;font-size:21px"><?php echo $arr_get_a_org['approved_trips']; ?></span></p>
 </div>
 
 <div class="card card-3">
   <p>TOTAL</p>
-    <p>PENDING</p>
+    <p>PENDING <span style="font-weight:bold;font-size:21px"><?php echo $arr_get_a_org['pending_trips']; ?></span></p>
 </div>
         <!-- Your content goes here --></div>
         <div class="row">
@@ -118,12 +129,30 @@ session_start();
             <th>Employee Name</th>
             <th>Dept</th>
             <th>Travel Date</th>
+            <th>Trip No.</th>
             <th>Pending Days</th>
             <th>Total Claim</th>
             <th>Status</th>
             <th>View</th>
           </tr>
         </thead>
+
+
+        <tbody>
+        <?php for($x=0;$x<count($arr_get_a_org['user and trip details']);$x++){?>
+            <tr>
+              <td><?php echo $arr_get_a_org['user and trip details'][$x]['user details']['uid']; ?></td>
+              <td><?php echo $arr_get_a_org['user and trip details'][$x]['user details']['name']; ?></td>
+              <td><?php echo $arr_get_a_org['user and trip details'][$x]['user details']['department']; ?></td>
+              <td><?php echo ($arr_get_a_org['user and trip details'][$x]['trip_details']['start_date']." - ".$arr_get_a_org['user and trip details'][$x]['trip_details']['start_date']); ?></td>
+              <td><?php echo ($arr_get_a_org['user and trip details'][$x]['trip_details']['pk']); ?></td>
+              <td>Pending</td>
+              <td><?php echo $arr_get_a_org['user and trip details'][$x]['total']; ?></td>
+              <td><?php echo $arr_get_a_org['user and trip details'][$x]['trip_details']['status']; ?></td>
+              <td><button>View</button></td>
+            </tr>
+        <?php }?>
+        </tbody>
       </table>
     </div>
   </div>

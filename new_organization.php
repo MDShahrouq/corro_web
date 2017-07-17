@@ -1,3 +1,14 @@
+<?php
+/*ob_start("ob_gzhandler");*/  //Enables Gzip compression 
+
+session_start();
+if($_SESSION['login_reimburse_app'] == 1){
+
+}else{
+  echo "<script>location='index.php'</script>";
+}
+
+?>
 <html>
   <head>
     <!-- Material Design Lite -->
