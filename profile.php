@@ -142,11 +142,11 @@ $trip_id=$_GET['trip_id'];
 		</div>
 
 			<div class="mdl-shadow--2dp" style="overflow-y: auto;height: 451px;">
-				 <ul class="demo-list-two mdl-list mdl-js-ripple-effect">
+				 <ul class="demo-list-two mdl-list">
 
 			<?php for($t=0; $t< count($arr_get_a_user['categories']);$t++){?>
 				  <li class="mdl-list__item mdl-list__item--two-line ">
-				    <a class="mdl-list__item-primary-content " href="#!">
+				    <a class="mdl-list__item-primary-content " href="javascript:show_image();">
 				      <span><?php echo $arr_get_a_user['categories'][$t]['trip_details']['name']; ?></span>
 				      <span class="mdl-list__item-sub-title"><i><?php echo $arr_get_a_user['categories'][$t]['trip_details']['category']; ?></i></span>
 				    </a>
@@ -174,8 +174,11 @@ $trip_id=$_GET['trip_id'];
 <!--          <span class="demo-card-image__filename">Image.jpg</span>
            <div class=" mdl-card--expand"></div>-->
 			  <div class="mdl-card__actions">
-			  <div><a href="#!"><img src="http://lorempixel.com/1024/768/nature" style="width: 100%;"></a></div>
+			 <!--  <div><a href="#!"><img src="http://lorempixel.com/1024/768/nature" style="width: 100%;"></a>
+			  </div> -->
+				<div id="display_bill">
 			  </div>
+			   </div>
 		</div>
 
 		<!-- Carousel -->
@@ -242,6 +245,14 @@ $trip_id=$_GET['trip_id'];
 
 <!-- Scripts -->
 <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+<script type="text/javascript">
+function show_image() {
+	document.getElementById("display_bill").innerHTML='<img src="http://lorempixel.com/1024/768/food	" style="width:100%;" />';
+}
+</script>
 </body>
 </html>
