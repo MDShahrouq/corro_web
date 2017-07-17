@@ -30,7 +30,7 @@ $output2 = file_get_contents($url2, false,$context2);
 $arr2 = json_decode($output2,true);
 if($arr2['status']==200 && $arr2['message']=='Is Super Admin'){
   $_SESSION['login_reimburse_app'] = 1;
-  echo "<script>location='super_admin.php'</script>";
+  echo "<script>location='new_organization.php'</script>";
 
 }elseif($arr2['status']==200 && $arr2['message']=='Is Admin'){
   $_SESSION['login_reimburse_app'] = 1;
