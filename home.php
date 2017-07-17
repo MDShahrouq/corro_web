@@ -24,9 +24,10 @@ if($_SESSION['login_reimburse_app'] == 1){
     <html>
   <head>
     <!-- Material Design Lite -->
-    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-    <script type="text/javascript" src="table.js"></script>
-    <link rel="stylesheet" href="css/material.min.css">
+    <script src="js/table.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
     <!-- Material Design icon font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <style type="text/css">
@@ -112,6 +113,16 @@ session_start();
     <p>PENDING <span style="font-weight:bold;font-size:21px"><?php echo $arr_get_a_org['pending_trips']; ?></span></p>
 </div>
         <!-- Your content goes here --></div>
+<div class="mdl-grid" style="margin-top: 5px">
+        <!-- Colored raised button -->
+<button style="margin-left:69%" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+Download
+</button>
+<!-- Colored raised button -->
+<button style="margin-left:1%" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+  Clear Filter
+</button>
+</div>
         <div class="row">
   <div id="admin" class="col s12">
     <div class="cards material-table">
@@ -134,6 +145,17 @@ session_start();
             <th>Total Claim</th>
             <th>Status</th>
             <th>View</th>
+          </tr>
+           <tr>
+
+            <td>Employee ID</td>
+            <td>Employee Name</td>
+            <td>Dept</td>
+            <td>Travel Date</td>
+            <td>Pending Days</td>
+            <td>Total Claim</td>
+            <td>Status</td>
+            <td><a href="">View</a></td>
           </tr>
         </thead>
 
