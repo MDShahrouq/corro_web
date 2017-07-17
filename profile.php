@@ -19,129 +19,8 @@ if($_SESSION['login_reimburse_app'] == 1){
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
-    </head>
-
-<style type="text/css">
-.demo-card-square.mdl-card {
-    width: 100%;
-    min-height: 129px !important;
-    max-height: 150px !important;
-  background-color: #fff;
-  color: black; 
-}
-.demo-list-two {
-  width: 100%;
-}
-.mdl-list__item-secondary-info{
-	font-size: 17px !important;
-}
-
-.image-card-square{
-	
-}
-
-.demo-card-image.mdl-card {
- width: 100%;
-	height: auto;
-}
- .android-screen-section {
-  position: relative;
-  padding-top: 60px;
-  padding-bottom: 80px;
-  margin-top: 13px;
-
-}
-
-.android-screens {
-  text-align: right;
-  width: 100%;
-  white-space: nowrap;
-  overflow-x: auto;
-}
-
-.android-screen {
-  text-align: center;
-}
-
-.android-screen .android-link {
-  margin-top: 16px;
-  display: block;
-  z-index: 2;
-}
-
-.android-image-link {
-  text-decoration: none;
-}
-
-.android-wear {
-  display: inline-block;
-  width: 160px;
-  margin-right: 32px;
-}
-
-  .android-wear .android-screen-image {
-    width: 40%;
-    z-index: 1;
-  }
-
-
-.android-phone {
-  display: inline-block;
-  width: 64px;
-  margin-right: 48px;
-}
-
-  .android-phone .android-screen-image {
-    width: 100%;
-    z-index: 1;
-  }
-
-
-.android-tablet {
-  display: inline-block;
-  width: 110px;
-  margin-right: 21px;
-}
-
-  .android-tablet .android-screen-image {
-    width: 100%;
-    z-index: 1;
-  }
-
-  .android-tablet .android-link {
-    display: block;
-    z-index: 2;
-  }
-
-
-.android-tv {
-  display: inline-block;
-  width: 300px;
-  margin-right: 80px;
-}
-
-  .android-tv .android-screen-image {
-    width: 100%;
-    z-index: 1;
-  }
-
-
-.android-auto {
-  display: inline-block;
-  width: 300px;
-  overflow: hidden;
-}
-
-  .android-auto .android-screen-image {
-    display: block;
-    height: 300px;
-    z-index: 1;
-  }
-
-</style>
-
-
-
+<link rel="stylesheet" type="text/css" href="css/profile.css">
+</head>
 
 <body>
 
@@ -262,7 +141,7 @@ $trip_id=$_GET['trip_id'];
           </div>
 		</div>
 
-			<div class="mdl-shadow--2dp" style="overflow-y: auto; max-height: 451px;">
+			<div class="mdl-shadow--2dp" style="overflow-y: auto;height: 451px;">
 				 <ul class="demo-list-two mdl-list mdl-js-ripple-effect">
 
 			<?php for($t=0; $t< count($arr_get_a_user['categories']);$t++){?>
@@ -300,71 +179,59 @@ $trip_id=$_GET['trip_id'];
 		</div>
 
 		<!-- Carousel -->
-	<div class="android-screens mdl-shadow--2dp">
+	<div class="bill-screens mdl-shadow--4dp">
             
-            <div class="android-tablet android-screen">
-              <a class="android-image-link" href="">
-                <img class="android-screen-image" src="http://lorempixel.com/1024/768/nature">
+            <div class="bill-pic bill-screen">
+              <a class="bill-image-link" href="">
+                <img class="bill-screen-image" src="http://lorempixel.com/1024/768/nature">
               </a>
-              <a class="android-link mdl-typography--font-regular mdl-typography--text-uppercase" href="">Tablets</a>
+              <a class="bill-link mdl-typography--font-regular mdl-typography--text-uppercase" href="">Bill</a>
             </div>
-            <div class="android-tablet android-screen">
-              <a class="android-image-link" href="">
-                <img class="android-screen-image" src="http://lorempixel.com/1024/768/nature">
+            <div class="bill-pic bill-screen">
+              <a class="bill-image-link" href="">
+                <img class="bill-screen-image" src="http://lorempixel.com/1024/768/nature">
               </a>
-              <a class="android-link mdl-typography--font-regular mdl-typography--text-uppercase" href="">Tablets</a>
+              <a class="bill-link mdl-typography--font-regular mdl-typography--text-uppercase" href="">Bill0</a>
             </div>
-            <div class="android-tablet android-screen">
-              <a class="android-image-link" href="">
-                <img class="android-screen-image" src="http://lorempixel.com/1024/768/nature">
+            <div class="bill-pic bill-screen">
+              <a class="bill-image-link" href="">
+                <img class="bill-screen-image" src="http://lorempixel.com/1024/768/nature">
               </a>
-              <a class="android-link mdl-typography--font-regular mdl-typography--text-uppercase" href="">Tablets1</a>
-            </div><div class="android-tablet android-screen">
-              <a class="android-image-link" href="">
-                <img class="android-screen-image" src="http://lorempixel.com/1024/768/nature">
+              <a class="bill-link mdl-typography--font-regular mdl-typography--text-uppercase" href="">Bill1</a>
+            </div><div class="bill-pic bill-screen">
+              <a class="bill-image-link" href="">
+                <img class="bill-screen-image" src="http://lorempixel.com/1024/768/nature">
               </a>
-              <a class="android-link mdl-typography--font-regular mdl-typography--text-uppercase" href="">Tablets2</a>
+              <a class="bill-link mdl-typography--font-regular mdl-typography--text-uppercase" href="">Bill2</a>
             </div>
-            <div class="android-tablet android-screen">
-              <a class="android-image-link" href="">
-                <img class="android-screen-image" src="http://lorempixel.com/1024/768/nature">
+            <div class="bill-pic bill-screen">
+              <a class="bill-image-link" href="">
+                <img class="bill-screen-image" src="http://lorempixel.com/1024/768/nature">
               </a>
-              <a class="android-link mdl-typography--font-regular mdl-typography--text-uppercase" href="">Tablets3</a>
+              <a class="bill-link mdl-typography--font-regular mdl-typography--text-uppercase" href="">Bill3</a>
             </div>
-             <div class="android-tablet android-screen">
-              <a class="android-image-link" href="">
-                <img class="android-screen-image" src="http://lorempixel.com/1024/768/nature">
+           <!--   <div class="bill-pic bill-screen">
+              <a class="bill-image-link" href="">
+                <img class="bill-screen-image" src="http://lorempixel.com/1024/768/nature">
               </a>
-              <a class="android-link mdl-typography--font-regular mdl-typography--text-uppercase" href="">Tablets3</a>
+              <a class="bill-link mdl-typography--font-regular mdl-typography--text-uppercase" href="">Bill3</a>
             </div>
-             <div class="android-tablet android-screen">
-              <a class="android-image-link" href="">
-                <img class="android-screen-image" src="http://lorempixel.com/1024/768/nature">
+             <div class="bill-pic bill-screen">
+              <a class="bill-image-link" href="">
+                <img class="bill-screen-image" src="http://lorempixel.com/1024/768/nature">
               </a>
-              <a class="android-link mdl-typography--font-regular mdl-typography--text-uppercase" href="">Tablets3</a>
+              <a class="bill-link mdl-typography--font-regular mdl-typography--text-uppercase" href="">Bill3</a>
             </div>
-             <div class="android-tablet android-screen">
-              <a class="android-image-link" href="">
-                <img class="android-screen-image" src="http://lorempixel.com/1024/768/nature">
+             <div class="bill-pic bill-screen">
+              <a class="bill-image-link" href="">
+                <img class="bill-screen-image" src="http://lorempixel.com/1024/768/nature">
               </a>
-              <a class="android-link mdl-typography--font-regular mdl-typography--text-uppercase" href="">Tablets3</a>
-            </div>
-            <!-- <div class="android-tv android-screen">
-              <a class="android-image-link" href="">
-                <img class="android-screen-image" src="http://lorempixel.com/1024/768/nature">
-              </a>
-              <a class="android-link mdl-typography--font-regular mdl-typography--text-uppercase" href="">Android TV</a>
-            </div>
-            <div class="android-auto android-screen">
-              <a class="android-image-link" href="">
-                <img class="android-screen-image" src="http://lorempixel.com/1024/768/nature">
-              </a>
-              <a class="android-link mdl-typography--font-regular mdl-typography--text-uppercase mdl-typography--text-left" href="">Coming Soon: Android Auto</a>
+              <a class="bill-link mdl-typography--font-regular mdl-typography--text-uppercase" href="">Bill3</a>
             </div> -->
-  </div>
+   		</div>
 
 		</div>
-	</div>
+	 </div>
 	</main>
 </div>
 

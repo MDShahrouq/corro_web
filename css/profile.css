@@ -1,0 +1,103 @@
+
+.demo-card-square.mdl-card {
+    width: 100%;
+    min-height: 129px !important;
+    max-height: 150px !important;
+  background-color: #fff;
+  color: black; 
+}
+.demo-list-two {
+  width: 100%;
+}
+.mdl-list__item-secondary-info{
+	font-size: 17px !important;
+}
+
+.image-card-square{
+	
+}
+
+.demo-card-image.mdl-card {
+ width: 100%;
+	height: auto;
+}
+ .bill-screen-section {
+  position: relative;
+  padding-top: 60px;
+  padding-bottom: 80px;
+
+}
+
+.bill-screens {
+  text-align: right;
+  width: 100%;
+  white-space: nowrap;
+  overflow-x: auto;
+   margin-top: 20px;
+
+}
+
+.bill-screen {
+  text-align: center;
+}
+
+.bill-screen .bill-link {
+  margin-top: 16px;
+  display: block;
+  z-index: 2;
+}
+
+.bill-image-link {
+  text-decoration: none;
+}
+
+
+.bill-pic {
+  display: inline-block;
+  width: 110px;
+  margin-right: 21px;
+}
+
+  .bill-pic .bill-screen-image {
+    width: 100%;
+    z-index: 1;
+  }
+
+  .bill-pic .bill-link {
+    display: block;
+    z-index: 2;
+  }
+/*Scroll bar*/
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: #e1e1e1;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ffffff;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #000000;
+}
+::-webkit-scrollbar-track {
+  background: #ffffff;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-track:hover {
+  background: #666666;
+}
+::-webkit-scrollbar-track:active {
+  background: #333333;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
