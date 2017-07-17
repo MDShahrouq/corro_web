@@ -14,7 +14,7 @@
 
         <div class="mdl-layout__header-row">
           <!-- Title -->
-          <span class="mdl-layout-title" style="margin-top:78px;margin-left:80%;">CORRO</span>
+          <span class="mdl-layout-title" style="margin-left:80%;">CORRO</span>
           <!-- Add spacer, to align navigation to the right -->
           <div class="mdl-layout-spacer"></div>
         </div>
