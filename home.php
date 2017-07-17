@@ -4,7 +4,6 @@
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <link rel="stylesheet" href="css/material.min.css">
     <link rel="stylesheet" href="css/home.css">
-     <link rel="stylesheet" href="css/table.css">
     <!-- Material Design icon font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   </head>
@@ -14,7 +13,6 @@
   <head>
     <!-- Material Design Lite -->
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-    <script type="text/javascript" src="table.js"></script>
     <link rel="stylesheet" href="css/material.min.css">
     <!-- Material Design icon font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -81,35 +79,6 @@
     <p>PENDING</p>
 </div>
         <!-- Your content goes here --></div>
-
-        <div class="row">
-  <div id="admin" class="col s12">
-    <div class="card material-table">
-      <div class="table-header">
-        <span class="table-title">Material Datatable</span>
-        <div class="actions">
-          <a href="#add_users" class="modal-trigger waves-effect btn-flat nopadding"><i class="material-icons">person_add</i></a>
-          <a href="#" class="search-toggle waves-effect btn-flat nopadding"><i class="material-icons">search</i></a>
-        </div>
-      </div>
-      <table id="datatable">
-        <thead>
-          <tr>
-            <th>EMPLOYEE<br>ID</th>
-            <th>EMPLOYEE<br>NAME</th>
-            <th>DEPT</th>
-            <th>TRAVEL DATE</th>
-            <th>TRIP NO</th>
-            <th>PENDING DAYS</th>
-            <th>TOTAL CLAIM</th>
-            <th>STATUS</th>
-            <th>VIEW</th>
-          </tr>
-        </thead>
-      </table>
-    </div>
-  </div>
-</div>
       </main>
     </div>
   </body>
