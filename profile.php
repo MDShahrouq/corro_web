@@ -41,6 +41,30 @@
 
 
 <body>
+
+<?php
+session_start();
+$pk="1";
+$trip_id="558";
+
+  $url_get_a_user = 'http://127.0.0.1:8000/get_details_of_org_user/';
+  $options_get_a_user = array(
+    'http' => array(
+      'header'  => array(
+                  'PK: '.$pk,
+                  'TRIP-ID: '.$trip_id,
+                  'ACCOUNT-TOKEN: '.$_SESSION['account_token']
+                ),
+      'method'  => 'GET',
+    ),
+  );
+  $context_get_a_user = stream_context_create($options_get_a_user);
+  $output_get_a_user = file_get_contents($url_get_a_user, false,$context_get_a_user);
+/*  echo $output_get_a_user;*/
+  $arr_get_a_user = json_decode($output_get_a_user,true);
+/*  echo $arr_get_a_user;*/
+  
+?>
 	
 <!-- <div class="mdl-layout__container">
  -->
@@ -66,7 +90,7 @@
 		    <span class="mdl-list__item-primary-content">
 		      <b>Employee ID : </b></span>
 		        <span class="mdl-list__item-secondary-content">
-			  <span class="mdl-list__item-secondary-info">15</span>  
+			  <span class="mdl-list__item-secondary-info"><?php echo $arr_get_a_user['user_details']['uid']; ?></span>  
 			  </span>
 		    </span>
 		    </li>
@@ -75,44 +99,44 @@
 		    <span class="mdl-list__item-primary-content">
 		      <b>Designation :</b></span>
 		        <span class="mdl-list__item-secondary-content">
-			  <span class="mdl-list__item-secondary-info">MGR.SALES</span>  
+			  <span class="mdl-list__item-secondary-info"><?php echo $arr_get_a_user['user_details']['designation']; ?></span>  
 			  </span>
 		    </li>
 		    <li class="mdl-list__item">
 		    <span class="mdl-list__item-primary-content">
 		      <b>Department :</b></span>
 		        <span class="mdl-list__item-secondary-content">
-			  <span class="mdl-list__item-secondary-info">CHEM SALES</span>  
+			  <span class="mdl-list__item-secondary-info"><?php echo $arr_get_a_user['user_details']['department']; ?></span>  
 			  </span>
 		    </li>
-		<li class="mdl-list__item">
+		<!-- <li class="mdl-list__item">
 		    <span class="mdl-list__item-primary-content">
 		      <b>Approver : </b></span>
 		        <span class="mdl-list__item-secondary-content">
 			  <span class="mdl-list__item-secondary-info">Prashant</span>  
 			  </span>
-		    </li>
+		    </li> -->
 		<li class="mdl-list__item">
 		    <span class="mdl-list__item-primary-content">
 		      <b>Mobile No : </b></span>
 		      <span class="mdl-list__item-secondary-content">
-			  <span class="mdl-list__item-secondary-info">9123456789</span>  
+			  <span class="mdl-list__item-secondary-info"><?php echo $arr_get_a_user['user_details']['mobile']; ?></span>  
 			  </span>
 		    </li>
 		<li class="mdl-list__item">
 		    <span class="mdl-list__item-primary-content">
 		      <b>Email ID : </b></span>
 		      <span class="mdl-list__item-secondary-content">
-			  <span class="mdl-list__item-secondary-info">karan@gmail.com</span>  
+			  <span class="mdl-list__item-secondary-info"><?php echo $arr_get_a_user['user_details']['email']; ?></span>  
 			  </span>
 		    </li>		    
 		  <li class="mdl-list__item">
-		  	<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+		  	<button href="home.php" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
   				View History
 			</button>
 		  </li>
 		   <li class="mdl-list__item">
-		  	<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+		  	<button href="home.php" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
 			Cancel
 			</button>
 		  </li>
@@ -121,133 +145,36 @@
 		</div>
 		</div>
 	</aside>
+
 		<!-- End of Aside bar -->
 		</div>
 		<div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-desktop">
 
 		<div class="demo-card-square mdl-card mdl-shadow--2dp" style="text-align: center;">
             <div class="mdl-card__supporting-text">
-              <span>TRIP NO :109</span>
-              <div><span>PIDLITE MEET</span></div>
-              <div><span>29/05/2015 - 02/06/2017</span></div>
-              <div><span>&#8377; 8000.00</span></div>
+              <span>TRIP NO :<?php echo $arr_get_a_user['trip']['pk']; ?></span>
+              <div><span><?php echo $arr_get_a_user['trip']['category']; ?></span></div>
+              <div><span><?php echo $arr_get_a_user['trip']['start_date']; ?> - <?php echo $arr_get_a_user['trip']['end_date']; ?></span></div>
+              <div><span>&#8377; <?php echo $arr_get_a_user['total']; ?></span></div>
           </div>
 		</div>
 
 			<div style="overflow-y: auto; max-height: 451px;">
 				 <ul class="demo-list-two mdl-list mdl-js-ripple-effect">
+
+			<?php for($t=0; $t< count($arr_get_a_user['categories']);$t++){?>
 				  <li class="mdl-list__item mdl-list__item--two-line ">
 				    <a class="mdl-list__item-primary-content " href="#!">
-				      <span>INDIGO ARLINE TRAVELS:</span>
-				      <span class="mdl-list__item-sub-title"><i>TRAVEL</i></span>
+				      <span><?php echo $arr_get_a_user['categories'][$t]['trip_details']['name']; ?></span>
+				      <span class="mdl-list__item-sub-title"><i><?php echo $arr_get_a_user['categories'][$t]['trip_details']['category']; ?></i></span>
 				    </a>
 				    <span class="mdl-list__item-secondary-content">
-				      <span class="mdl-list__item-secondary-info">&#8377;2800.00</span>
+				      <span class="mdl-list__item-secondary-info">&#8377;<?php echo $arr_get_a_user['categories'][$t]['trip_details']['amount']; ?></span>
 				      
 				    </span>
 				  </li>
-					<li class="mdl-list__item mdl-list__item--two-line ">
-				    <a class="mdl-list__item-primary-content" href="#!">
-				      <span>DOMINOS:</span>
-				      <span class="mdl-list__item-sub-title"><i>FOOD</i></span>
-				    </a>
-				    <span class="mdl-list__item-secondary-content">
-				      <span class="mdl-list__item-secondary-info">&#8377;200.00</span>
-				      
-				    </span>
-				  </li>
-				  <li class="mdl-list__item mdl-list__item--two-line ">
-				    <a class="mdl-list__item-primary-content" href="#!">
-				      <span>UBER:</span>
-				      <span class="mdl-list__item-sub-title"><i>TRAVEL</i></span>
-				    </a>
-				    <span class="mdl-list__item-secondary-content">
-				      <span class="mdl-list__item-secondary-info">&#8377;280.00</span>
-				      
-				    </span>
-				  </li>
-				  <li class="mdl-list__item mdl-list__item--two-line ">
-				    <a class="mdl-list__item-primary-content" href="#!">
-				      <span>HOTEL RAJOHANI:</span>
-				      <span class="mdl-list__item-sub-title"><i>FOOD</i></span>
-				    </a>
-				    <span class="mdl-list__item-secondary-content">
-				      <span class="mdl-list__item-secondary-info">&#8377;800.00</span>
-				      
-				    </span>
-				  </li>
-				  <li class="mdl-list__item mdl-list__item--two-line ">
-				    <a class="mdl-list__item-primary-content" href="#!">
-				      <span>JAGAR UPAHAR:</span>
-				      <span class="mdl-list__item-sub-title"><i>FOOD</i></span>
-				    </a>
-				    <span class="mdl-list__item-secondary-content">
-				      <span class="mdl-list__item-secondary-info">&#8377;160.00</span>
-				      
-				    </span>
-				  </li>
-				  <li class="mdl-list__item mdl-list__item--two-line ">
-				    <a class="mdl-list__item-primary-content" href="#!">
-				      <span>OLA:</span>
-				      <span class="mdl-list__item-sub-title"><i>TRAVEL</i></span>
-				    </a>
-				    <span class="mdl-list__item-secondary-content">
-				      <span class="mdl-list__item-secondary-info">&#8377;490.00</span>
-				      
-				    </span>
-				  </li>
-				   <li class="mdl-list__item mdl-list__item--two-line ">
-				    <a class="mdl-list__item-primary-content" href="#!">
-				      <span>UBER:</span>
-				      <span class="mdl-list__item-sub-title"><i>TRAVEL</i></span>
-				    </a>
-				    <span class="mdl-list__item-secondary-content">
-				      <span class="mdl-list__item-secondary-info">&#8377;280.00</span>
-				      
-				    </span>
-				  </li>
-				   <li class="mdl-list__item mdl-list__item--two-line ">
-				    <a class="mdl-list__item-primary-content" href="#!">
-				      <span>UBER:</span>
-				      <span class="mdl-list__item-sub-title"><i>TRAVEL</i></span>
-				    </a>
-				    <span class="mdl-list__item-secondary-content">
-				      <span class="mdl-list__item-secondary-info">&#8377;280.00</span>
-				      
-				    </span>
-				  </li>
-				   <li class="mdl-list__item mdl-list__item--two-line ">
-				    <a class="mdl-list__item-primary-content" href="#!">
-				      <span>UBER:</span>
-				      <span class="mdl-list__item-sub-title"><i>TRAVEL</i></span>
-				    </a>
-				    <span class="mdl-list__item-secondary-content">
-				      <span class="mdl-list__item-secondary-info">&#8377;280.00</span>
-				      
-				    </span>
-				  </li>
-				   <li class="mdl-list__item mdl-list__item--two-line ">
-				    <a class="mdl-list__item-primary-content" href="#!">
-				      <span>UBER:</span>
-				      <span class="mdl-list__item-sub-title"><i>TRAVEL</i></span>
-				    </a>
-				    <span class="mdl-list__item-secondary-content">
-				      <span class="mdl-list__item-secondary-info">&#8377;280.00</span>
-				      
-				    </span>
-				  </li>
-				   <li class="mdl-list__item mdl-list__item--two-line ">
-				    <a class="mdl-list__item-primary-content" href="#!">
-				      <span>UBER:</span>
-				      <span class="mdl-list__item-sub-title"><i>TRAVEL</i></span>
-				    </a>
-				    <span class="mdl-list__item-secondary-content">
-				      <span class="mdl-list__item-secondary-info">&#8377;280.00</span>
-				      
-				    </span>
-				  </li>
-
-				  </ul>
+            <?php }?>
+				 </ul>
 <!--           </div>
  -->		</div>
 			 
