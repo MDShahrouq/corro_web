@@ -148,16 +148,7 @@ $trip_id=$_GET['trip_id'];
           </div>
 		</div>
 
-<<<<<<< 4b8de5101027534e6ffcf3e68f565d57ae936429
 			<div class="mdl-shadow--2dp" style="overflow-y: auto;height: 451px;">
-<<<<<<< d6ec6c9d10080ba76e80243bfe79398134f1c5e7
-				 <ul class="demo-list-two mdl-list">
-=======
-=======
-			<div class="mdl-shadow--2dp" style="overflow-y: auto; max-height: 451px;">
->>>>>>> Slider in progress
-				 <ul class="demo-list-two mdl-list mdl-js-ripple-effect">
->>>>>>> Slider in progress
 
 <script type="text/javascript">
 	function display_text(category,amount){
@@ -166,6 +157,7 @@ $trip_id=$_GET['trip_id'];
       /*alert(category);*/
 	}
 </script>
+				 <ul class="demo-list-two mdl-list">
 			<?php for($t=0; $t< count($arr_get_a_user['categories']);$t++){?>
 
 		    <button onClick="display_text('<?php echo $arr_get_a_user['categories'][$t]['trip_details']['category'] ?>','<?php echo $arr_get_a_user['categories'][$t]['trip_details']['amount'] ?>')">
