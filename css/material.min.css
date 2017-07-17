@@ -247,7 +247,8 @@ p {
 p {
     font-size: 14px;
     letter-spacing: 0;
-    margin: 0 0 16px
+    margin: 12px 22px 16px;
+    text-align: left;
 }
 a {
     color: rgb(255, 64, 129);
@@ -3828,7 +3829,9 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
 .mdl-layout__title,
 .mdl-layout-title {
     display: block;
+    margin-top: 46px;
     position: relative;
+    margin-top: 
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     font-size: 20px;
     line-height: 1;
@@ -3855,7 +3858,7 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
     height: 100%;
     max-height: 100%;
     position: absolute;
-    top: 0;
+    top: 0px;
     left: 0;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
     box-sizing: border-box;
@@ -3951,7 +3954,7 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
     line-height: 56px;
     font-family: Helvetica, Arial, sans-serif;
     margin: 8px 12px;
-    top: 0;
+    top:28px;
     left: 0;
     color: rgb(255, 255, 255);
     z-index: 4
