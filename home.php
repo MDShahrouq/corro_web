@@ -74,11 +74,11 @@ session_start();
       <div class="mdl-layout__drawer">
         <span class="mdl-layout-title">CORRO</span>
         <nav class="mdl-navigation">
-          <a class="mdl-navigation__link" href="">OVERVIEW</a>
-          <a class="mdl-navigation__link" href="">EXPENSE REPORT</a>
-          <a class="mdl-navigation__link" href="">BOOKING</a>
-          <a class="mdl-navigation__link" href="">SITTING's</a>
-          <a class="mdl-navigation__link" href="">REPORT</a>
+          <a class="mdl-navigation__link" href="#!">OVERVIEW</a>
+          <a class="mdl-navigation__link" href="home.php">EXPENSE REPORT</a>
+          <a class="mdl-navigation__link" href="#!">BOOKING</a>
+          <a class="mdl-navigation__link" href="new_user.php">SETTING's</a>
+          <a class="mdl-navigation__link" href="#!">REPORT</a>
         </nav>
       </div>
 
