@@ -162,7 +162,18 @@ $trip_id=$_GET['trip_id'];
 
 		    <button onClick="display_text('<?php echo $arr_get_a_user['categories'][$t]['trip_details']['category'] ?>','<?php echo $arr_get_a_user['categories'][$t]['trip_details']['amount'] ?>')">
 				  <li class="mdl-list__item mdl-list__item--two-line ">
-				    <a class="mdl-list__item-primary-content " href="javascript:show_image();">
+
+
+
+
+			<a class="mdl-list__item-primary-content ">
+				      
+
+
+
+
+
+
 				      <span><?php echo $arr_get_a_user['categories'][$t]['trip_details']['name']; ?></span>
 				      <span class="mdl-list__item-sub-title"><i><?php echo $arr_get_a_user['categories'][$t]['trip_details']['category']; ?></i></span>
 				    </a>
@@ -270,10 +281,14 @@ $trip_id=$_GET['trip_id'];
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
+
 <script type="text/javascript">
-function show_image() {
-	document.getElementById("display_bill").innerHTML='<img src="http://lorempixel.com/1024/768/food	" style="width:100%;" />';
+function show_image(bill_image) {
+	var bill_img = document.createElement("bill_img");
+	bill_img.bill_image=bill_image;
+document.getElementById('display_bill').innerHTML="<img src="+bill_img+" style="width:100%;" />";
 }
 </script>
 </body>
 </html>
+<!-- <image style="display:none" src="<?php echo $arr_get_a_user['categories'][$t]['image_id']; ?>"></image> -->
