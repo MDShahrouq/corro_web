@@ -62,7 +62,14 @@ $trip_id=$_GET['trip_id'];
 			</div> -->
 			<aside class="mdl-components__nav docs-text-styling mdl-shadow--4dp">
 			<div style="text-align: center;">
-			<a href="#" ><img src="http://lorempixel.com/1024/768/people" alt="" width="100px" height="100px" style="-moz-border-radius: 50px;-webkit-border-radius: 50px;border-radius: 50px; margin-top: 20px;" /></a>
+
+			<?php if($arr_get_a_user['profile image'] == ""){ 
+              $profile_image="boy.png";
+             }else{
+              $profile_image=$arr_get_a_user['profile image'];
+             }
+			?>
+			<a href="#" ><img src="<?php echo $profile_image; ?>" alt="" width="100px" height="100px" style="-moz-border-radius: 50px;-webkit-border-radius: 50px;border-radius: 50px; margin-top: 20px;" /></a>
 			</div>
 
        <div style="overflow-x:auto;overflow-y: auto;height: 498px;" >
