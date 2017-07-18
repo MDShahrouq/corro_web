@@ -6380,10 +6380,14 @@ fieldset[disabled] .mdl-textfield .mdl-textfield__label,
     .mdl-grid--no-spacing>.mdl-cell--5-col-desktop.mdl-cell--5-col-desktop {
         width: 41.6666666667%
     }
-    .mdl-cell--6-col,
+    /*.mdl-cell--6-col,
     .mdl-cell--6-col-desktop.mdl-cell--6-col-desktop {
         width: calc(50% - 16px)
-    }
+    }*/
+      .mdl-cell--6-col,
+     .mdl-cell--6-col-desktop.mdl-cell--6-col-desktop {
+    width: calc(50% - 137px);
+}
     .mdl-grid--no-spacing>.mdl-cell--6-col,
     .mdl-grid--no-spacing>.mdl-cell--6-col-desktop.mdl-cell--6-col-desktop {
         width: 50%
