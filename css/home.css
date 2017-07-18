@@ -26,11 +26,12 @@
     display: inline-block;
     height: 147px;
     position: relative;
-    width: 509px;
+    width: 505px;
     margin: 0%;
-    left: -7%;
+    left: -6.3%;
     top: 12px;
 }
+
 .card,
 .card-1,
 .card-2,
@@ -47,13 +48,14 @@
     background: #fff;
     border-color: black;
     display: inline-block;
-    height: 148px;
+    height: 142px;
     position: relative;
-    width: 384px;
+    width: 379px;
     margin: 0%;
-    left: -7%;
+    left: -6.1%;
     top: 12px;
 }
+
 .card,
 .card-1,
 .card-2,
@@ -70,13 +72,14 @@
     background: #fff;
     border-color: black;
     display: inline-block;
-    height: 147px;
+    height: 149px;
     position: relative;
-    width: 335px;
+    width: 327px;
     margin: 0%;
-    left: -7%;
+    left: -6%;
     top: 12px;
 }
+
 .card,
 .card-1,
 .card-2,
@@ -93,13 +96,14 @@
     background: #fff;
     border-color: black;
     display: inline-block;
-    height: 139px;
+    height: 134px;
     position: relative;
-    width: 320px;
+    width: 311px;
     margin: 0%;
-    left: -7%;
+    left: -6%;
     top: 12px;
 }
+
 .card,
 .card-1,
 .card-2,
@@ -118,11 +122,12 @@
     display: inline-block;
     height: 147px;
     position: relative;
-    width: 287px;
+    width: 283px;
     margin: 0%;
-    left: -7%;
+    left: -6%;
     top: 12px;
 }
+
 
 .card,
 .card-1,
@@ -141,16 +146,13 @@
     border-color: black;
     display: inline-block;
     height: 116px;
-<<<<<<< HEAD
-
-=======
->>>>>>> home page is completed and logout btn is added
     position: relative;
-    width: 260px;
+    width: 266px;
     margin: 0%;
-    left: -7%;
+    left: -6%;
     top: 12px;
 }
+
 
 .card,
 .card-1,
