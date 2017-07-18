@@ -112,6 +112,7 @@ session_start();
         <div class="mdl-grid">
  <div class="mdl-cell mdl-cell--2-col">
     <!-- add content here -->
+ <!--    card -->
  </div>
 
   <div class="card">
