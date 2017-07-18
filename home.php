@@ -155,19 +155,6 @@ Download
                 <th>VIEW</th>
             </tr>
         </thead>
-        <!-- <tfoot>
-            <tr>
-                <th>EMPLOYEE<br>ID</th>
-                <th>EMPLOYEE<br>NAME</th>
-                <th>DEPT</th>
-                <th>TRAVEL DATE</th>
-                <th>TRIP NO.</th>
-                <th>PENDING<br>DAYS</th>
-                <th>TOTAL CLAIM</th>
-                <th>STATUS</th>
-                <th>VIEW</th>
-            </tr>
-        </tfoot> -->
         <tbody>
 
         <?php for($x=0;$x<count($arr_get_a_org['user and trip details']);$x++){?>

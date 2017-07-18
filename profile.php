@@ -70,6 +70,7 @@ $trip_id=$_GET['trip_id'];
              }
 			?>
 			<a href="#" ><img src="<?php echo $profile_image; ?>" alt="" width="100px" height="100px" style="-moz-border-radius: 50px;-webkit-border-radius: 50px;border-radius: 50px; margin-top: 20px;" /></a>
+
 			</div>
 
        <div style="overflow-x:auto;overflow-y: auto;height: 498px;" >
@@ -149,7 +150,7 @@ $trip_id=$_GET['trip_id'];
 		</div>
 
 			<div class="mdl-shadow--2dp" style="overflow-y: auto;height: 451px;">
-				 <ul class="demo-list-two mdl-list">
+				 <ul class="demo-list-two mdl-list mdl-js-ripple-effect">
 
 <script type="text/javascript">
 	function display_text(category,amount){
@@ -195,9 +196,11 @@ $trip_id=$_GET['trip_id'];
 <!--          <span class="demo-card-image__filename">Image.jpg</span>
            <div class=" mdl-card--expand"></div>-->
 			  <div class="mdl-card__actions">
+
 			 <!--  <div><a href="#!"><img src="http://lorempixel.com/1024/768/nature" style="width: 100%;"></a>
 			  </div> -->
 				<div id="display_bill">
+
 			  </div>
 			   </div>
 		</div>
