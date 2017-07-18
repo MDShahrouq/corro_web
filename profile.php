@@ -50,7 +50,15 @@ $trip_id=$_GET['trip_id'];
 	
 <!-- <div class="mdl-layout__container">
  -->
-<div class="mdl-layout mdl-js-layout">
+<div class=" mdl-layout mdl-js-layout">
+    <header style="background-color:#3f51b5; height:64px;" class="mdl-layout__header mdl-layout__header--transparent mdl-shadow--4dp ">
+    	<div class="mdl-layout__header-row">
+        <span class=" mdl-layout-title">Corro</span>
+        <div class="mdl-layout-spacer"></div>
+        <a href="logout.php"><img id="logout" style="" src="images/logout_btn.png"></img></a> 
+      </div>
+      </header>
+
 	<main class="mdl-layout__content">    
  	<div class="mdl-grid">
 		<div class="mdl-components mdl-js-components mdl-cell mdl-cell--3-col mdl-cell--3-col-tablet mdl-cell--3-col-desktop">
@@ -157,23 +165,11 @@ $trip_id=$_GET['trip_id'];
       /*alert(category);*/
 	}
 </script>
-				 <ul class="demo-list-two mdl-list">
 			<?php for($t=0; $t< count($arr_get_a_user['categories']);$t++){?>
 
 		    <button onClick="display_text('<?php echo $arr_get_a_user['categories'][$t]['trip_details']['category'] ?>','<?php echo $arr_get_a_user['categories'][$t]['trip_details']['amount'] ?>')">
 				  <li class="mdl-list__item mdl-list__item--two-line ">
-
-
-
-
-			<a class="mdl-list__item-primary-content ">
-				      
-
-
-
-
-
-
+				    <a class="mdl-list__item-primary-content " href="javascript:show_image();">
 				      <span><?php echo $arr_get_a_user['categories'][$t]['trip_details']['name']; ?></span>
 				      <span class="mdl-list__item-sub-title"><i><?php echo $arr_get_a_user['categories'][$t]['trip_details']['category']; ?></i></span>
 				    </a>
