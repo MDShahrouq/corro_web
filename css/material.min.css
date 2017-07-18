@@ -247,7 +247,7 @@ p {
 p {
     font-size: 14px;
     letter-spacing: 0;
-    margin: 12px 22px 16px;
+    margin: 6px 22px 16px;
     text-align: left;
 }
 a {
@@ -2802,6 +2802,7 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
 }
 .mdl-data-table {
     position: relative;
+    margin: auto;
     border: 1px solid rgba(0, 0, 0, .12);
     border-collapse: collapse;
     white-space: nowrap;
@@ -3918,6 +3919,7 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
     flex-shrink: 0;
     padding: 16px 40px;
     margin: 0;
+    text-align: left;
     color: #757575
 }
 @media screen and (max-width: 1024px) {
@@ -4074,6 +4076,10 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
         display: -ms-flexbox;
         display: flex
     }
+    .mdl-layout__header--transparent.mdl-layout__header--transparent {
+    background-color: transparent;
+    box-shadow: none
+}
 }
 .mdl-layout__header--transparent.mdl-layout__header--transparent {
     background-color: transparent;
@@ -4121,6 +4127,11 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
 }
 .mdl-layout--no-drawer-button .mdl-layout__header-row {
     padding-left: 40px
+}
+@media screen and (min-width: 1024px) {
+    .mdl-layout--no-desktop-drawer-button .mdl-layout__header-row {
+        padding-left: 40px
+    }
 }
 @media screen and (min-width: 1025px) {
     .mdl-layout--no-desktop-drawer-button .mdl-layout__header-row {
