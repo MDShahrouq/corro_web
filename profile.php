@@ -161,10 +161,8 @@ $trip_id=$_GET['trip_id'];
 				      <span class="mdl-list__item-secondary-info">&#8377;<?php echo $arr_get_a_user['categories'][$t]['trip_details']['amount']; ?></span>
 				      
 				    </span>
-				    <image src="<?php echo $arr_get_a_user['categories'][$t]['image_id']; ?>"></image>
-                     <?php
-				    echo $arr_get_a_user['categories'][$t]['image_id'];
-				    ?>
+				    <image style="display:none" src="<?php echo $arr_get_a_user['categories'][$t]['image_id']; ?>"></image>
+                   
 				  </li>
             <?php }?>
 				 </ul>
