@@ -14,6 +14,7 @@ if($_SESSION['login_reimburse_app'] == 1){
     <!-- Material Design Lite -->
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <link rel="stylesheet" href="css/material.min.css">
+    <link rel="stylesheet" href="css/new_user.css">
     <!-- Material Design icon font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   </head>
@@ -87,6 +88,7 @@ if(isset($_POST['submit'])){
         <div class="mdl-layout__header-row">
            <!-- Title -->
           <span class="mdl-layout-title">CORRO</span>
+          <a href="logout.php"><img id="logout" style="" src="images/logout_btn.png"></img></a> 
           <!-- Add spacer, to align navigation to the right -->
           <div class="mdl-layout-spacer"></div>
           <!-- Navigation. We hide it in small screens. -->

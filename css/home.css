@@ -26,9 +26,9 @@
     display: inline-block;
     height: 147px;
     position: relative;
-    width: 352px;
+    width: 509px;
     margin: 0%;
-    left: 5%;
+    left: -7%;
     top: 12px;
 }
 .card,
@@ -47,11 +47,11 @@
     background: #fff;
     border-color: black;
     display: inline-block;
-    height: 147px;
+    height: 148px;
     position: relative;
-    width: 319px;
+    width: 384px;
     margin: 0%;
-    left: 1%;
+    left: -7%;
     top: 12px;
 }
 .card,
@@ -72,9 +72,9 @@
     display: inline-block;
     height: 147px;
     position: relative;
-    width: 293px;
+    width: 335px;
     margin: 0%;
-    left: -1%;
+    left: -7%;
     top: 12px;
 }
 .card,
@@ -93,11 +93,11 @@
     background: #fff;
     border-color: black;
     display: inline-block;
-    height: 147px;
+    height: 139px;
     position: relative;
-    width: 285px;
+    width: 320px;
     margin: 0%;
-    left: 0%;
+    left: -7%;
     top: 12px;
 }
 .card,
@@ -118,11 +118,12 @@
     display: inline-block;
     height: 147px;
     position: relative;
-    width: 270px;
+    width: 287px;
     margin: 0%;
-    left: -5%;
+    left: -7%;
     top: 12px;
 }
+
 .card,
 .card-1,
 .card-2,
@@ -139,13 +140,14 @@
     background: #fff;
     border-color: black;
     display: inline-block;
-    height: 119px;
+    height: 116px;
     position: relative;
-    width: 254px;
+    width: 260px;
     margin: 0%;
-    left: -5%;
+    left: -7%;
     top: 12px;
 }
+
 .card,
 .card-1,
 .card-2,
@@ -163,11 +165,11 @@
     background: #fff;
     border-color: black;
     display: inline-block;
-    height: 147px;
+    height: 132px;
     position: relative;
-    width: 254px;
+    width: 258px;
     margin: 0%;
-    left: -7%;
+    left: -7.5%;
     top: 12px;
 }
 

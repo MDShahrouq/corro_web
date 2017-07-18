@@ -16,15 +16,35 @@ if($_SESSION['login_reimburse_app'] == 1){
     <link rel="stylesheet" href="css/material.min.css">
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/table.css">
+    <link rel="stylesheet" href="css/new_user.css">
+    <link rel="stylesheet" href="css/datatable.material.css">
     <!-- Material Design icon font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- TABLE CSS AND JS -->
+     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <link rel="stylesheet" src="https://cdn.datatables.net/1.10.15/css/dataTables.material.min.css">
+    <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/dataTables.material.min.js"></script>
+<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+<script type="text/javascript">
+        $(document).ready(function() {
+    $('#example').DataTable( {
+        columnDefs: [
+            {
+                targets: [ 0, 1, 2 ],
+                className: 'mdl-data-table__cell--non-numeric'
+            }
+        ]
+    } );
+} );
+    </script>
   </head>
   <body>
     <!-- Always shows a header, even in smaller screens. -->
     <html>
   <head>
     <!-- Material Design Lite -->
-    <script src="js/table.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
@@ -67,6 +87,7 @@ session_start();
         <div class="mdl-layout__header-row">
            <!-- Title -->
           <span class="mdl-layout-title">CORRO</span>
+          <a href="logout.php"><img id="logout" style="" src="images/logout_btn.png"></img></a> 
           <!-- Add spacer, to align navigation to the right -->
           <div class="mdl-layout-spacer"></div>
           <!-- Navigation. We hide it in small screens. -->
@@ -113,54 +134,41 @@ session_start();
     <p>PENDING <span style="font-weight:bold;font-size:21px"><?php echo $arr_get_a_org['pending_trips']; ?></span></p>
 </div>
         <!-- Your content goes here --></div>
-<div class="mdl-grid" style="margin-top: 5px">
+<!-- <div class="mdl-grid" style="margin-top: 5px"> -->
         <!-- Colored raised button -->
-<button style="margin-left:69%" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+<button style="margin-left:69%;margin-top: 38px;" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
 Download
 </button>
-<!-- Colored raised button -->
-<button style="margin-left:1%" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
-  Clear Filter
-</button>
-</div>
-        <div class="row">
-  <div id="admin" class="col s12">
-    <div class="cards material-table">
-      <div class="table-header">
-        <span class="table-title">Material Datatable</span>
-        <div class="actions">
-          <a href="#" class="search-toggle waves-effect btn-flat nopadding"><i class="material-icons">search</i></a>
-        </div>
-      </div>
-      <table id="datatable">
+
+        <table id="example" class="mdl-data-table" cellspacing="0" width="100%" style="width:80%">
         <thead>
-          <tr>
-
-            <th>Employee ID</th>
-            <th>Employee Name</th>
-            <th>Dept</th>
-            <th>Travel Date</th>
-            <th>Trip No.</th>
-            <th>Pending Days</th>
-            <th>Total Claim</th>
-            <th>Status</th>
-            <th>View</th>
-          </tr>
-           <tr>
-
-            <td>Employee ID</td>
-            <td>Employee Name</td>
-            <td>Dept</td>
-            <td>Travel Date</td>
-            <td>Pending Days</td>
-            <td>Total Claim</td>
-            <td>Status</td>
-            <td><a href="">View</a></td>
-          </tr>
+            <tr>
+                <th>EMPLOYEE<br>ID</th>
+                <th>EMPLOYEE<br>NAME</th>
+                <th>DEPT</th>
+                <th>TRAVEL DATE</th>
+                <th>TRIP NO.</th>
+                <th>PENDING<br>DAYS</th>
+                <th>TOTAL CLAIM</th>
+                <th>STATUS</th>
+                <th>VIEW</th>
+            </tr>
         </thead>
-
-
+        <!-- <tfoot>
+            <tr>
+                <th>EMPLOYEE<br>ID</th>
+                <th>EMPLOYEE<br>NAME</th>
+                <th>DEPT</th>
+                <th>TRAVEL DATE</th>
+                <th>TRIP NO.</th>
+                <th>PENDING<br>DAYS</th>
+                <th>TOTAL CLAIM</th>
+                <th>STATUS</th>
+                <th>VIEW</th>
+            </tr>
+        </tfoot> -->
         <tbody>
+
         <?php for($x=0;$x<count($arr_get_a_org['user and trip details']);$x++){?>
             <tr>
               <td><?php echo $arr_get_a_org['user and trip details'][$x]['user details']['uid']; ?></td>
