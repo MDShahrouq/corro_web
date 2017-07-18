@@ -22,7 +22,11 @@ if($_SESSION['login_reimburse_app'] == 1){
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- TABLE CSS AND JS -->
      <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+<<<<<<< HEAD
    <!--  <link rel="stylesheet" src="https://cdn.datatables.net/1.10.15/css/dataTables.material.min.css"> -->
+=======
+    <link rel="stylesheet" src="https://cdn.datatables.net/1.10.15/css/dataTables.material.min.css">
+>>>>>>> 695f63aa072812d8e2b746773a3b660c4525fd50
     <script src="//code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.15/js/dataTables.material.min.js"></script>
@@ -154,19 +158,6 @@ Download
                 <th>VIEW</th>
             </tr>
         </thead>
-        <!-- <tfoot>
-            <tr>
-                <th>EMPLOYEE<br>ID</th>
-                <th>EMPLOYEE<br>NAME</th>
-                <th>DEPT</th>
-                <th>TRAVEL DATE</th>
-                <th>TRIP NO.</th>
-                <th>PENDING<br>DAYS</th>
-                <th>TOTAL CLAIM</th>
-                <th>STATUS</th>
-                <th>VIEW</th>
-            </tr>
-        </tfoot> -->
         <tbody>
 
         <?php for($x=0;$x<count($arr_get_a_org['user and trip details']);$x++){?>
