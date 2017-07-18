@@ -4,6 +4,8 @@
     margin-left: -69%;
     margin-top: -17px;
 
+}
+
 
 .dataTables_filter {
     position: relative;
@@ -32,4 +34,6 @@
 button.mdl-button.mdl-button--raised.mdl-button--colored {
     background: rgb(63,81,181);
     color: rgb(255,255,255);
+
 }
+
