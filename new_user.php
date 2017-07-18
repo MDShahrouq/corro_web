@@ -71,7 +71,8 @@ if(isset($_POST['submit'])){
               'email' => $_POST['email'],
               'username' => $_POST['username'],
               'password' => $_POST['password'],
-              'account_token' => $_SESSION['account_token']
+              'account_token' => $_SESSION['account_token'],
+              'image_id' => ''
             );
 
     // use key 'http' even if you send the request to https://...
