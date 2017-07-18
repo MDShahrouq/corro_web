@@ -25,7 +25,19 @@ if($_SESSION['login_reimburse_app'] == 1){
     padding: 8px;
 }
   </style> -->
-
+  <style type="text/css">
+.mdl-textfield {
+    position: relative;
+    font-size: 16px;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 300px;
+    max-width: 100%;
+    /* margin: 0; */
+    margin-top: -1%;
+    padding: 20px 0;
+}
+</style>
   <body>
 
 <?php
@@ -107,14 +119,11 @@ if(isset($_POST['submit'])){
 
     <main class="mdl-layout__content">
       <div class="page-content">
-      <div class="container">
-      <div class="row" style="margin-top:-2%">
-       <center>
-      <div class="col-sm-5" style="width:32%">
     <!-- Textfield with Floating Label -->
-   
-    <form action="#" style="margin-top: 32px;" method="post">
-
+    <div class="mdl-grid">
+    <div class="mdl-components mdl-js-components mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-desktop">
+   <center>
+    <form  action="#" style="margin-top:0px;" method="post">
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
         <input class="mdl-textfield__input" type="text" id="name" name="name">
         <label class="mdl-textfield__label" for="sample3">NAME</label>
@@ -167,6 +176,8 @@ if(isset($_POST['submit'])){
     </button> -->
     </form>
     </center>
+    </div>
+
 
 <?php
   $url_get_all_users = 'https://reimburse.herokuapp.com/get_all_users/';
@@ -182,7 +193,8 @@ if(isset($_POST['submit'])){
 /*  echo $arr_get_all_users;*/
   
 ?>
-<table align="center" class="mdl-data-table mdl-js-data-table">
+<div class="mdl-components mdl-js-components mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-desktop">
+<table align="center" style="box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);" class="mdl-data-table mdl-js-data-table">
         <thead>
             <tr>
                 <th class="mdl-data-table__cell--non-numeric">Name</th> 

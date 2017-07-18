@@ -154,7 +154,7 @@ button.mdl-button.mdl-button--raised.mdl-button--colored {
 }
 @media screen and (max-width:1440px){
 .dataTables_length {
-    margin-left: -33%;
+    margin-left: -27%;
     margin-top: -29px;
 }
 
@@ -191,7 +191,7 @@ button.mdl-button.mdl-button--raised.mdl-button--colored {
 
 @media screen and (max-width:1366px){
 .dataTables_length {
-    margin-left: -33%;
+    margin-left: -26%;
     margin-top: -29px;
 }
 

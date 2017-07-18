@@ -145,7 +145,7 @@ if(isset($_POST['submit'])){
 /*  echo $arr_get_all_accounts;*/
   
 ?>
-<table align="center" class="mdl-data-table mdl-js-data-table">
+<table align="center" style="box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);" class="mdl-data-table mdl-js-data-table">
         <thead>
             <tr>
                 <th class="mdl-data-table__cell--non-numeric">Organization</th> 
