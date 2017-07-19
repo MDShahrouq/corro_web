@@ -159,14 +159,15 @@ $trip_id=$_GET['trip_id'];
 			<div class="mdl-shadow--2dp" style="overflow-y: auto;height: 451px;">
 
 <script type="text/javascript">
-	function display_text(category,amount){
+	function display_text(category,amount,img12){
       document.getElementById('category1').innerHTML=category;
       document.getElementById('amount1').innerHTML=amount;
+      document.getElementById('right_image').src=img12;
       /*alert(category);*/
 	}
 </script>
 			<?php for($t=0; $t< count($arr_get_a_user['categories']);$t++){?>
-		    <button onClick="display_text('<?php echo $arr_get_a_user['categories'][$t]['trip_details']['category'] ?>','<?php echo $arr_get_a_user['categories'][$t]['trip_details']['amount'] ?>')">
+		    <button onClick="display_text('<?php echo $arr_get_a_user['categories'][$t]['trip_details']['category'] ?>','<?php echo $arr_get_a_user['categories'][$t]['trip_details']['amount'] ?>','<?php echo $arr_get_a_user['categories'][$t]['image_id']; ?>')">
 				  <li class="mdl-list__item mdl-list__item--two-line ">
 				    <a class="mdl-list__item-primary-content " href="javascript:show_image();">
 				      <span><?php echo $arr_get_a_user['categories'][$t]['trip_details']['name']; ?></span>
@@ -205,10 +206,23 @@ $trip_id=$_GET['trip_id'];
 			  <div class="mdl-card__actions">
 			 <!--  <div><a href="#!"><img src="http://lorempixel.com/1024/768/nature" style="width: 100%;"></a>
 			  </div> -->
+			 <?php for($t=0; $t< 1;$t++){?>
+			  <div><img id="right_image" src="<?php echo $arr_get_a_user['categories'][$t]['image_id']; ?>" style="width: 100%;"/>
+			  </div>
+			 <?php }?>
 				<div id="display_bill">
 			  </div>
 			   </div>
 		</div>
+
+<script type="text/javascript">
+	function display_image(category,amount,img12){
+      document.getElementById('category1').innerHTML=category;
+      document.getElementById('amount1').innerHTML=amount;
+      document.getElementById('right_image').src=img12;
+      /*alert(category);*/
+	}
+</script>
 
 		<!-- Carousel -->
 	<div class="bill-screens mdl-shadow--4dp">
@@ -216,7 +230,9 @@ $trip_id=$_GET['trip_id'];
            <?php for($t=0; $t< count($arr_get_a_user['categories']);$t++){?>
             <div class="bill-pic bill-screen">
               <!-- <a class="bill-image-link" href=""> -->
+              <button onClick="display_image('<?php echo $arr_get_a_user['categories'][$t]['trip_details']['category'] ?>','<?php echo $arr_get_a_user['categories'][$t]['trip_details']['amount'] ?>','<?php echo $arr_get_a_user['categories'][$t]['image_id']; ?>')">
                 <img class="bill-screen-image" src="<?php echo $arr_get_a_user['categories'][$t]['image_id']; ?>">
+             </button>
               <!-- </a> -->
              <!--  <a class="bill-link mdl-typography--font-regular mdl-typography--text-uppercase" href="">Bill</a> -->
             </div>
