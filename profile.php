@@ -176,7 +176,10 @@ $trip_id=$_GET['trip_id'];
 	function display_text(category,amount,img12,btn_id){
 	  /*alert(btn_id);*/
 	  $('.btn_class').css('background-color','transparent');
-	  document.getElementById(btn_id).style.background = "#D0D0D0";
+	  document.getElementById(('btn_')+(btn_id)).style.background = "#D0D0D0";
+
+	  $('.bill_class').css('border','none');
+	  document.getElementById(('bill_')+(btn_id)).style.border = "2px solid #3F51B5";
 
       document.getElementById('category1').innerHTML=category;
       document.getElementById('amount1').innerHTML=amount;
@@ -189,7 +192,7 @@ $trip_id=$_GET['trip_id'];
 	}
 </script>
 			<?php for($t=0; $t< count($arr_get_a_user['categories']);$t++){?>
-		    <button class="btn_class" id="btn_<?php echo $t ?>" style="width:100%;background:transparent;border:1px solid #D0D0D0 " onClick="display_text('<?php echo $arr_get_a_user['categories'][$t]['trip_details']['category'] ?>','<?php echo $arr_get_a_user['categories'][$t]['trip_details']['amount'] ?>','<?php echo $arr_get_a_user['categories'][$t]['image_id']; ?>','btn_<?php echo $t ?>')">
+		    <button class="btn_class" id="btn_<?php echo $t ?>" style="width:100%;background:transparent;border:1px solid #D0D0D0 " onClick="display_text('<?php echo $arr_get_a_user['categories'][$t]['trip_details']['category'] ?>','<?php echo $arr_get_a_user['categories'][$t]['trip_details']['amount'] ?>','<?php echo $arr_get_a_user['categories'][$t]['image_id']; ?>','<?php echo $t ?>')">
 				  <li class="mdl-list__item mdl-list__item--two-line">
 				    <a style="text-align:left" class="mdl-list__item-primary-content " href="javascript:show_image();">
 				      <span style="text-align:left"><?php echo $arr_get_a_user['categories'][$t]['trip_details']['name']; ?></span>
@@ -232,6 +235,7 @@ $trip_id=$_GET['trip_id'];
 
               <script type="text/javascript">
                  document.getElementById('btn_0').style.background = "#D0D0D0";
+                 document.getElementById('bill_0').style.border = "2px solid #3F51B5";
               </script>
 			  
 			  <?php if($arr_get_a_user['categories'][$t]['image_id'] == ""){
@@ -250,7 +254,13 @@ $trip_id=$_GET['trip_id'];
 		</div>
 
 <script type="text/javascript">
-	function display_image(category,amount,img12,bill_id){
+	function display_image(category,amount,img12,btn_id){
+
+	  $('.btn_class').css('background-color','transparent');
+	  document.getElementById(('btn_')+(btn_id)).style.background = "#D0D0D0";
+
+	  $('.bill_class').css('border','none');
+	  document.getElementById(('bill_')+(btn_id)).style.border = "2px solid #3F51B5";
 
       document.getElementById('category1').innerHTML=category;
       document.getElementById('amount1').innerHTML=amount;
@@ -270,7 +280,7 @@ $trip_id=$_GET['trip_id'];
            <?php for($t=0; $t< count($arr_get_a_user['categories']);$t++){?>
             <div class="bill-pic bill-screen">
               <!-- <a class="bill-image-link" href=""> -->
-              <button class="bill_class" id="bill_<?php echo $t ?>"  onClick="display_image('<?php echo $arr_get_a_user['categories'][$t]['trip_details']['category'] ?>','<?php echo $arr_get_a_user['categories'][$t]['trip_details']['amount'] ?>','<?php echo $arr_get_a_user['categories'][$t]['image_id']; ?>','bill_<?php echo $t ?>')">
+              <button class="bill_class" id="bill_<?php echo $t ?>"  onClick="display_image('<?php echo $arr_get_a_user['categories'][$t]['trip_details']['category'] ?>','<?php echo $arr_get_a_user['categories'][$t]['trip_details']['amount'] ?>','<?php echo $arr_get_a_user['categories'][$t]['image_id']; ?>','<?php echo $t ?>')">
                 
                 <?php if($arr_get_a_user['categories'][$t]['image_id'] == ""){
 			  	  $btn_img1="images/no_image_available.png";
