@@ -45,9 +45,13 @@ if($_SESSION['login_reimburse_app'] == 1){
     <html>
   <head>
     <!-- Material Design Lite -->
+<<<<<<< HEAD
 
     <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 >>>>>>> landing page alignment working in firefix
+=======
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+>>>>>>> df5b2ab43be21fff9a2c9646754572a8c37f076b
     <script src="https://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script> -->
     <!-- Material Design icon font -->
@@ -157,19 +161,6 @@ Download
                 <th>VIEW</th>
             </tr>
         </thead>
-        <!-- <tfoot>
-            <tr>
-                <th>EMPLOYEE<br>ID</th>
-                <th>EMPLOYEE<br>NAME</th>
-                <th>DEPT</th>
-                <th>TRAVEL DATE</th>
-                <th>TRIP NO.</th>
-                <th>PENDING<br>DAYS</th>
-                <th>TOTAL CLAIM</th>
-                <th>STATUS</th>
-                <th>VIEW</th>
-            </tr>
-        </tfoot> -->
         <tbody>
 
         <?php for($x=0;$x<count($arr_get_a_org['user and trip details']);$x++){?>
