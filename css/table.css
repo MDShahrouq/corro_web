@@ -1,20 +1,36 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> home page is completed and logout btn is added
 .dataTables_length {
     /* margin: auto; */
     margin-left: -69%;
     margin-top: -17px;
+<<<<<<< HEAD
+=======
+}
+>>>>>>> home page is completed and logout btn is added
 
 .dataTables_filter {
     position: relative;
     margin-left: 42%;
     margin-top: -39px;
     padding: 18px;
+<<<<<<< HEAD
 }
 @-moz-document url-prefix(){
 .dataTables_length {
     margin-left: -69%;
     margin-top: -29px;
 }
+=======
+}
+@-moz-document url-prefix(){
+.dataTables_length {
+    margin-left: -69%;
+    margin-top: -29px;
+}
+>>>>>>> home page is completed and logout btn is added
 
 
 .dataTables_filter {
@@ -22,8 +38,13 @@
     margin-left: 41%;
     margin-top: -39px;
     padding: 18px;
+<<<<<<< HEAD
 }
 }
+=======
+}
+}
+>>>>>>> home page is completed and logout btn is added
 .dataTables_info{
   margin-left: -67%;
 }
@@ -31,4 +52,8 @@
 button.mdl-button.mdl-button--raised.mdl-button--colored {
     background: rgb(63,81,181);
     color: rgb(255,255,255);
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> home page is completed and logout btn is added
