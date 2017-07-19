@@ -159,7 +159,6 @@ $trip_id=$_GET['trip_id'];
 	}
 </script>
 			<?php for($t=0; $t< count($arr_get_a_user['categories']);$t++){?>
-
 		    <button onClick="display_text('<?php echo $arr_get_a_user['categories'][$t]['trip_details']['category'] ?>','<?php echo $arr_get_a_user['categories'][$t]['trip_details']['amount'] ?>')">
 				  <li class="mdl-list__item mdl-list__item--two-line ">
 				    <a class="mdl-list__item-primary-content " href="javascript:show_image();">
@@ -185,9 +184,11 @@ $trip_id=$_GET['trip_id'];
 		<div class="mdl-cell mdl-cell--5-col mdl-cell--5-col-tablet mdl-cell--5-col-desktop">
 		 
 		 <div class="demo-card-image mdl-card mdl-shadow--2dp">
-			 <table><tr><td> <span >Catergory: <span id="category1"></span></span>
-	       <div></div><span >Amt: <span id="amount1"></span></span></td></tr></table>
-	      
+
+		 <?php for($t=0; $t< 1;$t++){?>
+			 <table><tr><td> <span >Catergory: <span id="category1"><?php echo $arr_get_a_user['categories'][$t]['trip_details']['category']; ?></span></span>
+	       <div></div><span >Amt: <span id="amount1"><?php echo $arr_get_a_user['categories'][$t]['trip_details']['amount']; ?></span></span></td></tr></table>
+	     <?php }?>
 	       
 	       
 
@@ -205,13 +206,15 @@ $trip_id=$_GET['trip_id'];
 		<!-- Carousel -->
 	<div class="bill-screens mdl-shadow--4dp">
             
+           <?php for($t=0; $t< count($arr_get_a_user['categories']);$t++){?>
             <div class="bill-pic bill-screen">
-              <a class="bill-image-link" href="">
-                <img class="bill-screen-image" src="http://lorempixel.com/1024/768/nature">
-              </a>
-              <a class="bill-link mdl-typography--font-regular mdl-typography--text-uppercase" href="">Bill</a>
+              <!-- <a class="bill-image-link" href=""> -->
+                <img class="bill-screen-image" src="<?php echo $arr_get_a_user['categories'][$t]['image_id']; ?>">
+              <!-- </a> -->
+             <!--  <a class="bill-link mdl-typography--font-regular mdl-typography--text-uppercase" href="">Bill</a> -->
             </div>
-            <div class="bill-pic bill-screen">
+           <?php }?>
+            <!-- <div class="bill-pic bill-screen">
               <a class="bill-image-link" href="">
                 <img class="bill-screen-image" src="http://lorempixel.com/1024/768/nature">
               </a>
@@ -233,7 +236,7 @@ $trip_id=$_GET['trip_id'];
                 <img class="bill-screen-image" src="http://lorempixel.com/1024/768/nature">
               </a>
               <a class="bill-link mdl-typography--font-regular mdl-typography--text-uppercase" href="">Bill3</a>
-            </div>
+            </div> -->
            <!--   <div class="bill-pic bill-screen">
               <a class="bill-image-link" href="">
                 <img class="bill-screen-image" src="http://lorempixel.com/1024/768/nature">
