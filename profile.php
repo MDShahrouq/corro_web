@@ -50,14 +50,26 @@ $trip_id=$_GET['trip_id'];
 	
 <!-- <div class="mdl-layout__container">
  -->
-<div class=" mdl-layout mdl-js-layout">
-    <header style="background-color:#3f51b5; height:64px;" class="mdl-layout__header mdl-layout__header--transparent mdl-shadow--4dp ">
+<div class=" mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header style="background-color:#3f51b5;" class="mdl-layout__header mdl-layout__header--transparent mdl-shadow--4dp ">
     	<div class="mdl-layout__header-row">
         <span class=" mdl-layout-title">Corro</span>
         <div class="mdl-layout-spacer"></div>
         <a href="logout.php"><img id="logout" style="" src="images/logout_btn.png"></img></a> 
       </div>
-      </header>
+</header>
+      <!-- NAv bar -->
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">CORRO</span>
+        <nav class="mdl-navigation">
+          <a class="mdl-navigation__link" href="#!">OVERVIEW</a>
+          <a class="mdl-navigation__link" href="home.php">EXPENSE REPORT</a>
+          <a class="mdl-navigation__link" href="#!">BOOKING</a>
+          <a class="mdl-navigation__link" href="new_user.php">SETTING's</a>
+          <a class="mdl-navigation__link" href="#!">REPORT</a>
+        </nav>
+      </div>
+ 
 
 	<main class="mdl-layout__content">    
  	<div class="mdl-grid">
@@ -212,6 +224,7 @@ $trip_id=$_GET['trip_id'];
 			  </div> -->
 			 <?php for($t=0; $t< 1;$t++){?>
 
+
 			  <?php if($arr_get_a_user['categories'][$t]['image_id'] == ""){
 			  	$rgt_img1="images/no_image_available.png";
 			  }else{
@@ -222,8 +235,8 @@ $trip_id=$_GET['trip_id'];
 			  <div><img id="right_image" src="<?php echo $rgt_img1; ?>" style="width: 100%;"/>
 			  </div>
 			 <?php }?>
-				<div id="display_bill">
-			  </div>
+				<!-- <div id="display_bill">
+			  </div> -->
 			   </div>
 		</div>
 
@@ -323,12 +336,11 @@ $trip_id=$_GET['trip_id'];
   crossorigin="anonymous"></script>
 
 <script type="text/javascript">
-function show_image(bill_image) {
-	var bill_img = document.createElement("bill_img");
-	bill_img.bill_image=bill_image;
-document.getElementById('display_bill').innerHTML="<img src="+bill_img+" style="width:100%;" />";
-}
+// function show_image(bill_image) {
+// 	var bill_img = document.createElement("bill_img");
+// 	bill_img.bill_image=bill_image;
+// document.getElementById('display_bill').innerHTML="<img src="+bill_img+" style="width:100%;" />";
+// }
 </script>
 </body>
 </html>
-<!-- <image style="display:none" src="<?php echo $arr_get_a_user['categories'][$t]['image_id']; ?>"></image> -->
