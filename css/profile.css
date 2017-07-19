@@ -1,14 +1,5 @@
 
 
-@media screen and (max-width: 1024px) {
-/*Display NAvigation bar for 1024 width*/
-.mdl-layout__header {
-    display: block !important; 
-    height: 56px !important; 
-
-  }
-}
-
 .demo-card-square.mdl-card {
     width: 100%;
     min-height: 129px !important;
