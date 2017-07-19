@@ -167,11 +167,11 @@ $trip_id=$_GET['trip_id'];
 	}
 </script>
 			<?php for($t=0; $t< count($arr_get_a_user['categories']);$t++){?>
-		    <button onClick="display_text('<?php echo $arr_get_a_user['categories'][$t]['trip_details']['category'] ?>','<?php echo $arr_get_a_user['categories'][$t]['trip_details']['amount'] ?>','<?php echo $arr_get_a_user['categories'][$t]['image_id']; ?>')">
+		    <button style="width:100%;background:transparent;border:1px solid #D0D0D0 " onClick="display_text('<?php echo $arr_get_a_user['categories'][$t]['trip_details']['category'] ?>','<?php echo $arr_get_a_user['categories'][$t]['trip_details']['amount'] ?>','<?php echo $arr_get_a_user['categories'][$t]['image_id']; ?>')">
 				  <li class="mdl-list__item mdl-list__item--two-line ">
-				    <a class="mdl-list__item-primary-content " href="javascript:show_image();">
-				      <span><?php echo $arr_get_a_user['categories'][$t]['trip_details']['name']; ?></span>
-				      <span class="mdl-list__item-sub-title"><i><?php echo $arr_get_a_user['categories'][$t]['trip_details']['category']; ?></i></span>
+				    <a style="text-align:left" class="mdl-list__item-primary-content " href="javascript:show_image();">
+				      <span style="text-align:left"><?php echo $arr_get_a_user['categories'][$t]['trip_details']['name']; ?></span>
+				      <span style="text-align:left" class="mdl-list__item-sub-title"><i><?php echo $arr_get_a_user['categories'][$t]['trip_details']['category']; ?></i></span>
 				    </a>
 				    <span class="mdl-list__item-secondary-content">
 				      <span class="mdl-list__item-secondary-info">&#8377;<?php echo $arr_get_a_user['categories'][$t]['trip_details']['amount']; ?></span>
