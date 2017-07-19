@@ -153,9 +153,9 @@ if(isset($_POST['submit'])){
       <br>
 
       <div style="margin-top:-5%" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input name="password" id="password" class="mdl-textfield__input" type="password" value="">
-          <label class="mdl-textfield__label" for="sample3">PASSWORD</label>
-        </div>
+        <input class="mdl-textfield__input" type="text" id="password" name="password">
+        <label class="mdl-textfield__label" for="sample3">PASSWORD</label>
+      </div>
       <br>
 
         <!-- Accent-colored raised button with ripple -->
