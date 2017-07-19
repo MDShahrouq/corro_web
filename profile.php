@@ -174,7 +174,11 @@ $trip_id=$_GET['trip_id'];
 	function display_text(category,amount,img12){
       document.getElementById('category1').innerHTML=category;
       document.getElementById('amount1').innerHTML=amount;
-      document.getElementById('right_image').src=img12;
+      if(img12 == ""){
+       document.getElementById('right_image').src="images/no_image_available.png";
+      }else{
+       document.getElementById('right_image').src=img12;
+      }
       /*alert(category);*/
 	}
 </script>
@@ -219,7 +223,16 @@ $trip_id=$_GET['trip_id'];
 			 <!--  <div><a href="#!"><img src="http://lorempixel.com/1024/768/nature" style="width: 100%;"></a>
 			  </div> -->
 			 <?php for($t=0; $t< 1;$t++){?>
-			  <div><img id="right_image" src="<?php echo $arr_get_a_user['categories'][$t]['image_id']; ?>" width: 100%; />
+
+
+			  <?php if($arr_get_a_user['categories'][$t]['image_id'] == ""){
+			  	$rgt_img1="images/no_image_available.png";
+			  }else{
+			 	$rgt_img1=$arr_get_a_user['categories'][$t]['image_id'];
+			  }
+
+			  ?>
+			  <div><img id="right_image" src="<?php echo $rgt_img1; ?>" style="width: 100%;"/>
 			  </div>
 			 <?php }?>
 				<!-- <div id="display_bill">
@@ -231,7 +244,12 @@ $trip_id=$_GET['trip_id'];
 	function display_image(category,amount,img12){
       document.getElementById('category1').innerHTML=category;
       document.getElementById('amount1').innerHTML=amount;
-      document.getElementById('right_image').src=img12;
+
+      if(img12 == ""){
+       document.getElementById('right_image').src="images/no_image_available.png";
+      }else{
+       document.getElementById('right_image').src=img12;
+      }
       /*alert(category);*/
 	}
 </script>
@@ -243,7 +261,15 @@ $trip_id=$_GET['trip_id'];
             <div class="bill-pic bill-screen">
               <!-- <a class="bill-image-link" href=""> -->
               <button onClick="display_image('<?php echo $arr_get_a_user['categories'][$t]['trip_details']['category'] ?>','<?php echo $arr_get_a_user['categories'][$t]['trip_details']['amount'] ?>','<?php echo $arr_get_a_user['categories'][$t]['image_id']; ?>')">
-                <img class="bill-screen-image" src="<?php echo $arr_get_a_user['categories'][$t]['image_id']; ?>">
+                
+                <?php if($arr_get_a_user['categories'][$t]['image_id'] == ""){
+			  	  $btn_img1="images/no_image_available.png";
+			 	}else{
+			  	  $btn_img1=$arr_get_a_user['categories'][$t]['image_id'];
+			    }
+
+			  ?>
+                <img class="bill-screen-image" src="<?php echo $btn_img1; ?>">
              </button>
               <!-- </a> -->
              <!--  <a class="bill-link mdl-typography--font-regular mdl-typography--text-uppercase" href="">Bill</a> -->
