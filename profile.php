@@ -20,6 +20,8 @@ if($_SESSION['login_reimburse_app'] == 1){
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
 <link rel="stylesheet" type="text/css" href="css/profile.css">
+
+
 </head>
 
 <body>
@@ -171,7 +173,11 @@ $trip_id=$_GET['trip_id'];
 			<div class="mdl-shadow--2dp" style="overflow-y: auto;height: 451px;">
 
 <script type="text/javascript">
-	function display_text(category,amount,img12){
+	function display_text(category,amount,img12,btn_id){
+	  /*alert(btn_id);*/
+	  $('.btn_class').css('border','none');
+	  document.getElementById(btn_id).style.border = "2px solid red";
+
       document.getElementById('category1').innerHTML=category;
       document.getElementById('amount1').innerHTML=amount;
       if(img12 == ""){
@@ -183,8 +189,8 @@ $trip_id=$_GET['trip_id'];
 	}
 </script>
 			<?php for($t=0; $t< count($arr_get_a_user['categories']);$t++){?>
-		    <button style="width:100%;background:transparent;border:1px solid #D0D0D0 " onClick="display_text('<?php echo $arr_get_a_user['categories'][$t]['trip_details']['category'] ?>','<?php echo $arr_get_a_user['categories'][$t]['trip_details']['amount'] ?>','<?php echo $arr_get_a_user['categories'][$t]['image_id']; ?>')">
-				  <li class="mdl-list__item mdl-list__item--two-line ">
+		    <button class="btn_class" id="btn_<?php echo $t ?>" style="width:100%;background:transparent;border:1px solid #D0D0D0 " onClick="display_text('<?php echo $arr_get_a_user['categories'][$t]['trip_details']['category'] ?>','<?php echo $arr_get_a_user['categories'][$t]['trip_details']['amount'] ?>','<?php echo $arr_get_a_user['categories'][$t]['image_id']; ?>','btn_<?php echo $t ?>')">
+				  <li class="mdl-list__item mdl-list__item--two-line">
 				    <a style="text-align:left" class="mdl-list__item-primary-content " href="javascript:show_image();">
 				      <span style="text-align:left"><?php echo $arr_get_a_user['categories'][$t]['trip_details']['name']; ?></span>
 				      <span style="text-align:left" class="mdl-list__item-sub-title"><i><?php echo $arr_get_a_user['categories'][$t]['trip_details']['category']; ?></i></span>
@@ -224,7 +230,11 @@ $trip_id=$_GET['trip_id'];
 			  </div> -->
 			 <?php for($t=0; $t< 1;$t++){?>
 
-
+              <script type="text/javascript">
+                 document.getElementById('btn_0').style.border = "2px solid red";
+                 document.getElementById('bill_0').style.border = "2px solid red";
+              </script>
+			  
 			  <?php if($arr_get_a_user['categories'][$t]['image_id'] == ""){
 			  	$rgt_img1="images/no_image_available.png";
 			  }else{
@@ -241,7 +251,8 @@ $trip_id=$_GET['trip_id'];
 		</div>
 
 <script type="text/javascript">
-	function display_image(category,amount,img12){
+	function display_image(category,amount,img12,bill_id){
+
       document.getElementById('category1').innerHTML=category;
       document.getElementById('amount1').innerHTML=amount;
 
@@ -260,7 +271,7 @@ $trip_id=$_GET['trip_id'];
            <?php for($t=0; $t< count($arr_get_a_user['categories']);$t++){?>
             <div class="bill-pic bill-screen">
               <!-- <a class="bill-image-link" href=""> -->
-              <button onClick="display_image('<?php echo $arr_get_a_user['categories'][$t]['trip_details']['category'] ?>','<?php echo $arr_get_a_user['categories'][$t]['trip_details']['amount'] ?>','<?php echo $arr_get_a_user['categories'][$t]['image_id']; ?>')">
+              <button class="bill_class" id="bill_<?php echo $t ?>"  onClick="display_image('<?php echo $arr_get_a_user['categories'][$t]['trip_details']['category'] ?>','<?php echo $arr_get_a_user['categories'][$t]['trip_details']['amount'] ?>','<?php echo $arr_get_a_user['categories'][$t]['image_id']; ?>','bill_<?php echo $t ?>')">
                 
                 <?php if($arr_get_a_user['categories'][$t]['image_id'] == ""){
 			  	  $btn_img1="images/no_image_available.png";
