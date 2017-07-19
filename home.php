@@ -14,8 +14,8 @@ if($_SESSION['login_reimburse_app'] == 1){
     <!-- Material Design Lite -->
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <link rel="stylesheet" href="css/material.min.css">
-    <link rel="stylesheet" href="css/home.css">
-    <link rel="stylesheet" href="css/table.css">
+    <link rel="stylesheet" href="css/home2.css">
+    <link rel="stylesheet" href="css/tabledata.css">
     <link rel="stylesheet" href="css/new_user.css">
     <link rel="stylesheet" href="css/datatable.material.css">
     <!-- Material Design icon font -->
