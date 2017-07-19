@@ -14,15 +14,15 @@ if($_SESSION['login_reimburse_app'] == 1){
     <!-- Material Design Lite -->
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <link rel="stylesheet" href="css/material.min.css">
-    <link rel="stylesheet" href="css/home.css">
-    <link rel="stylesheet" href="css/table.css">
+    <link rel="stylesheet" href="css/home2.css">
+    <link rel="stylesheet" href="css/tabledata.css">
     <link rel="stylesheet" href="css/new_user.css">
     <link rel="stylesheet" href="css/datatable.material.css">
     <!-- Material Design icon font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- TABLE CSS AND JS -->
      <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-    <link rel="stylesheet" src="https://cdn.datatables.net/1.10.15/css/dataTables.material.min.css">
+   <!--  <link rel="stylesheet" src="https://cdn.datatables.net/1.10.15/css/dataTables.material.min.css"> -->
     <script src="//code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.15/js/dataTables.material.min.js"></script>
@@ -45,9 +45,15 @@ if($_SESSION['login_reimburse_app'] == 1){
     <html>
   <head>
     <!-- Material Design Lite -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<<<<<<< HEAD
+
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+>>>>>>> landing page alignment working in firefix
+=======
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+>>>>>>> df5b2ab43be21fff9a2c9646754572a8c37f076b
     <script src="https://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script> -->
     <!-- Material Design icon font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <style type="text/css">
@@ -110,6 +116,7 @@ session_start();
         <div class="mdl-grid">
  <div class="mdl-cell mdl-cell--2-col">
     <!-- add content here -->
+ <!--    card -->
  </div>
 
   <div class="card">
@@ -154,19 +161,6 @@ Download
                 <th>VIEW</th>
             </tr>
         </thead>
-        <!-- <tfoot>
-            <tr>
-                <th>EMPLOYEE<br>ID</th>
-                <th>EMPLOYEE<br>NAME</th>
-                <th>DEPT</th>
-                <th>TRAVEL DATE</th>
-                <th>TRIP NO.</th>
-                <th>PENDING<br>DAYS</th>
-                <th>TOTAL CLAIM</th>
-                <th>STATUS</th>
-                <th>VIEW</th>
-            </tr>
-        </tfoot> -->
         <tbody>
 
         <?php for($x=0;$x<count($arr_get_a_org['user and trip details']);$x++){?>
