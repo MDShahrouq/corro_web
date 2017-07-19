@@ -219,7 +219,7 @@ $trip_id=$_GET['trip_id'];
 			 <!--  <div><a href="#!"><img src="http://lorempixel.com/1024/768/nature" style="width: 100%;"></a>
 			  </div> -->
 			 <?php for($t=0; $t< 1;$t++){?>
-			  <div><img id="right_image" src="<?php echo $arr_get_a_user['categories'][$t]['image_id']; ?>" width: 100%; />
+			  <div><img id="right_image" src="<?php echo $arr_get_a_user['categories'][$t]['image_id']; ?>" style="width: 100%;" />
 			  </div>
 			 <?php }?>
 				<!-- <div id="display_bill">
