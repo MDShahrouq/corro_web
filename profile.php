@@ -175,8 +175,8 @@ $trip_id=$_GET['trip_id'];
 <script type="text/javascript">
 	function display_text(category,amount,img12,btn_id){
 	  /*alert(btn_id);*/
-	  $('.btn_class').css('border','none');
-	  document.getElementById(btn_id).style.border = "2px solid red";
+	  $('.btn_class').css('background-color','transparent');
+	  document.getElementById(btn_id).style.background = "#D0D0D0";
 
       document.getElementById('category1').innerHTML=category;
       document.getElementById('amount1').innerHTML=amount;
@@ -231,8 +231,7 @@ $trip_id=$_GET['trip_id'];
 			 <?php for($t=0; $t< 1;$t++){?>
 
               <script type="text/javascript">
-                 document.getElementById('btn_0').style.border = "2px solid red";
-                 document.getElementById('bill_0').style.border = "2px solid red";
+                 document.getElementById('btn_0').style.background = "#D0D0D0";
               </script>
 			  
 			  <?php if($arr_get_a_user['categories'][$t]['image_id'] == ""){
