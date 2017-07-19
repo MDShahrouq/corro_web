@@ -122,44 +122,44 @@ if(isset($_POST['submit'])){
       </div>
       <br>
 
-       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+       <div style="margin-top:-5%" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
         <input class="mdl-textfield__input" type="text" id="designation" name="designation">
         <label class="mdl-textfield__label" for="sample3">DESIGNATION</label>
       </div>
       <br>
 
-      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <div style="margin-top:-5%" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
         <input class="mdl-textfield__input" type="text" id="department" name="department">
         <label class="mdl-textfield__label" for="sample3">DEPARTMENT</label>
       </div>
       <br>
 
-      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <div style="margin-top:-5%" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
         <input class="mdl-textfield__input" type="text" id="email" name="email">
         <label class="mdl-textfield__label" for="sample3">EMAIL</label>
       </div>
       <br>
 
-      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <div style="margin-top:-5%" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
         <input class="mdl-textfield__input" type="text" id="phone" name="phone">
         <label class="mdl-textfield__label" for="sample3">PHONE</label>
       </div>
       <br>
 
-      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <div style="margin-top:-5%" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
         <input class="mdl-textfield__input" type="text" id="username" name="username">
         <label class="mdl-textfield__label" for="sample3">USERNAME</label>
       </div>
       <br>
 
-      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <div style="margin-top:-5%" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
           <input name="password" id="password" class="mdl-textfield__input" type="password" value="">
           <label class="mdl-textfield__label" for="sample3">PASSWORD</label>
         </div>
       <br>
 
         <!-- Accent-colored raised button with ripple -->
-    <button name="submit" id="submit" style="background-color: #5cb85c;width:7em" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
+    <button name="submit" id="submit" style="background-color: #5cb85c;width:7em;margin-top:-2%" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
       Save
     </button>
 
