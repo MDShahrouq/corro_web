@@ -1,4 +1,14 @@
 
+
+@media screen and (max-width: 1024px) {
+/*Display NAvigation bar for 1024 width*/
+.mdl-layout__header {
+    display: block !important; 
+    height: 56px !important; 
+
+  }
+}
+
 .demo-card-square.mdl-card {
     width: 100%;
     min-height: 129px !important;
@@ -21,6 +31,8 @@
  width: 100%;
 	height: auto;
 }
+
+/*Horizontal Scroll effect*/
  .bill-screen-section {
   position: relative;
   padding-top: 60px;
@@ -67,7 +79,7 @@
     display: block;
     z-index: 2;
   }
-/*Scroll bar*/
+/* Customized Scroll bar*/
 ::-webkit-scrollbar {
   width: 4px;
   height: 4px;

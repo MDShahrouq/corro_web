@@ -50,7 +50,15 @@ $trip_id=$_GET['trip_id'];
 	
 <!-- <div class="mdl-layout__container">
  -->
-<div class="mdl-layout mdl-js-layout">
+<div class=" mdl-layout mdl-js-layout">
+    <header style="background-color:#3f51b5; height:64px;" class="mdl-layout__header mdl-layout__header--transparent mdl-shadow--4dp ">
+    	<div class="mdl-layout__header-row">
+        <span class=" mdl-layout-title">Corro</span>
+        <div class="mdl-layout-spacer"></div>
+        <a href="logout.php"><img id="logout" style="" src="images/logout_btn.png"></img></a> 
+      </div>
+      </header>
+
 	<main class="mdl-layout__content">    
  	<div class="mdl-grid">
 		<div class="mdl-components mdl-js-components mdl-cell mdl-cell--3-col mdl-cell--3-col-tablet mdl-cell--3-col-desktop">
@@ -149,7 +157,6 @@ $trip_id=$_GET['trip_id'];
 		</div>
 
 			<div class="mdl-shadow--2dp" style="overflow-y: auto;height: 451px;">
-				 <ul class="demo-list-two mdl-list">
 
 <script type="text/javascript">
 	function display_text(category,amount){
@@ -273,10 +280,14 @@ $trip_id=$_GET['trip_id'];
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
+
 <script type="text/javascript">
-function show_image() {
-	document.getElementById("display_bill").innerHTML='<img src="http://lorempixel.com/1024/768/food	" style="width:100%;" />';
+function show_image(bill_image) {
+	var bill_img = document.createElement("bill_img");
+	bill_img.bill_image=bill_image;
+document.getElementById('display_bill').innerHTML="<img src="+bill_img+" style="width:100%;" />";
 }
 </script>
 </body>
 </html>
+<!-- <image style="display:none" src="<?php echo $arr_get_a_user['categories'][$t]['image_id']; ?>"></image> -->
