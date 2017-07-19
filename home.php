@@ -45,9 +45,15 @@ if($_SESSION['login_reimburse_app'] == 1){
     <html>
   <head>
     <!-- Material Design Lite -->
+<<<<<<< HEAD
     <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 =======
+=======
+<<<<<<< HEAD
+>>>>>>> resolved conflict2
 
+=======
+>>>>>>> home page is completed and logout btn is added
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 >>>>>>> resolved conflict in table of home page
     <script src="https://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
