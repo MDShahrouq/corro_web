@@ -20,6 +20,15 @@ if($_SESSION['login_reimburse_app'] == 1){
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
 <link rel="stylesheet" type="text/css" href="css/profile.css">
+<style>
+.mdl-list__item.mdl-list__item--two-line:hover {
+    background-color: #e0e0e0;
+}
+
+.mdl-list__item-primary-content :focus{
+   color: yellow;
+}
+</style> 
 </head>
 
 <body>
@@ -158,10 +167,6 @@ $trip_id=$_GET['trip_id'];
 		</div>
 
 			<div class="mdl-shadow--2dp" style="overflow-y: auto;height: 451px;">
-<<<<<<< HEAD
-=======
-				 <ul class="demo-list-two mdl-list mdl-js-ripple-effect">
->>>>>>> df5b2ab43be21fff9a2c9646754572a8c37f076b
 
 <script type="text/javascript">
 	function display_text(category,amount,img12){

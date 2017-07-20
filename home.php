@@ -9,26 +9,29 @@ if($_SESSION['login_reimburse_app'] == 1){
 }
 
 ?>
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <!-- Material Design Lite -->
-    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-    <link rel="stylesheet" href="css/material.min.css">
-    <link rel="stylesheet" href="css/home2.css">
-    <link rel="stylesheet" href="css/tabledata.css">
-    <link rel="stylesheet" href="css/new_user.css">
-    <link rel="stylesheet" href="css/datatable.material.css">
-    <!-- Material Design icon font -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <!-- TABLE CSS AND JS -->
-     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-   <!--  <link rel="stylesheet" src="https://cdn.datatables.net/1.10.15/css/dataTables.material.min.css"> -->
-    <script src="//code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.15/js/dataTables.material.min.js"></script>
-<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Profile</title>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+<link rel="stylesheet" href="css/button.css">
+   <!-- DATA TABLE CSS -->
+  <!--  <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.1.0/material.min.css"> -->
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/dataTables.material.min.css">
+
+<!-- Table js -->
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/dataTables.material.min.js"></script>
+
 <script type="text/javascript">
-        $(document).ready(function() {
+  $(document).ready(function() {
     $('#example').DataTable( {
         columnDefs: [
             {
@@ -38,28 +41,30 @@ if($_SESSION['login_reimburse_app'] == 1){
         ]
     } );
 } );
-    </script>
-  </head>
-  <body>
-    <!-- Always shows a header, even in smaller screens. -->
-    <html>
-  <head>
-    <!-- Material Design Lite -->
-    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
->>>>>>> df5b2ab43be21fff9a2c9646754572a8c37f076b
-    <script src="https://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script> -->
-    <!-- Material Design icon font -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <style type="text/css">
-      body {
-  background: #e2e1e0;
-  text-align: center;
+</script>
+
+
+<style type="text/css">
+  .demo-card-square{
+  min-height: 140px !important;
+  max-height: 141px !important;
+  }
+
+.mdl-layout__drawer-button {
+    top: 21px;
+    left: 0;
+    color: rgb(255,255,255);
+    z-index: 4;
 }
 
-    </style>
-  </head>
-  <body>
+     body {
+  background: #e2e1e0;
+}
+
+</style>
+</head>
+
+<body >
 
 <?php
 session_start();
@@ -80,20 +85,15 @@ session_start();
 /*  echo $arr_get_a_org;*/
   
 ?>
-     <!-- Always shows a header, even in smaller screens. -->
-  
-    <div class="demo-layout-transparent mdl-layout mdl-js-layout">
-    <header style="background-color:#3f51b5;height:100px;" class="mdl-layout__header mdl-layout__header--transparent">
-
-        <div class="mdl-layout__header-row">
-           <!-- Title -->
-          <span class="mdl-layout-title">CORRO</span>
-          <a href="logout.php"><img id="logout" style="" src="images/logout_btn.png"></img></a> 
-          <!-- Add spacer, to align navigation to the right -->
-          <div class="mdl-layout-spacer"></div>
-          <!-- Navigation. We hide it in small screens. -->
-        </div>
-      </header>
+  <div class=" mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header style="background-color:#3f51b5;height: 100px;" class="mdl-layout__header mdl-layout__header--transparent mdl-shadow--4dp ">
+      <div class="mdl-layout__header-row">
+        <span class=" mdl-layout-title" style="margin-top: 49px;">Corro</span>
+        <div class="mdl-layout-spacer"></div>
+        <a href="logout.php"><img id="logout" style="margin-top: 49px;" src="images/logout_btn.png"></img></a> 
+      </div>
+</header>
+      <!-- NAv bar -->
       <div class="mdl-layout__drawer">
         <span class="mdl-layout-title">CORRO</span>
         <nav class="mdl-navigation">
@@ -105,44 +105,84 @@ session_start();
         </nav>
       </div>
 
-    <main class="mdl-layout__content">
-      <div class="page-content">
+      <main class="mdl-layout__content">    
+      <div class="mdl-grid">
+          <div class="mdl-components mdl-js-components mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--2-col-desktop">
+        </div>
 
-        <div class="mdl-grid">
- <div class="mdl-cell mdl-cell--2-col">
-    <!-- add content here -->
- <!--    card -->
- </div>
 
-  <div class="card">
-    <p>TOTAL</p>
-    <p>B-TRIPS <span style="font-weight:bold;font-size:21px"><?php echo $arr_get_a_org['total_trips']; ?></span></p>
-    <p>MADE</p>
+        <div class="mdl-components mdl-js-components mdl-cell mdl-cell--8-col mdl-cell--8-col-tablet mdl-cell--8-col-desktop" style="display: inherit;">
+      <div class="demo-card-square mdl-card mdl-shadow--2dp" style="text-align: center;">
+            <div class="mdl-card__supporting-text">
+              <p>TOTAL</p>
+              <p>B-TRIPS <span style="font-weight:bold;font-size:21px"><?php echo $arr_get_a_org['total_trips']; ?></span></p>
+              <p>MADE</p>
+                    </div>
+      </div>
+
+        <div class="demo-card-square mdl-card mdl-shadow--2dp" style="text-align: center;">
+            <div class="mdl-card__supporting-text">
+              <p>TOTAL</p>
+              <p>B-TRIPS <span style="font-weight:bold;font-size:21px"><?php echo $arr_get_a_org['total_trips']; ?></span></p>
+              <p>MADE</p>
+                    </div>
+          </div>
+
+            <div class="demo-card-square mdl-card mdl-shadow--2dp" style="text-align: center;">
+            <div class="mdl-card__supporting-text">
+              <p>TOTAL</p>
+              <p>B-TRIPS <span style="font-weight:bold;font-size:21px"><?php echo $arr_get_a_org['total_trips']; ?></span></p>
+              <p>MADE</p>
+                    </div>
+          </div>
+
+            <div class="demo-card-square mdl-card mdl-shadow--2dp" style="text-align: center;">
+            <div class="mdl-card__supporting-text">
+              <p>TOTAL</p>
+              <p>B-TRIPS <span style="font-weight:bold;font-size:21px"><?php echo $arr_get_a_org['total_trips']; ?></span></p>
+              <p>MADE</p>
+                    </div>
+          </div>
+
+        </div>
+
+
+
+        <div class="mdl-components mdl-js-components mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--2-col-desktop">
+
+        </div>
   </div>
+<!-- =============================================================================== -->
 
-<div class="card card-1">
-  <p>TOTAL</p>
-    <p>REIMBURSEMENT <span style="font-weight:bold;font-size:21px"><?php echo $arr_get_a_org['reimbursed_trips']; ?></span></p>
-    <p>FIELD</p>
-</div>
+  <div class="mdl-grid">
+    <div class="mdl-components mdl-js-components mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--2-col-desktop">
 
-<div class="card card-2">
-  <p>TOTAL</p>
-    <p>APPROVED <span style="font-weight:bold;font-size:21px"><?php echo $arr_get_a_org['approved_trips']; ?></span></p>
-</div>
+    </div>
+    <div class="mdl-components mdl-js-components mdl-cell mdl-cell--6-col mdl-cell--6-col-tablet mdl-cell--6-col-desktop">
 
-<div class="card card-3">
-  <p>TOTAL</p>
-    <p>PENDING <span style="font-weight:bold;font-size:21px"><?php echo $arr_get_a_org['pending_trips']; ?></span></p>
-</div>
-        <!-- Your content goes here --></div>
-<!-- <div class="mdl-grid" style="margin-top: 5px"> -->
-        <!-- Colored raised button -->
-<button style="margin-left:69%;margin-top: 38px;" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
-Download
-</button>
+    </div>
+    <div class="mdl-components mdl-js-components mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--2-col-desktop">
+       
+      <button id="download" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+      Download
+      </button>
+    </div>
+    <div class="mdl-components mdl-js-components mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--2-col-desktop">
 
-        <table id="example" class="mdl-data-table" cellspacing="0" width="100%" style="width:80%">
+    </div>
+  </div>
+  <!-- ========================================================= -->
+  <div class="mdl-grid">
+          <!-- <div class="mdl-components mdl-js-components mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--2-col-desktop">
+          <p>jsbksdjbvljdsbvljsd</p>
+
+        </div> -->
+
+
+        <div class="mdl-components mdl-js-components mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-desktop " style="padding-left: 100px;padding-right: 100px;">
+
+
+        <table id="example" class="mdl-data-table" cellspacing="0" width="100%">
         <thead>
             <tr>
                 <th>EMPLOYEE<br>ID</th>
@@ -156,6 +196,7 @@ Download
                 <th>VIEW</th>
             </tr>
         </thead>
+       
         <tbody>
 
         <?php for($x=0;$x<count($arr_get_a_org['user and trip details']);$x++){?>
@@ -177,11 +218,26 @@ Download
             </tr>
         <?php }?>
         </tbody>
-      </table>
-    </div>
+      </table> 
+
+        </div>
+      <!--  <div class="mdl-components mdl-js-components mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--2-col-desktop">
+          <p>jsbksdjbvljdsbvljsd</p>
+
+        </div> -->
   </div>
 </div>
-      </main>
-    </div>
-  </body>
+</main>
+
+<!-- Scripts -->
+<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+
+
+
+</body>
+
+
+
+
 </html>
