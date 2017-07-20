@@ -1,0 +1,145 @@
+
+
+
+
+@media screen and (max-width: 2560px) {
+#download {
+    margin-top: 39px;
+    position: absolute;
+    margin-left: -5%;
+}
+
+@-moz-document url-prefix(){
+	#download{
+    margin-top: 39px;
+    position: absolute;
+    margin-left:-2%;
+    }
+
+}
+}
+}
+
+
+
+@media screen and (max-width: 1920px) {
+#download {
+    margin-top: 39px;
+    position: absolute;
+    margin-left: -5%;
+}
+
+@-moz-document url-prefix(){
+	#download{
+    margin-top: 39px;
+    position: absolute;
+    margin-left:-2%;
+    }
+
+}
+}
+
+
+@media screen and (max-width: 1680px) {
+#download {
+    margin-top: 39px;
+    position: absolute;
+    margin-left: -5%;
+}
+
+@-moz-document url-prefix(){
+	#download{
+    margin-top: 39px;
+    position: absolute;
+    margin-left:-2%;
+    }
+
+}
+}
+@media screen and (max-width: 1600px) {
+#download {
+    margin-top: 39px;
+    position: absolute;
+    margin-left: -5%;
+}
+
+@-moz-document url-prefix(){
+	#download{
+    margin-top: 39px;
+    position: absolute;
+    margin-left:-2%;
+    }
+
+}
+}
+
+@media screen and (max-width: 1440px) {
+#download {
+    margin-top: 39px;
+    position: absolute;
+    margin-left: -5%;
+}
+
+@-moz-document url-prefix(){
+	#download{
+    margin-top: 39px;
+    position: absolute;
+    margin-left:-2%;
+    }
+
+}
+}
+
+@media screen and (max-width: 1366px) {
+#download {
+    margin-top: 39px;
+    position: absolute;
+    margin-left: -5%;
+}
+
+@-moz-document url-prefix(){
+	#download {
+    margin-top: 39px;
+    position: absolute;
+    margin-left: -4%;
+}
+
+}
+}
+
+@media screen and (max-width: 1280px) {
+#download {
+    margin-top: 39px;
+    position: absolute;
+    margin-left: -4%;
+}
+
+@-moz-document url-prefix(){
+#download {
+    margin-top: 39px;
+    position: absolute;
+    margin-left: -7%;
+}
+
+
+
+}
+}
+
+@media screen and (max-width: 1024px) {
+#download {
+    margin-top: 39px;
+    position: absolute;
+    margin-left: -14%;
+}
+
+@-moz-document url-prefix(){
+	#download {
+    margin-top: 39px;
+    position: absolute;
+    margin-left: -16%;
+}
+
+
+}
+}
