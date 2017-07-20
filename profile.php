@@ -232,9 +232,6 @@ $trip_id=$_GET['trip_id'];
 			 <!--  <div><a href="#!"><img src="http://lorempixel.com/1024/768/nature" style="width: 100%;"></a>
 			  </div> -->
 			 <?php for($t=0; $t< 1;$t++){?>
-<<<<<<< HEAD
-			  <div><img id="right_image" src="<?php echo $arr_get_a_user['categories'][$t]['image_id']; ?>" style="width: 100%;" />
-=======
 
               <script type="text/javascript">
                  document.getElementById('btn_0').style.background = "#D0D0D0";
@@ -249,7 +246,6 @@ $trip_id=$_GET['trip_id'];
 
 			  ?>
 			  <div><img id="right_image" src="<?php echo $rgt_img1; ?>" style="width: 100%;"/>
->>>>>>> d4317526820a614b0a319f7bbc617fbb18ca9064
 			  </div>
 			 <?php }?>
 				<!-- <div id="display_bill">
@@ -279,9 +275,9 @@ $trip_id=$_GET['trip_id'];
 </script>
 
 		<!-- Carousel -->
-		<span style="cursor:pointer" id="left-button"><i class="material-icons">keyboard_arrow_left</i></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-
-		<span style="cursor:pointer" id="right-button"> <i class="material-icons">keyboard_arrow_right</i></span>
+		<span style="cursor: pointer;margin-top: 73px;position: absolute;margin-left: -17px;" id="left-button"><i class="material-icons">keyboard_arrow_left</i></span>
+		
+		
 	<div class="bill-screens mdl-shadow--4dp" id="offer-pg-cont">
             
            <?php for($t=0; $t< count($arr_get_a_user['categories']);$t++){?>
@@ -311,7 +307,10 @@ $trip_id=$_GET['trip_id'];
       
            -->
    		</div>
-
+   		<div>
+			<span style="margin-left: 40%;cursor: pointer;margin-top: -75px;
+    position: absolute;" id="right-button"> <i class="material-icons">keyboard_arrow_right</i></span>
+			</div>
 		</div>
 	 </div>
 	</main>
