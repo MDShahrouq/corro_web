@@ -42,6 +42,10 @@ if($_SESSION['login_reimburse_app'] == 1){
     } );
 } );
 
+
+$('#example').dataTable( {
+  "autoWidth": false
+} );
 </script>
 
 
@@ -50,7 +54,27 @@ if($_SESSION['login_reimburse_app'] == 1){
   min-height: 140px !important;
   max-height: 141px !important;
   }
+ @media screen and (max-width: 1024px) {
+  div.dataTables_wrapper 
+  div.mdl-grid.dt-table {
+    padding-top: 0;
+    /* margin: auto; */
+    margin-left: -4%!important;
+    /* width: 5% !important; */
+    padding-bottom: 0;
+}
+#mdl-tab{
+  padding-left: 0px;
+  padding-right: 0px;
+}
 
+.mdl-components.mdl-js-components.mdl-cell.mdl-cell--12-col.mdl-cell--12-col-tablet.mdl-cell--12-col-desktop 
+{
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+
+}
 .mdl-layout__drawer-button {
     top: 21px;
     left: 0;
@@ -177,7 +201,7 @@ session_start();
         </div> -->
 
 
-        <div class="mdl-components mdl-js-components mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-desktop " style="padding-left: 100px;padding-right: 100px;">
+        <div id="mdl-tab" class="mdl-components mdl-js-components mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-desktop " style="padding-left: 100px;padding-right: 100px;">
 
 
         <table id="example" class="mdl-data-table" cellspacing="0" width="100%">

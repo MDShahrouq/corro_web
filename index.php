@@ -53,11 +53,10 @@ if($arr2['status']==200 && $arr2['message']=='Is Super Admin'){
 ?>
 
     <!-- Always shows a header, even in smaller screens. -->
-  
-    <div class="demo-layout-transparent mdl-layout mdl-js-layout">
-    <header style="background-color:#3f51b5;height:100px;" class="mdl-layout__header mdl-layout__header--transparent">
 
-        <div class="mdl-layout__header-row">
+    <div class=" mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header style="background-color:#3f51b5;height: 100px;" class="mdl-layout__header mdl-layout__header--transparent mdl-shadow--4dp ">
+      <div class="mdl-layout__header-row">
           <!-- Title -->
           <span class="mdl-layout-title" style="margin-left:80%;">CORRO</span>
           <!-- Add spacer, to align navigation to the right -->
@@ -65,11 +64,15 @@ if($arr2['status']==200 && $arr2['message']=='Is Super Admin'){
         </div>
       </header>
       <main class="mdl-layout__content">
-        <div class="page-content"><!-- Your content goes here -->
 
     <!-- card is added -->
         <div class="mdl-grid">
-       <div class="mdl-card mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-shadow--2dp" style="margin-left:75%">
+      <div class=" mdl-cell mdl-cell--8-col mdl-cell--8-col-tablet mdl-cell--8-col-desktop">
+        </div>
+
+        <!-- <div class="mdl-components mdl-js-components mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-desktop"> -->
+        
+       <div class="mdl-card mdl-cell mdl-cell--3-col mdl-cell--3-col-tablet mdl-cell--3-col-desktop mdl-shadow--2dp" style="width: inherit;">
       <div class="mdl-card__title">
       <h1 class="mdl-card__title-text">Admin Console</h1>
     </div>
@@ -99,6 +102,9 @@ if($arr2['status']==200 && $arr2['message']=='Is Super Admin'){
 
           </div>
         </div>
+             <div class=" mdl-cell mdl-cell--1-col mdl-cell--1-col-tablet mdl-cell--1-col-desktop"> </div>
+        </div>
+    
         </div>
         </div>
       </main>
