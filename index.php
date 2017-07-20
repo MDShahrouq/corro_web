@@ -58,7 +58,7 @@ if($arr2['status']==200 && $arr2['message']=='Is Super Admin'){
   <header style="background-color:#3f51b5;height: 100px;" class="mdl-layout__header mdl-layout__header--transparent mdl-shadow--4dp ">
       <div class="mdl-layout__header-row">
           <!-- Title -->
-          <span class="mdl-layout-title" style="margin-left:80%;">CORRO</span>
+          <span class="mdl-layout-title" style="">CORRO</span>
           <!-- Add spacer, to align navigation to the right -->
           <div class="mdl-layout-spacer"></div>
         </div>
