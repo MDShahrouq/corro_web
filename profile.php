@@ -232,6 +232,9 @@ $trip_id=$_GET['trip_id'];
 			 <!--  <div><a href="#!"><img src="http://lorempixel.com/1024/768/nature" style="width: 100%;"></a>
 			  </div> -->
 			 <?php for($t=0; $t< 1;$t++){?>
+<<<<<<< HEAD
+			  <div><img id="right_image" src="<?php echo $arr_get_a_user['categories'][$t]['image_id']; ?>" style="width: 100%;" />
+=======
 
               <script type="text/javascript">
                  document.getElementById('btn_0').style.background = "#D0D0D0";
@@ -246,6 +249,7 @@ $trip_id=$_GET['trip_id'];
 
 			  ?>
 			  <div><img id="right_image" src="<?php echo $rgt_img1; ?>" style="width: 100%;"/>
+>>>>>>> d4317526820a614b0a319f7bbc617fbb18ca9064
 			  </div>
 			 <?php }?>
 				<!-- <div id="display_bill">
