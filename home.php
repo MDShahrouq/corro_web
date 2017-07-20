@@ -59,7 +59,6 @@ if($_SESSION['login_reimburse_app'] == 1){
 }
 
      body {
-
   background: #e2e1e0;
 }
 
@@ -111,8 +110,6 @@ session_start();
       <div class="mdl-grid">
           <div class="mdl-components mdl-js-components mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--2-col-desktop">
         </div>
-
-
         <div class="mdl-components mdl-js-components mdl-cell mdl-cell--8-col mdl-cell--8-col-tablet mdl-cell--8-col-desktop" style="display: inherit;">
       <div class="demo-card-square mdl-card mdl-shadow--2dp" style="text-align: center;">
             <div class="mdl-card__supporting-text">
@@ -145,7 +142,6 @@ session_start();
               <p>MADE</p>
                     </div>
           </div>
-
         </div>
 
 
@@ -199,6 +195,7 @@ session_start();
             </tr>
         </thead>
 
+
         <!-- <tfoot>
             <tr>
                 <th>EMPLOYEE<br>ID</th>
@@ -212,6 +209,7 @@ session_start();
                 <th>VIEW</th>
             </tr>
         </tfoot> -->
+
 
         <tbody>
 
