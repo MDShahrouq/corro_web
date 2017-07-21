@@ -34,9 +34,11 @@ if($_SESSION['login_reimburse_app'] == 1){
 
 <script type="text/javascript">
 var $ = jQuery.noConflict();
+
+
 $(document).ready(function() {
     $('#example').DataTable( {
-        "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+        "lengthMenu": [[-1,10,25,50], [ "All",10,25,50]],
          "oLanguage": {
          "sSearch": "Filter:"
        }
