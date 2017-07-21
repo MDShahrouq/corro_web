@@ -171,7 +171,7 @@ $trip_id=$_GET['trip_id'];
           </div>
 		</div>
 
-			<div class="mdl-shadow--2dp" style="overflow-y: auto;height: 451px;">
+			<div class="mdl-shadow--2dp" style="overflow-y: auto;height: 400px;">
 
 <script type="text/javascript">
 	function display_text(category,amount,img12,btn_id){
@@ -247,7 +247,7 @@ $trip_id=$_GET['trip_id'];
 			  }
 
 			  ?>
-			  <div style="max-height:310px;overflow-y:scroll"><img id="right_image" src="<?php echo $rgt_img1; ?>" style="width: 100%;"/>
+			  <div style="max-height:310px;min-height:310px;overflow-y:scroll"><img id="right_image" src="<?php echo $rgt_img1; ?>" style="width: 100%;"/>
 			  </div>
 			 <?php }?>
 				<!-- <div id="display_bill">
