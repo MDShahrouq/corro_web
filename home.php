@@ -31,46 +31,17 @@ if($_SESSION['login_reimburse_app'] == 1){
 <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.15/js/dataTables.material.min.js"></script>
 
-<!-- <script src="https://cdn.datatables.net/buttons/1.3.1/js/dataTables.buttons.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/1.3.1/js/buttons.flash.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
- <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.27/build/pdfmake.min.js"></script>
-<script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.27/build/vfs_fonts.js"></script>
-<script src="https://cdn.datatables.net/buttons/1.3.1/js/buttons.html5.min.js"></script> -->
 
 <script type="text/javascript">
 var $ = jQuery.noConflict();
-//   $(document).ready(function() {
-//     $('#example').DataTable( {
-//         columnDefs: [
-//             {
-//                 targets: [ 0, 1, 2 ],
-//                 className: 'mdl-data-table__cell--non-numeric'
-//             }
-//         ]
-//     } );
-// } );
-
 $(document).ready(function() {
     $('#example').DataTable( {
-        "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]]
+        "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+         "oLanguage": {
+         "sSearch": "Filter:"
+       }
     } );
 } );
-
-$('#example').dataTable( {
-  "language": {
-    "search": "Filter records:"
-  }
-} );
-
-//   $(document).ready(function() {
-//     $('.mdl-data-table').DataTable( {
-//         dom: 'Bfrtip',
-//         buttons: [
-//             'excel'
-//         ]
-//     } );
-// } );
 
 </script>
 
