@@ -247,7 +247,7 @@ $trip_id=$_GET['trip_id'];
 			  }
 
 			  ?>
-			  <div><img id="right_image" src="<?php echo $rgt_img1; ?>" style="width: 100%;"/>
+			  <div style="max-height:310px;overflow-y:scroll"><img id="right_image" src="<?php echo $rgt_img1; ?>" style="width: 100%;"/>
 			  </div>
 			 <?php }?>
 				<!-- <div id="display_bill">
