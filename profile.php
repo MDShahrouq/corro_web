@@ -345,11 +345,7 @@ $trip_id=$_GET['trip_id'];
     </script>
 
 <script type="text/javascript">
-// function show_image(bill_image) {
-// 	var bill_img = document.createElement("bill_img");
-// 	bill_img.bill_image=bill_image;
-// document.getElementById('display_bill').innerHTML="<img src="+bill_img+" style="width:100%;" />";
-// }
+
 function goBack() 
 {
  window.history.back()
