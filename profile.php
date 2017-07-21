@@ -143,12 +143,12 @@ $trip_id=$_GET['trip_id'];
 			  </span>
 		    </li>		    
 		  <li class="mdl-list__item">
-		  	<button href="home.php" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+		  	<button onclick="return goBack();" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
   				View History
 			</button>
 		  </li>
 		   <li class="mdl-list__item">
-		  	<button href="home.php" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+		  	<button onclick="return goBack();" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
 			Cancel
 			</button>
 		  </li>
@@ -277,7 +277,10 @@ $trip_id=$_GET['trip_id'];
 </script>
 
 		<!-- Carousel -->
-	<div class="bill-screens mdl-shadow--4dp">
+		<span style="cursor: pointer;margin-top: 73px;position: absolute;margin-left: -17px;" id="left-button"><i class="material-icons">keyboard_arrow_left</i></span>
+		
+		
+	<div class="bill-screens mdl-shadow--4dp" id="offer-pg-cont">
             
            <?php for($t=0; $t< count($arr_get_a_user['categories']);$t++){?>
             <div class="bill-pic bill-screen">
@@ -303,43 +306,13 @@ $trip_id=$_GET['trip_id'];
               </a>
               <a class="bill-link mdl-typography--font-regular mdl-typography--text-uppercase" href="">Bill0</a>
             </div>
-            <div class="bill-pic bill-screen">
-              <a class="bill-image-link" href="">
-                <img class="bill-screen-image" src="http://lorempixel.com/1024/768/nature">
-              </a>
-              <a class="bill-link mdl-typography--font-regular mdl-typography--text-uppercase" href="">Bill1</a>
-            </div><div class="bill-pic bill-screen">
-              <a class="bill-image-link" href="">
-                <img class="bill-screen-image" src="http://lorempixel.com/1024/768/nature">
-              </a>
-              <a class="bill-link mdl-typography--font-regular mdl-typography--text-uppercase" href="">Bill2</a>
-            </div>
-            <div class="bill-pic bill-screen">
-              <a class="bill-image-link" href="">
-                <img class="bill-screen-image" src="http://lorempixel.com/1024/768/nature">
-              </a>
-              <a class="bill-link mdl-typography--font-regular mdl-typography--text-uppercase" href="">Bill3</a>
-            </div> -->
-           <!--   <div class="bill-pic bill-screen">
-              <a class="bill-image-link" href="">
-                <img class="bill-screen-image" src="http://lorempixel.com/1024/768/nature">
-              </a>
-              <a class="bill-link mdl-typography--font-regular mdl-typography--text-uppercase" href="">Bill3</a>
-            </div>
-             <div class="bill-pic bill-screen">
-              <a class="bill-image-link" href="">
-                <img class="bill-screen-image" src="http://lorempixel.com/1024/768/nature">
-              </a>
-              <a class="bill-link mdl-typography--font-regular mdl-typography--text-uppercase" href="">Bill3</a>
-            </div>
-             <div class="bill-pic bill-screen">
-              <a class="bill-image-link" href="">
-                <img class="bill-screen-image" src="http://lorempixel.com/1024/768/nature">
-              </a>
-              <a class="bill-link mdl-typography--font-regular mdl-typography--text-uppercase" href="">Bill3</a>
-            </div> -->
+      
+           -->
    		</div>
-
+   		<div>
+			<span style="margin-left: 40%;cursor: pointer;margin-top: -75px;
+    position: absolute;" id="right-button"> <i class="material-icons">keyboard_arrow_right</i></span>
+			</div>
 		</div>
 	 </div>
 	</main>
@@ -352,10 +325,24 @@ $trip_id=$_GET['trip_id'];
 
 <!-- Scripts -->
 <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-<script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
+<script data-require="jquery" data-semver="2.1.1" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript">
+    	// Carausol JS 
+
+   $('#right-button').click(function() {
+      event.preventDefault();
+      $('#offer-pg-cont').animate({
+        scrollLeft: "+=200px"
+      }, "slow");
+   });
+   
+     $('#left-button').click(function() {
+      event.preventDefault();
+      $('#offer-pg-cont').animate({
+        scrollLeft: "-=200px"
+      }, "slow");
+   });
+    </script>
 
 <script type="text/javascript">
 // function show_image(bill_image) {
@@ -363,6 +350,10 @@ $trip_id=$_GET['trip_id'];
 // 	bill_img.bill_image=bill_image;
 // document.getElementById('display_bill').innerHTML="<img src="+bill_img+" style="width:100%;" />";
 // }
+function goBack() 
+{
+ window.history.back()
+}
 </script>
 </body>
 </html>
