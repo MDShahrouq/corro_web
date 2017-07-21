@@ -40,17 +40,22 @@ if($_SESSION['login_reimburse_app'] == 1){
 
 <script type="text/javascript">
 var $ = jQuery.noConflict();
-  $(document).ready(function() {
+//   $(document).ready(function() {
+//     $('#example').DataTable( {
+//         columnDefs: [
+//             {
+//                 targets: [ 0, 1, 2 ],
+//                 className: 'mdl-data-table__cell--non-numeric'
+//             }
+//         ]
+//     } );
+// } );
+
+$(document).ready(function() {
     $('#example').DataTable( {
-        columnDefs: [
-            {
-                targets: [ 0, 1, 2 ],
-                className: 'mdl-data-table__cell--non-numeric'
-            }
-        ]
+        "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]]
     } );
 } );
-
 //   $(document).ready(function() {
 //     $('.mdl-data-table').DataTable( {
 //         dom: 'Bfrtip',
