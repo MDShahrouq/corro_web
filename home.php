@@ -146,24 +146,24 @@ session_start();
         <div class="demo-card-square mdl-card mdl-shadow--2dp" style="text-align: center;">
             <div class="mdl-card__supporting-text">
               <p>TOTAL</p>
-              <p>B-TRIPS <span style="font-weight:bold;font-size:21px"><?php echo $arr_get_a_org['total_trips']; ?></span></p>
-              <p>MADE</p>
+              <p>REIMBURSEMENT <span style="font-weight:bold;font-size:21px"><?php echo $arr_get_a_org['reimbursed_trips']; ?></span></p>
+              <p>FILED</p>
                     </div>
           </div>
 
             <div class="demo-card-square mdl-card mdl-shadow--2dp" style="text-align: center;">
             <div class="mdl-card__supporting-text">
               <p>TOTAL</p>
-              <p>B-TRIPS <span style="font-weight:bold;font-size:21px"><?php echo $arr_get_a_org['total_trips']; ?></span></p>
-              <p>MADE</p>
+              <p>APPROVED <span style="font-weight:bold;font-size:21px"><?php echo $arr_get_a_org['approved_trips']; ?></span></p>
+             <!--  <p>MADE</p> -->
                     </div>
           </div>
 
             <div class="demo-card-square mdl-card mdl-shadow--2dp" style="text-align: center;">
             <div class="mdl-card__supporting-text">
               <p>TOTAL</p>
-              <p>B-TRIPS <span style="font-weight:bold;font-size:21px"><?php echo $arr_get_a_org['total_trips']; ?></span></p>
-              <p>MADE</p>
+              <p>PENDING <span style="font-weight:bold;font-size:21px"><?php echo $arr_get_a_org['pending_trips']; ?></span></p>
+              <!-- <p>MADE</p> -->
                     </div>
           </div>
         </div>
