@@ -247,7 +247,7 @@ p {
 p {
     font-size: 14px;
     letter-spacing: 0;
-    margin: 6px 22px 16px;
+    margin: 12px 22px 16px;
     text-align: left;
 }
 a {
@@ -2802,7 +2802,7 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
 }
 .mdl-data-table {
     position: relative;
-    margin: auto;
+    margin:auto;
     border: 1px solid rgba(0, 0, 0, .12);
     border-collapse: collapse;
     white-space: nowrap;
@@ -3919,7 +3919,6 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
     flex-shrink: 0;
     padding: 16px 40px;
     margin: 0;
-    text-align: left;
     color: #757575
 }
 @media screen and (max-width: 1024px) {
@@ -4076,10 +4075,6 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
         display: -ms-flexbox;
         display: flex
     }
-    .mdl-layout__header--transparent.mdl-layout__header--transparent {
-    background-color: transparent;
-    box-shadow: none
-}
 }
 .mdl-layout__header--transparent.mdl-layout__header--transparent {
     background-color: transparent;
@@ -4127,11 +4122,6 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
 }
 .mdl-layout--no-drawer-button .mdl-layout__header-row {
     padding-left: 40px
-}
-@media screen and (min-width: 1024px) {
-    .mdl-layout--no-desktop-drawer-button .mdl-layout__header-row {
-        padding-left: 40px
-    }
 }
 @media screen and (min-width: 1025px) {
     .mdl-layout--no-desktop-drawer-button .mdl-layout__header-row {
@@ -6380,10 +6370,15 @@ fieldset[disabled] .mdl-textfield .mdl-textfield__label,
     .mdl-grid--no-spacing>.mdl-cell--5-col-desktop.mdl-cell--5-col-desktop {
         width: 41.6666666667%
     }
-    .mdl-cell--6-col,
+   /* .mdl-cell--6-col,
     .mdl-cell--6-col-desktop.mdl-cell--6-col-desktop {
         width: calc(50% - 16px)
-    }
+    }*/
+    .mdl-cell--6-col,
+     .mdl-cell--6-col-desktop.mdl-cell--6-col-desktop {
+    width: calc(50% - 137px);
+}
+
     .mdl-grid--no-spacing>.mdl-cell--6-col,
     .mdl-grid--no-spacing>.mdl-cell--6-col-desktop.mdl-cell--6-col-desktop {
         width: 50%
