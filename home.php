@@ -19,7 +19,7 @@ if($_SESSION['login_reimburse_app'] == 1){
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
-<link rel="stylesheet" href="css/button.css">
+<!-- <link rel="stylesheet" href="css/button.css"> -->
 <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.3.1/css/buttons.dataTables.min.css">
    <!-- DATA TABLE CSS -->
   <!--  <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.1.0/material.min.css"> -->
@@ -56,6 +56,13 @@ $(document).ready(function() {
         "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]]
     } );
 } );
+
+$('#example').dataTable( {
+  "language": {
+    "search": "Filter records:"
+  }
+} );
+
 //   $(document).ready(function() {
 //     $('.mdl-data-table').DataTable( {
 //         dom: 'Bfrtip',
@@ -210,8 +217,18 @@ session_start();
     </div >
     <div class="mdl-components mdl-js-components mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--2-col-desktop">
 
+    <button  class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="margin-left:-2%" type="button"  id="test">Clear Filter</button>
+
     </div>
   </div>
+
+  <script type="text/javascript">
+$('#test').click(function() {
+    /*$('input[type=search]').val('');*/
+    $('#example').dataTable().fnFilter('');
+    /*table.search('').draw();*/ //required after
+});
+</script>
   <!-- ========================================================= -->
   <div class="mdl-grid">
           <!-- <div class="mdl-components mdl-js-components mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--2-col-desktop">
@@ -221,7 +238,6 @@ session_start();
 
 
         <div id="mdl-tab" class="mdl-components mdl-js-components mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-desktop " style="padding-left: 100px;padding-right: 100px;">
-
 
         <table id="example" class="mdl-data-table" cellspacing="0" width="100%">
         <thead>
