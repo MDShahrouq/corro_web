@@ -296,9 +296,9 @@ $d("#download").click(function(){
  $d("#example").table2excel({    
   // exclude CSS class    
   
-   exclude: ".noExl",
+   // exclude: ".noExl",
           name: "corro Document Name",
-         filename: "corro-" + new Date().toISOString().replace(/[\-\:\.]/g, ""),
+         filename: "corro.xls",
           fileext: ".xls",
           exclude_img: true,
           exclude_links: true,
