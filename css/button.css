@@ -98,11 +98,12 @@
 }
 
 @-moz-document url-prefix(){
-	#download {
+#download {
     margin-top: 39px;
     position: absolute;
-    margin-left: -4%;
+    margin-left: -7%;
 }
+
 
 }
 }
