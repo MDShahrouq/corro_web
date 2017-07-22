@@ -74,7 +74,7 @@ $(document).ready(function() {
 
           {
                 extend: 'alert',
-                text: 'Filter Clear'
+                text: 'Clear Filter'
             }
            
 
