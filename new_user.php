@@ -61,35 +61,51 @@ if(isset($_POST['delete_btn'])){
 
 session_start();
 if(isset($_POST['submit'])){
-  $url = 'https://reimburse.herokuapp.com/organization_users/';
-  $data = array(
-              'name' => $_POST['name'],
-              'designation' => $_POST['designation'],
-              'department' => $_POST['department'],
-              'mobile' => $_POST['phone'],
-              'email' => $_POST['email'],
-              'username' => $_POST['username'],
-              'password' => $_POST['password'],
-              'account_token' => $_SESSION['account_token'],
-              'image_id' => ''
-            );
 
-    // use key 'http' even if you send the request to https://...
-    $options = array(
-      'http' => array(
-        'header'  => "Content-Type: application/json\r\n" .
-                     "Accept: application/json\r\n",
-        'method'  => 'POST',
-        'content' => json_encode( $data ),
-      ),
-    );
-    $context  = stream_context_create($options);
-    $result = file_get_contents($url, false, $context);
-    /*echo $result8;*/
-    $arr = json_decode($result,true);
-    /*if($arr != ''){
-      echo "<script>alert('New Account Added')</script>";
-    }*/
+  $url_check_count = 'https://reimburse.herokuapp.com/check_no_of_users_in_org/';
+  $options_check_count = array(
+    'http' => array(
+      'header'  => array(
+                  'ACCOUNT-TOKEN: '.$_SESSION['account_token'],
+                ),
+      'method'  => 'GET',
+    ),
+  );
+  $context_check_count = stream_context_create($options_check_count);
+  $output_check_count = file_get_contents($url_check_count, false,$context_check_count);
+  /*echo $output_check_count;*/
+  $arr_check_count = json_decode($output_check_count,true);
+  /*echo $arr_check_count['count'];*/
+  if($arr_check_count['count'] >= 10){
+    echo "<script type='text/javascript'>alert('Ten users already exists.');</script>";
+  }else{
+    /*echo "<script type='text/javascript'>alert('Ten users does not already exists.');</script>";*/
+    $url = 'https://reimburse.herokuapp.com/organization_users/';
+    $data = array(
+                'name' => $_POST['name'],
+                'designation' => $_POST['designation'],
+                'department' => $_POST['department'],
+                'mobile' => $_POST['phone'],
+                'email' => $_POST['email'],
+                'username' => $_POST['username'],
+                'password' => $_POST['password'],
+                'account_token' => $_SESSION['account_token'],
+                'image_id' => ''
+              );
+
+      $options = array(
+        'http' => array(
+          'header'  => "Content-Type: application/json\r\n" .
+                       "Accept: application/json\r\n",
+          'method'  => 'POST',
+          'content' => json_encode( $data ),
+        ),
+      );
+      $context  = stream_context_create($options);
+      $result = file_get_contents($url, false, $context);
+      $arr = json_decode($result,true);
+  }
+
 }
 ?>
      <!-- Always shows a header, even in smaller screens. -->
@@ -168,7 +184,7 @@ if(isset($_POST['submit'])){
       <br>
 
         <!-- Accent-colored raised button with ripple -->
-    <button name="submit" id="submit" style="background-color: #5cb85c;width:7em;margin-top:-2%" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
+    <button name="submit" id="submit" style="background-color: #5cb85c;width:7em;margin-top:0%" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
       Save
     </button>
 
@@ -184,6 +200,9 @@ if(isset($_POST['submit'])){
   $url_get_all_users = 'https://reimburse.herokuapp.com/get_all_users/';
   $options_get_all_users = array(
     'http' => array(
+      'header'  => array(
+                  'ACCOUNT-TOKEN: '.$_SESSION['account_token'],
+                ),
       'method'  => 'GET',
     ),
   );
