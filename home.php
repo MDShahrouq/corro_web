@@ -275,7 +275,6 @@ $('#test').click(function() {
 
 <!-- Scripts -->
 <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js">
 </script>
 <script src="//cdn.rawgit.com/rainabba/jquery-table2excel/1.1.0/dist/jquery.table2excel.min.js">
@@ -299,6 +298,7 @@ $d("#download").click(function(){
    }); 
    });</script>
 
+</script>
 
 
 </body>
