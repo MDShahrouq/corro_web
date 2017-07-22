@@ -255,7 +255,7 @@ $('#test').click(function() {
               <td><?php echo $arr_get_a_user['trip details'][$x]['trip_details']['invoice_no']; ?></td>
               <td><?php echo $arr_get_a_user['trip details'][$x]['trip_details']['status']; ?></td>
               <td>
-              <form method="post" action="profile.php?pk=<?php echo $arr_get_a_user['user details']['pk']; ?>&trip_id=<?php echo $arr_get_a_user['trip details'][$x]['trip_details']['pk']; ?>">
+              <form method="post" action="../profile.php?pk=<?php echo $arr_get_a_user['user details']['pk']; ?>&trip_id=<?php echo $arr_get_a_user['trip details'][$x]['trip_details']['pk']; ?>">
               <button type="submit">View</button>
               </form>
 

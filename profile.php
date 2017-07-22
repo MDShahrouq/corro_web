@@ -143,7 +143,7 @@ $trip_id=$_GET['trip_id'];
 			  </span>
 		    </li>		    
 		  <li class="mdl-list__item">
-		  	<button onclick="return goBack();" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+		  	<button onClick="location.href='view_history.php/?pk=<?php echo $arr_get_a_user['user_details']['pk']; ?>'" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
   				View History
 			</button>
 		  </li>
