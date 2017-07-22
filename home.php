@@ -32,18 +32,55 @@ if($_SESSION['login_reimburse_app'] == 1){
 <script src="https://cdn.datatables.net/1.10.15/js/dataTables.material.min.js"></script>
 
 
+<script src="https://cdn.datatables.net/buttons/1.3.1/js/dataTables.buttons.min.js"></script>
+<script src="//cdn.datatables.net/buttons/1.3.1/js/buttons.flash.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="//cdn.rawgit.com/bpampuch/pdfmake/0.1.27/build/pdfmake.min.js"></script>
+<script src="//cdn.rawgit.com/bpampuch/pdfmake/0.1.27/build/vfs_fonts.js"></script>
+<script src="//cdn.datatables.net/buttons/1.3.1/js/buttons.html5.min.js"></script>
+<script src="//cdn.datatables.net/buttons/1.3.1/js/buttons.print.min.js"></script>
+
+
+
+
+
 <script type="text/javascript">
 var $ = jQuery.noConflict();
 
 
+$.fn.dataTable.ext.buttons.alert = {
+    className: 'buttons-alert',
+ 
+    action: function ( e, dt, node, config ) {
+    $('#example').dataTable().fnFilter('');
+    }
+};
+
 $(document).ready(function() {
     $('#example').DataTable( {
-        "lengthMenu": [[-1,10,25,50], [ "All",10,25,50]],
-         "oLanguage": {
-         "sSearch": "Filter:"
-       }
-    } );
-} );
+      "order" : [[3,"desc"]],
+      "oLanguage": {
+        "sSearch": "Filter:"
+      },
+      "lengthMenu": [[10,25,50,-1], [10,25,50,"All"]],
+        dom: 'Bfrtip',
+        
+        buttons: [
+          'pageLength',
+         {
+            extend: 'excel',
+            text: 'Download'
+        },
+
+          {
+                extend: 'alert',
+                text: 'Filter Clear'
+            }
+           
+
+        ]
+    });
+});
 
 </script>
 
@@ -83,6 +120,42 @@ $(document).ready(function() {
 
      body {
   background: #e2e1e0;
+}
+
+div.dataTables_wrapper div.dataTables_filter {
+    text-align: left !important;
+}
+
+div.dt-buttons {
+    position: relative;
+    float: right;
+}
+
+/*Buttons css*/
+
+/*button.dt-button, div.dt-button, a.dt-button {
+  color: white ! important;
+}
+a.dt-button{
+  background-color: red !important;
+}*/
+
+.dt-buttons a:nth-child(1){
+    background-color:#3f51b5;
+}
+button.dt-button, div.dt-button, a.dt-button{
+  background-color: #3f51b5;
+}
+button.dt-button, div.dt-button, a.dt-button
+{
+  background-image:none;
+color: white !important;
+box-shadow:12px 42px -1px 3px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+button.dt-button:hover:not(.disabled),div.dt-button:hover:not(.disabled),a.dt-button:hover:not(.disabled){
+      background-color:#3f51b5;
+      background-image:none
+
 }
 
 </style>
@@ -184,24 +257,24 @@ session_start();
     </div>
      <div class="mdl-components mdl-js-components mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--2-col-desktop">
        
-      <button id="download" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+     <!--  <button id="download" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
       Download
-      </button>
+      </button> -->
     </div >
     <div class="mdl-components mdl-js-components mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--2-col-desktop">
 
-    <button  class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="margin-left:-2%" type="button"  id="test">Clear Filter</button>
+    <!-- <button  class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="margin-left:-2%" type="button"  id="test">Clear Filter</button> -->
 
     </div>
   </div>
 
-  <script type="text/javascript">
+<!--   <script type="text/javascript">
 $('#test').click(function() {
     /*$('input[type=search]').val('');*/
     $('#example').dataTable().fnFilter('');
     /*table.search('').draw();*/ //required after
 });
-</script>
+</script> -->
   <!-- ========================================================= -->
   <div class="mdl-grid">
           <!-- <div class="mdl-components mdl-js-components mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--2-col-desktop">
@@ -277,7 +350,7 @@ $('#test').click(function() {
 
 <!-- Scripts -->
 <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-
+<!-- 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js">
 </script>
 <script src="//cdn.rawgit.com/rainabba/jquery-table2excel/1.1.0/dist/jquery.table2excel.min.js">
@@ -296,12 +369,11 @@ $d("#download").click(function(){
           fileext: ".xls",
           exclude_img: true,
           exclude_links: true,
-          exclude_inputs: true
-   //do not include extension  
+          exclude_inputs: true,
    }); 
    });</script>
 
-
+ -->
 
 </body>
 
