@@ -148,7 +148,7 @@ $trip_id=$_GET['trip_id'];
 			</button>
 		  </li>
 		   <li class="mdl-list__item">
-		  	<button onclick="return goBack();" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+		  	<button onclick="location.href='home.php'" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
 			Cancel
 			</button>
 		  </li>
