@@ -113,7 +113,7 @@ session_start();
       <div class="mdl-layout__header-row">
         <span class=" mdl-layout-title" style="margin-top: 49px;">Corro</span>
         <div class="mdl-layout-spacer"></div>
-        <a href="logout.php"><img id="logout" style="margin-top: 49px;" src="images/logout_btn.png"></img></a> 
+        <a href="../logout.php"><img id="logout" style="margin-top: 49px;" src="images/logout_btn.png"></img></a> 
       </div>
 </header>
       <!-- NAv bar -->
