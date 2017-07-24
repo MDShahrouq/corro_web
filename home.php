@@ -66,7 +66,11 @@ $(document).ready(function() {
           'pageLength',
          {
             extend: 'excel',
-            text: 'Download'
+            text: 'Download',
+            footer: true,
+            exportOptions: {
+                columns: [0,1,2,3,4,5,6,7]
+            },
         },
 
           {
