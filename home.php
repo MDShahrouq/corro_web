@@ -19,7 +19,8 @@ if($_SESSION['login_reimburse_app'] == 1){
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
-<link rel="stylesheet" href="css/button.css">
+<!-- <link rel="stylesheet" href="css/button.css"> -->
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.3.1/css/buttons.dataTables.min.css">
    <!-- DATA TABLE CSS -->
   <!--  <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.1.0/material.min.css"> -->
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/dataTables.material.min.css">
@@ -38,9 +39,6 @@ if($_SESSION['login_reimburse_app'] == 1){
 <script src="//cdn.rawgit.com/bpampuch/pdfmake/0.1.27/build/vfs_fonts.js"></script>
 <script src="//cdn.datatables.net/buttons/1.3.1/js/buttons.html5.min.js"></script>
 <script src="//cdn.datatables.net/buttons/1.3.1/js/buttons.print.min.js"></script>
-
-
-
 
 
 <script type="text/javascript">
@@ -80,14 +78,6 @@ $(document).ready(function() {
         ]
     });
 });
-
-
-
-$('#example').dataTable( {
-  "autoWidth": false
-} );
-
-$('.dataTables_filter label:eq(1)').text('"Filter"');
 
 </script>
 
@@ -262,11 +252,10 @@ session_start();
     <div class="mdl-components mdl-js-components mdl-cell mdl-cell--6-col mdl-cell--6-col-tablet mdl-cell--6-col-desktop">
 
     </div>
-    <div class="mdl-components mdl-js-components mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--2-col-desktop">
+     <div class="mdl-components mdl-js-components mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--2-col-desktop">
        
      <!--  <button id="download" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
       Download
-
       </button> -->
     </div >
     <div class="mdl-components mdl-js-components mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--2-col-desktop">
@@ -283,14 +272,6 @@ $('#test').click(function() {
     /*table.search('').draw();*/ //required after
 });
 </script> -->
-
-      </button>
-    </div>
-    <div class="mdl-components mdl-js-components mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--2-col-desktop">
-
-    </div>
-  </div>
-
   <!-- ========================================================= -->
   <div class="mdl-grid">
           <!-- <div class="mdl-components mdl-js-components mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--2-col-desktop">
@@ -300,7 +281,6 @@ $('#test').click(function() {
 
 
         <div id="mdl-tab" class="mdl-components mdl-js-components mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-desktop " style="padding-left: 100px;padding-right: 100px;">
-
 
         <table id="example" class="mdl-data-table" cellspacing="0" width="100%">
         <thead>
@@ -367,7 +347,6 @@ $('#test').click(function() {
 
 <!-- Scripts -->
 <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-
 <!-- 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js">
 </script>
@@ -392,7 +371,6 @@ $d("#download").click(function(){
    });</script>
 
  -->
-
 
 </body>
 
