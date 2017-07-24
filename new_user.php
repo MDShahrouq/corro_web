@@ -142,43 +142,43 @@ if(isset($_POST['submit'])){
    <center>
     <form  action="#" style="margin-top:0px;" method="post">
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input" type="text" id="name" name="name">
+        <input class="mdl-textfield__input" type="text" id="name" name="name" required/>
         <label class="mdl-textfield__label" for="sample3">NAME</label>
       </div>
       <br>
 
        <div style="margin-top:-5%" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input" type="text" id="designation" name="designation">
+        <input class="mdl-textfield__input" type="text" id="designation" name="designation" required/>
         <label class="mdl-textfield__label" for="sample3">DESIGNATION</label>
       </div>
       <br>
 
       <div style="margin-top:-5%" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input" type="text" id="department" name="department">
+        <input class="mdl-textfield__input" type="text" id="department" name="department" required/>
         <label class="mdl-textfield__label" for="sample3">DEPARTMENT</label>
       </div>
       <br>
 
       <div style="margin-top:-5%" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input" type="text" id="email" name="email">
+        <input class="mdl-textfield__input" type="email" id="email" name="email" required/>
         <label class="mdl-textfield__label" for="sample3">EMAIL</label>
       </div>
       <br>
 
       <div style="margin-top:-5%" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input" type="text" id="phone" name="phone">
+        <input class="mdl-textfield__input" type="text" id="phone" name="phone" minlength="12" maxlength="12" required/>
         <label class="mdl-textfield__label" for="sample3">PHONE</label>
       </div>
       <br>
 
       <div style="margin-top:-5%" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input" type="text" id="username" name="username">
+        <input class="mdl-textfield__input" type="text" id="username" name="username" required autocomplete="off">
         <label class="mdl-textfield__label" for="sample3">USERNAME</label>
       </div>
       <br>
 
       <div style="margin-top:-5%" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input" type="text" id="password" name="password">
+        <input class="mdl-textfield__input" type="password" id="password" name="password" required autocomplete="off">
         <label class="mdl-textfield__label" for="sample3">PASSWORD</label>
       </div>
       <br>
