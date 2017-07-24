@@ -19,7 +19,8 @@ if($_SESSION['login_reimburse_app'] == 1){
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
-<link rel="stylesheet" href="css/button.css">
+<!-- <link rel="stylesheet" href="css/button.css"> -->
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.3.1/css/buttons.dataTables.min.css">
    <!-- DATA TABLE CSS -->
   <!--  <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.1.0/material.min.css"> -->
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/dataTables.material.min.css">
@@ -31,63 +32,16 @@ if($_SESSION['login_reimburse_app'] == 1){
 <script src="https://cdn.datatables.net/1.10.15/js/dataTables.material.min.js"></script>
 
 
-<script src="https://cdn.datatables.net/buttons/1.3.1/js/dataTables.buttons.min.js"></script>
-<script src="//cdn.datatables.net/buttons/1.3.1/js/buttons.flash.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-<script src="//cdn.rawgit.com/bpampuch/pdfmake/0.1.27/build/pdfmake.min.js"></script>
-<script src="//cdn.rawgit.com/bpampuch/pdfmake/0.1.27/build/vfs_fonts.js"></script>
-<script src="//cdn.datatables.net/buttons/1.3.1/js/buttons.html5.min.js"></script>
-<script src="//cdn.datatables.net/buttons/1.3.1/js/buttons.print.min.js"></script>
-
-
-
-
-
 <script type="text/javascript">
 var $ = jQuery.noConflict();
-
-
-$.fn.dataTable.ext.buttons.alert = {
-    className: 'buttons-alert',
- 
-    action: function ( e, dt, node, config ) {
-    $('#example').dataTable().fnFilter('');
-    }
-};
-
 $(document).ready(function() {
     $('#example').DataTable( {
-      "order" : [[3,"desc"]],
-      "oLanguage": {
-        "sSearch": "Filter:"
-      },
-      "lengthMenu": [[10,25,50,-1], [10,25,50,"All"]],
-        dom: 'Bfrtip',
-        
-        buttons: [
-          'pageLength',
-         {
-            extend: 'excel',
-            text: 'Download'
-        },
-
-          {
-                extend: 'alert',
-                text: 'Clear Filter'
-            }
-           
-
-        ]
-    });
-});
-
-
-
-$('#example').dataTable( {
-  "autoWidth": false
+        "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+         "oLanguage": {
+         "sSearch": "Filter:"
+       }
+    } );
 } );
-
-$('.dataTables_filter label:eq(1)').text('"Filter"');
 
 </script>
 
@@ -129,42 +83,6 @@ $('.dataTables_filter label:eq(1)').text('"Filter"');
   background: #e2e1e0;
 }
 
-div.dataTables_wrapper div.dataTables_filter {
-    text-align: left !important;
-}
-
-div.dt-buttons {
-    position: relative;
-    float: right;
-}
-
-/*Buttons css*/
-
-/*button.dt-button, div.dt-button, a.dt-button {
-  color: white ! important;
-}
-a.dt-button{
-  background-color: red !important;
-}*/
-
-.dt-buttons a:nth-child(1){
-    background-color:#3f51b5;
-}
-button.dt-button, div.dt-button, a.dt-button{
-  background-color: #3f51b5;
-}
-button.dt-button, div.dt-button, a.dt-button
-{
-  background-image:none;
-color: white !important;
-box-shadow:12px 42px -1px 3px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
-}
-button.dt-button:hover:not(.disabled),div.dt-button:hover:not(.disabled),a.dt-button:hover:not(.disabled){
-      background-color:#3f51b5;
-      background-image:none
-
-}
-
 </style>
 </head>
 
@@ -173,20 +91,21 @@ button.dt-button:hover:not(.disabled),div.dt-button:hover:not(.disabled),a.dt-bu
 <?php
 session_start();
 
-  $url_get_a_org = 'https://reimburse.herokuapp.com/get_details_of_org/';
-  $options_get_a_org = array(
+  $url_get_a_user = 'https://reimburse.herokuapp.com/get_trips_of_user/';
+  $options_get_a_user = array(
     'http' => array(
       'header'  => array(
-                  'ACCOUNT-TOKEN: '.$_SESSION['account_token']
+                  'ACCOUNT-TOKEN: '.$_SESSION['account_token'],
+                  'PK: '.$_GET['pk']
                 ),
       'method'  => 'GET',
     ),
   );
-  $context_get_a_org = stream_context_create($options_get_a_org);
-  $output_get_a_org = file_get_contents($url_get_a_org, false,$context_get_a_org);
- /* echo $output_get_a_org;*/
-  $arr_get_a_org = json_decode($output_get_a_org,true);
-/*  echo $arr_get_a_org;*/
+  $context_get_a_user = stream_context_create($options_get_a_user);
+  $output_get_a_user = file_get_contents($url_get_a_user, false,$context_get_a_user);
+  /*echo $output_get_a_user;*/
+  $arr_get_a_user = json_decode($output_get_a_user,true);
+/*  echo $arr_get_a_user;*/
   
 ?>
   <div class=" mdl-layout mdl-js-layout mdl-layout--fixed-header">
@@ -194,7 +113,7 @@ session_start();
       <div class="mdl-layout__header-row">
         <span class=" mdl-layout-title" style="margin-top: 49px;">Corro</span>
         <div class="mdl-layout-spacer"></div>
-        <a href="logout.php"><img id="logout" style="margin-top: 49px;" src="images/logout_btn.png"></img></a> 
+        <a href="../logout.php"><img id="logout" style="margin-top: 49px;" src="images/logout_btn.png"></img></a> 
       </div>
 </header>
       <!-- NAv bar -->
@@ -217,7 +136,7 @@ session_start();
       <div class="demo-card-square mdl-card mdl-shadow--2dp" style="text-align: center;">
             <div class="mdl-card__supporting-text">
               <p>TOTAL</p>
-              <p>B-TRIPS <span style="font-weight:bold;font-size:21px"><?php echo $arr_get_a_org['total_trips']; ?></span></p>
+              <p>B-TRIPS <span style="font-weight:bold;font-size:21px"><?php echo $arr_get_a_user['total_trips']; ?></span></p>
               <p>MADE</p>
                     </div>
       </div>
@@ -225,7 +144,7 @@ session_start();
         <div class="demo-card-square mdl-card mdl-shadow--2dp" style="text-align: center;">
             <div class="mdl-card__supporting-text">
               <p>TOTAL</p>
-              <p>REIMBURSEMENT <span style="font-weight:bold;font-size:21px"><?php echo $arr_get_a_org['reimbursed_trips']; ?></span></p>
+              <p>REIMBURSEMENT <span style="font-weight:bold;font-size:21px"><?php echo $arr_get_a_user['reimbursed_trips']; ?></span></p>
               <p>FILED</p>
                     </div>
           </div>
@@ -233,7 +152,7 @@ session_start();
             <div class="demo-card-square mdl-card mdl-shadow--2dp" style="text-align: center;">
             <div class="mdl-card__supporting-text">
               <p>TOTAL</p>
-              <p>APPROVED <span style="font-weight:bold;font-size:21px"><?php echo $arr_get_a_org['approved_trips']; ?></span></p>
+              <p>APPROVED <span style="font-weight:bold;font-size:21px"><?php echo $arr_get_a_user['approved_trips']; ?></span></p>
              <!--  <p>MADE</p> -->
                     </div>
           </div>
@@ -241,7 +160,7 @@ session_start();
             <div class="demo-card-square mdl-card mdl-shadow--2dp" style="text-align: center;">
             <div class="mdl-card__supporting-text">
               <p>TOTAL</p>
-              <p>PENDING <span style="font-weight:bold;font-size:21px"><?php echo $arr_get_a_org['pending_trips']; ?></span></p>
+              <p>PENDING <span style="font-weight:bold;font-size:21px"><?php echo $arr_get_a_user['pending_trips']; ?></span></p>
               <!-- <p>MADE</p> -->
                     </div>
           </div>
@@ -262,36 +181,29 @@ session_start();
     <div class="mdl-components mdl-js-components mdl-cell mdl-cell--6-col mdl-cell--6-col-tablet mdl-cell--6-col-desktop">
 
     </div>
-    <div class="mdl-components mdl-js-components mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--2-col-desktop">
+     <div class="mdl-components mdl-js-components mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--2-col-desktop">
        
-     <!--  <button id="download" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+ <button id="download" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
       Download
-
-      </button> -->
+      </button>
     </div >
     <div class="mdl-components mdl-js-components mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--2-col-desktop">
 
-    <!-- <button  class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="margin-left:-2%" type="button"  id="test">Clear Filter</button> -->
+    <button  class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="margin-left:-2%" type="button"  id="test">Clear Filter</button> 
 
     </div>
   </div>
 
-<!--   <script type="text/javascript">
+  <script type="text/javascript">
 $('#test').click(function() {
     /*$('input[type=search]').val('');*/
     $('#example').dataTable().fnFilter('');
     /*table.search('').draw();*/ //required after
 });
-</script> -->
-
-      </button>
-    </div>
-    <div class="mdl-components mdl-js-components mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--2-col-desktop">
-
-    </div>
-  </div>
-
+</script>
   <!-- ========================================================= -->
+
+
   <div class="mdl-grid">
           <!-- <div class="mdl-components mdl-js-components mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--2-col-desktop">
           <p>jsbksdjbvljdsbvljsd</p>
@@ -301,17 +213,16 @@ $('#test').click(function() {
 
         <div id="mdl-tab" class="mdl-components mdl-js-components mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-desktop " style="padding-left: 100px;padding-right: 100px;">
 
-
         <table id="example" class="mdl-data-table" cellspacing="0" width="100%">
         <thead>
             <tr>
-                <th>EMPLOYEE<br>ID</th>
-                <th>EMPLOYEE<br>NAME</th>
-                <th>DEPT</th>
-                <th>TRAVEL DATE</th>
-                <th>TRIP NO.</th>
-                <th>PENDING<br>DAYS</th>
-                <th>TOTAL CLAIM</th>
+                <th>TRIP ID</th>
+                <th>LOCATION</th>
+                <th>CATEGORY</th>
+                <th>DESCRIPTION</th>
+                <th>START DATE</th>
+                <th>END DATE</th>
+                <th>INVOICE NO.</th>
                 <th>STATUS</th>
                 <th>VIEW</th>
             </tr>
@@ -335,18 +246,18 @@ $('#test').click(function() {
 
         <tbody>
 
-        <?php for($x=0;$x<count($arr_get_a_org['user and trip details']);$x++){?>
+        <?php for($x=0;$x<count($arr_get_a_user['trip details']);$x++){?>
             <tr>
-              <td><?php echo $arr_get_a_org['user and trip details'][$x]['user details']['uid']; ?></td>
-              <td><?php echo $arr_get_a_org['user and trip details'][$x]['user details']['name']; ?></td>
-              <td><?php echo $arr_get_a_org['user and trip details'][$x]['user details']['department']; ?></td>
-              <td><?php echo ($arr_get_a_org['user and trip details'][$x]['trip_details']['start_date']." - ".$arr_get_a_org['user and trip details'][$x]['trip_details']['start_date']); ?></td>
-              <td><?php echo ($arr_get_a_org['user and trip details'][$x]['trip_details']['pk']); ?></td>
-              <td>Pending</td>
-              <td><?php echo $arr_get_a_org['user and trip details'][$x]['total']; ?></td>
-              <td><?php echo $arr_get_a_org['user and trip details'][$x]['trip_details']['status']; ?></td>
+              <td><?php echo $arr_get_a_user['trip details'][$x]['trip_details']['pk']; ?></td>
+              <td><?php echo $arr_get_a_user['trip details'][$x]['trip_details']['location']; ?></td>
+              <td><?php echo $arr_get_a_user['trip details'][$x]['trip_details']['category']; ?></td>
+              <td><?php echo $arr_get_a_user['trip details'][$x]['trip_details']['description']; ?></td>
+              <td><?php echo $arr_get_a_user['trip details'][$x]['trip_details']['start_date']; ?></td>
+              <td><?php echo $arr_get_a_user['trip details'][$x]['trip_details']['end_date']; ?></td>
+              <td><?php echo $arr_get_a_user['trip details'][$x]['trip_details']['invoice_no']; ?></td>
+              <td><?php echo $arr_get_a_user['trip details'][$x]['trip_details']['status']; ?></td>
               <td>
-              <form method="post" action="profile.php?pk=<?php echo $arr_get_a_org['user and trip details'][$x]['user details']['pk']; ?>&trip_id=<?php echo $arr_get_a_org['user and trip details'][$x]['trip_details']['pk']; ?>">
+              <form method="post" action="../profile.php?pk=<?php echo $arr_get_a_user['user details']['pk']; ?>&trip_id=<?php echo $arr_get_a_user['trip details'][$x]['trip_details']['pk']; ?>">
               <button type="submit">View</button>
               </form>
 
@@ -368,7 +279,6 @@ $('#test').click(function() {
 <!-- Scripts -->
 <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 
-<!-- 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js">
 </script>
 <script src="//cdn.rawgit.com/rainabba/jquery-table2excel/1.1.0/dist/jquery.table2excel.min.js">
@@ -387,11 +297,11 @@ $d("#download").click(function(){
           fileext: ".xls",
           exclude_img: true,
           exclude_links: true,
-          exclude_inputs: true,
+          exclude_inputs: true
+   //do not include extension  
    }); 
    });</script>
 
- -->
 
 
 </body>

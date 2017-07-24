@@ -1,6 +1,7 @@
 <?php
 /*ob_start("ob_gzhandler");*/  //Enables Gzip compression 
-
+header('Cache-Control: no cache'); //no cache
+session_cache_limiter('private_no_expire'); // works
 session_start();
 if($_SESSION['login_reimburse_app'] == 1){
 
@@ -12,6 +13,7 @@ if($_SESSION['login_reimburse_app'] == 1){
 <!DOCTYPE html>
 <html lang="en">
   <head>
+
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -143,12 +145,12 @@ $trip_id=$_GET['trip_id'];
 			  </span>
 		    </li>		    
 		  <li class="mdl-list__item">
-		  	<button onclick="return goBack();" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+		  	<button onClick="location.href='view_history.php/?pk=<?php echo $arr_get_a_user['user_details']['pk']; ?>'" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
   				View History
 			</button>
 		  </li>
 		   <li class="mdl-list__item">
-		  	<button onclick="return goBack();" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+		  	<button onclick="location.href='home.php'" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
 			Cancel
 			</button>
 		  </li>
@@ -329,14 +331,14 @@ $trip_id=$_GET['trip_id'];
     <script type="text/javascript">
     	// Carausol JS 
 
-   $('#right-button').click(function() {
+   $('#right-button').click(function(event) {
       event.preventDefault();
       $('#offer-pg-cont').animate({
         scrollLeft: "+=200px"
       }, "slow");
    });
    
-     $('#left-button').click(function() {
+     $('#left-button').click(function(event) {
       event.preventDefault();
       $('#offer-pg-cont').animate({
         scrollLeft: "-=200px"
@@ -345,11 +347,7 @@ $trip_id=$_GET['trip_id'];
     </script>
 
 <script type="text/javascript">
-// function show_image(bill_image) {
-// 	var bill_img = document.createElement("bill_img");
-// 	bill_img.bill_image=bill_image;
-// document.getElementById('display_bill').innerHTML="<img src="+bill_img+" style="width:100%;" />";
-// }
+
 function goBack() 
 {
  window.history.back()
