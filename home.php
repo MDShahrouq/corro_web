@@ -208,7 +208,7 @@ session_start();
           <div class="mdl-components mdl-js-components mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--2-col-desktop">
         </div>
         <div class="mdl-components mdl-js-components mdl-cell mdl-cell--8-col mdl-cell--8-col-tablet mdl-cell--8-col-desktop" style="display: inherit;">
-      <div class="demo-card-square mdl-card mdl-shadow--2dp" style="text-align: center;">
+      <!-- <div class="demo-card-square mdl-card mdl-shadow--2dp" style="text-align: center;">
             <div class="mdl-card__supporting-text">
               <p>TOTAL</p>
               <p>B-TRIPS <span style="font-weight:bold;font-size:21px"><?php echo $arr_get_a_org['total_trips']; ?></span></p>
@@ -228,7 +228,6 @@ session_start();
             <div class="mdl-card__supporting-text">
               <p>TOTAL</p>
               <p>APPROVED <span style="font-weight:bold;font-size:21px"><?php echo $arr_get_a_org['approved_trips']; ?></span></p>
-             <!--  <p>MADE</p> -->
                     </div>
           </div>
 
@@ -236,9 +235,16 @@ session_start();
             <div class="mdl-card__supporting-text">
               <p>TOTAL</p>
               <p>PENDING <span style="font-weight:bold;font-size:21px"><?php echo $arr_get_a_org['pending_trips']; ?></span></p>
-              <!-- <p>MADE</p> -->
                     </div>
-          </div>
+          </div> -->
+
+
+<!--           <canvas id="myChart" width="400" height="400"></canvas>
+ -->
+
+        <div id="piechart" style="width: 900px; height: 500px;"></div>
+
+
         </div>
 
 
@@ -351,6 +357,35 @@ $('#test').click(function() {
 
 <!-- Scripts -->
 <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['B-TRIPS',     <?php echo $arr_get_a_org['total_trips']; ?>],
+          ['Reimbursed',      <?php echo $arr_get_a_org['reimbursed_trips']; ?>],
+          ['Approved',  <?php echo $arr_get_a_org['approved_trips']; ?>],
+          ['Pending', <?php echo $arr_get_a_org['pending_trips']; ?>]
+         // ['Sleep',    <?php echo $arr_get_a_org['total_trips']; ?>]
+        ]);
+
+        var options = {
+          title: 'OVERVIEW',
+          backgroundColor:'#e2e1e0',
+          pieSliceText:'value',
+          sliceVisibilityThreshold :0
+
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+</script>
 <!-- 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js">
 </script>
