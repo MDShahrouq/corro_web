@@ -16,7 +16,17 @@ if($_SESSION['login_reimburse_app'] == 1){
     <link rel="stylesheet" href="css/material.min.css">
       <!-- Material Design icon font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/dataTables.material.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.1.0/material.min.css">
+
+
+<!-- Table js -->
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/dataTables.material.min.js"></script>
   </head>
+
   <!-- <style type="text/css">
     td, th {
     border: 1px solid #dddddd;
@@ -214,7 +224,9 @@ if(isset($_POST['submit'])){
   
 ?>
 <div class="mdl-components mdl-js-components mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-desktop">
-<table align="center" style="box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);" class="mdl-data-table mdl-js-data-table">
+
+
+<table align="center" id="example" style="box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);" class="mdl-data-table">
         <thead>
             <tr>
                 <th class="mdl-data-table__cell--non-numeric">Name</th> 

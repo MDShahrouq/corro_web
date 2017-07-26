@@ -132,6 +132,10 @@ div.dt-buttons {
     float: right;
 }
 
+.canvasjs-chart-credit{
+  color: white !important;
+}
+
 /*Buttons css*/
 
 /*button.dt-button, div.dt-button, a.dt-button {
@@ -160,6 +164,7 @@ button.dt-button:hover:not(.disabled),div.dt-button:hover:not(.disabled),a.dt-bu
 }
 
 </style>
+
 </head>
 
 <body >
@@ -247,6 +252,8 @@ session_start();
 
         </div>
   </div>
+
+
 <!-- =============================================================================== -->
 
   <div class="mdl-grid">
