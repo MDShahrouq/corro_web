@@ -213,7 +213,7 @@ session_start();
           <div class="mdl-components mdl-js-components mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--2-col-desktop">
         </div>
         <div class="mdl-components mdl-js-components mdl-cell mdl-cell--8-col mdl-cell--8-col-tablet mdl-cell--8-col-desktop" style="display: inherit;">
-      <!-- <div class="demo-card-square mdl-card mdl-shadow--2dp" style="text-align: center;">
+      <div class="demo-card-square mdl-card mdl-shadow--2dp" style="text-align: center;">
             <div class="mdl-card__supporting-text">
               <p>TOTAL</p>
               <p>B-TRIPS <span style="font-weight:bold;font-size:21px"><?php echo $arr_get_a_org['total_trips']; ?></span></p>
@@ -241,13 +241,12 @@ session_start();
               <p>TOTAL</p>
               <p>PENDING <span style="font-weight:bold;font-size:21px"><?php echo $arr_get_a_org['pending_trips']; ?></span></p>
                     </div>
-          </div> -->
+          </div>
 
 
 <!--           <canvas id="myChart" width="400" height="400"></canvas>
  -->
-
-        <div id="piechart" style="width: 900px; height: 500px;"></div>
+        
 
 
         </div>
@@ -258,75 +257,15 @@ session_start();
 
         </div>
   </div>
-
- <!--  <script type="text/javascript">
-window.onload = function () {
-    var chart = new CanvasJS.Chart("chartContainer",
-    {
-        title:{
-            text: "Overview"
-        },
-                animationEnabled: true,
-        legend:{
-            verticalAlign: "center",
-            horizontalAlign: "left",
-            fontSize: 20,
-            fontFamily: "Helvetica"        
-        },
-        theme: "theme1",
-        data: [
-        {        
-            type: "pie",       
-            indexLabelFontFamily: "Garamond",       
-            indexLabelFontSize: 20,
-            indexLabel: "{label} {y}",
-            startAngle:-20,      
-            showInLegend: true,
-            toolTipContent:"{legendText} {y}",
-            dataPoints: [
-                {  y:"<?php echo $arr_get_a_org['total_trips']; ?>", legendText:"B-TRIPS", label: "B-TRIPS" },
-                {  y: "<?php echo $arr_get_a_org['reimbursed_trips']; ?>", legendText:"REIMBURSEMENT", label: "REIMBURSEMENT" },
-                {  y:"<?php echo $arr_get_a_org['approved_trips']; ?>" , legendText:"APPROVED ", label: "APPROVED " },
-                {  y:"<?php echo $arr_get_a_org['pending_trips']; ?>", legendText:"PENDING" , label: "PENDING"},       
-                
-            ]
-        }
-        ]
-    });
-    chart.render();
-}
-</script>
-<div id="chartContainer" style="height: 300px; width: 100%;"></div>
-<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>  -->
-<!-- =============================================================================== -->
-
-  <div class="mdl-grid">
-    <div class="mdl-components mdl-js-components mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--2-col-desktop">
-
-    </div>
+<!--===================================================================-->
+    <div class="mdl-grid">
+    <div class="mdl-components mdl-js-components mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-desktop"></div>
     <div class="mdl-components mdl-js-components mdl-cell mdl-cell--6-col mdl-cell--6-col-tablet mdl-cell--6-col-desktop">
-
+    <div id="piechart" style="width: 500px; height:500px;"></div>
     </div>
-     <div class="mdl-components mdl-js-components mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--2-col-desktop">
-       
-     <!--  <button id="download" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
-      Download
-      </button> -->
-    </div >
-    <div class="mdl-components mdl-js-components mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--2-col-desktop">
+     <div class="mdl-components mdl-js-components mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-desktop"></div>
+     </div>
 
-    <!-- <button  class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="margin-left:-2%" type="button"  id="test">Clear Filter</button> -->
-
-    </div>
-  </div>
-
-<!--   <script type="text/javascript">
-$('#test').click(function() {
-    /*$('input[type=search]').val('');*/
-    $('#example').dataTable().fnFilter('');
-    /*table.search('').draw();*/ //required after
-});
-</script> -->
   <!-- ========================================================= -->
   <div class="mdl-grid">
           <!-- <div class="mdl-components mdl-js-components mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--2-col-desktop">
@@ -422,7 +361,11 @@ $('#test').click(function() {
           title: 'OVERVIEW',
           backgroundColor:'#e2e1e0',
           pieSliceText:'value',
-          sliceVisibilityThreshold :0
+          sliceVisibilityThreshold :0,
+          legend:{position: 'center'},
+          chartArea:{top:0,width:"500px",height:"500px"},
+          tooltip:'value'
+
 
         };
 
