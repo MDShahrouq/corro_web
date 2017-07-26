@@ -259,7 +259,45 @@ session_start();
         </div>
   </div>
 
-
+ <!--  <script type="text/javascript">
+window.onload = function () {
+    var chart = new CanvasJS.Chart("chartContainer",
+    {
+        title:{
+            text: "Overview"
+        },
+                animationEnabled: true,
+        legend:{
+            verticalAlign: "center",
+            horizontalAlign: "left",
+            fontSize: 20,
+            fontFamily: "Helvetica"        
+        },
+        theme: "theme1",
+        data: [
+        {        
+            type: "pie",       
+            indexLabelFontFamily: "Garamond",       
+            indexLabelFontSize: 20,
+            indexLabel: "{label} {y}",
+            startAngle:-20,      
+            showInLegend: true,
+            toolTipContent:"{legendText} {y}",
+            dataPoints: [
+                {  y:"<?php echo $arr_get_a_org['total_trips']; ?>", legendText:"B-TRIPS", label: "B-TRIPS" },
+                {  y: "<?php echo $arr_get_a_org['reimbursed_trips']; ?>", legendText:"REIMBURSEMENT", label: "REIMBURSEMENT" },
+                {  y:"<?php echo $arr_get_a_org['approved_trips']; ?>" , legendText:"APPROVED ", label: "APPROVED " },
+                {  y:"<?php echo $arr_get_a_org['pending_trips']; ?>", legendText:"PENDING" , label: "PENDING"},       
+                
+            ]
+        }
+        ]
+    });
+    chart.render();
+}
+</script>
+<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>  -->
 <!-- =============================================================================== -->
 
   <div class="mdl-grid">
