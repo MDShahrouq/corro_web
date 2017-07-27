@@ -250,13 +250,11 @@ session_start();
 
 
         </div>
-
-
-
-        <div class="mdl-components mdl-js-components mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--2-col-desktop">
-
-        </div>
   </div>
+
+
+<!-- =============================================================================== -->
+
 <!--===================================================================-->
     <div class="mdl-grid">
     <div class="mdl-components mdl-js-components mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-desktop"></div>
@@ -267,7 +265,7 @@ session_start();
      </div>
 
   <!-- ========================================================= -->
-  <div class="mdl-grid">
+  <div class="mdl-grid" style="margin-top: -276px;">
           <!-- <div class="mdl-components mdl-js-components mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--2-col-desktop">
           <p>jsbksdjbvljdsbvljsd</p>
 
