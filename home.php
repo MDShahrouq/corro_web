@@ -132,6 +132,10 @@ div.dt-buttons {
     float: right;
 }
 
+.canvasjs-chart-credit{
+  color: white !important;
+}
+
 /*Buttons css*/
 
 /*button.dt-button, div.dt-button, a.dt-button {
@@ -160,6 +164,7 @@ button.dt-button:hover:not(.disabled),div.dt-button:hover:not(.disabled),a.dt-bu
 }
 
 </style>
+
 </head>
 
 <body >
@@ -228,7 +233,6 @@ session_start();
             <div class="mdl-card__supporting-text">
               <p>TOTAL</p>
               <p>APPROVED <span style="font-weight:bold;font-size:21px"><?php echo $arr_get_a_org['approved_trips']; ?></span></p>
-             <!--  <p>MADE</p> -->
                     </div>
           </div>
 
@@ -236,48 +240,32 @@ session_start();
             <div class="mdl-card__supporting-text">
               <p>TOTAL</p>
               <p>PENDING <span style="font-weight:bold;font-size:21px"><?php echo $arr_get_a_org['pending_trips']; ?></span></p>
-              <!-- <p>MADE</p> -->
                     </div>
           </div>
-        </div>
 
 
+<!--           <canvas id="myChart" width="400" height="400"></canvas>
+ -->
+        
 
-        <div class="mdl-components mdl-js-components mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--2-col-desktop">
 
         </div>
   </div>
+
+
 <!-- =============================================================================== -->
 
-  <div class="mdl-grid">
-    <div class="mdl-components mdl-js-components mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--2-col-desktop">
-
-    </div>
+<!--===================================================================-->
+    <div class="mdl-grid">
+    <div class="mdl-components mdl-js-components mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-desktop"></div>
     <div class="mdl-components mdl-js-components mdl-cell mdl-cell--6-col mdl-cell--6-col-tablet mdl-cell--6-col-desktop">
-
+    <div id="piechart" style="width: 500px; height:500px;"></div>
     </div>
-     <div class="mdl-components mdl-js-components mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--2-col-desktop">
-       
-     <!--  <button id="download" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
-      Download
-      </button> -->
-    </div >
-    <div class="mdl-components mdl-js-components mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--2-col-desktop">
+     <div class="mdl-components mdl-js-components mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-desktop"></div>
+     </div>
 
-    <!-- <button  class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="margin-left:-2%" type="button"  id="test">Clear Filter</button> -->
-
-    </div>
-  </div>
-
-<!--   <script type="text/javascript">
-$('#test').click(function() {
-    /*$('input[type=search]').val('');*/
-    $('#example').dataTable().fnFilter('');
-    /*table.search('').draw();*/ //required after
-});
-</script> -->
   <!-- ========================================================= -->
-  <div class="mdl-grid">
+  <div class="mdl-grid" style="margin-top: -276px;">
           <!-- <div class="mdl-components mdl-js-components mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--2-col-desktop">
           <p>jsbksdjbvljdsbvljsd</p>
 
@@ -351,6 +339,39 @@ $('#test').click(function() {
 
 <!-- Scripts -->
 <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['B-TRIPS',     <?php echo $arr_get_a_org['total_trips']; ?>],
+          ['Reimbursed',      <?php echo $arr_get_a_org['reimbursed_trips']; ?>],
+          ['Approved',  <?php echo $arr_get_a_org['approved_trips']; ?>],
+          ['Pending', <?php echo $arr_get_a_org['pending_trips']; ?>]
+         // ['Sleep',    <?php echo $arr_get_a_org['total_trips']; ?>]
+        ]);
+
+        var options = {
+          title: 'OVERVIEW',
+          backgroundColor:'#e2e1e0',
+          pieSliceText:'value',
+          sliceVisibilityThreshold :0,
+          legend:{position: 'center'},
+          chartArea:{top:0,width:"500px",height:"500px"},
+          tooltip:'value'
+
+
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+</script>
 <!-- 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js">
 </script>
