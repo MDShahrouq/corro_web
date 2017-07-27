@@ -342,7 +342,6 @@ session_start();
 </main>
 
 <!-- Scripts -->
-<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">
         google.charts.load('current', {'packages':['corechart']});
@@ -351,7 +350,7 @@ session_start();
       function drawChart() {
 
         var data = google.visualization.arrayToDataTable([
-          ['Task', 'Hours per Day'],
+          ['Trips', 'Values'],
           ['B-TRIPS',     <?php echo $arr_get_a_org['total_trips']; ?>],
           ['Reimbursed',      <?php echo $arr_get_a_org['reimbursed_trips']; ?>],
           ['Approved',  <?php echo $arr_get_a_org['approved_trips']; ?>],
@@ -361,14 +360,13 @@ session_start();
 
         var options = {
           title: 'OVERVIEW',
+          legend:'center',
           backgroundColor:'#e2e1e0',
           pieSliceText:'value',
           sliceVisibilityThreshold :0,
           legend:{position: 'center'},
           chartArea:{top:0,width:"500px",height:"500px"},
           tooltip:'value'
-
-
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
@@ -406,6 +404,8 @@ session_start();
         chart1.draw(data, options);
       }
 </script>
+<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
 <!-- 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js">
 </script>
