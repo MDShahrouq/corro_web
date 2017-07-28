@@ -257,15 +257,19 @@ session_start();
 
 <!--===================================================================-->
     <div class="mdl-grid">
-    <div class="mdl-components mdl-js-components mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-desktop"></div>
-    <div class="mdl-components mdl-js-components mdl-cell mdl-cell--6-col mdl-cell--6-col-tablet mdl-cell--6-col-desktop">
+    <div class="mdl-components mdl-js-components mdl-cell mdl-cell--1-col mdl-cell--1-col-tablet mdl-cell--1-col-desktop"></div>
+    <div class="mdl-components mdl-js-components mdl-cell mdl-cell--5-col mdl-cell--5-col-tablet mdl-cell--5-col-desktop">
     <div id="piechart" style="width: 500px; height:500px;"></div>
     </div>
-     <div class="mdl-components mdl-js-components mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-desktop"></div>
+      <div class="mdl-components mdl-js-components mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-desktop">
+    <div id="piechart1" style="width: 500px; height:500px;"></div>
+    </div>
+
+     <div class="mdl-components mdl-js-components mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--2-col-desktop"></div>
      </div>
 
   <!-- ========================================================= -->
-  <div class="mdl-grid" style="margin-top: -276px;">
+  <div class="mdl-grid" style="margin-top: -276px;z-index:2;position:relative;">
           <!-- <div class="mdl-components mdl-js-components mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--2-col-desktop">
           <p>jsbksdjbvljdsbvljsd</p>
 
@@ -338,7 +342,6 @@ session_start();
 </main>
 
 <!-- Scripts -->
-<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">
         google.charts.load('current', {'packages':['corechart']});
@@ -347,9 +350,45 @@ session_start();
       function drawChart() {
 
         var data = google.visualization.arrayToDataTable([
-          ['Task', 'Hours per Day'],
+          ['Trips', 'Values'],
           ['B-TRIPS',     <?php echo $arr_get_a_org['total_trips']; ?>],
           ['Reimbursed',      <?php echo $arr_get_a_org['reimbursed_trips']; ?>],
+          ['Approved',  <?php echo $arr_get_a_org['approved_trips']; ?>],
+          ['Pending', <?php echo $arr_get_a_org['pending_trips']; ?>]
+         // ['Sleep',    <?php echo $arr_get_a_org['total_trips']; ?>]
+        ]);
+
+        var options = {
+          title: 'OVERVIEW',
+        legend:{position:'left'},
+           chartArea: {
+            left: 40,
+            top: 10,
+            width: 300,
+            height: 350,
+        },
+          // legend.position:'left',
+          backgroundColor:'#e2e1e0',
+          pieSliceText:'value',
+          sliceVisibilityThreshold :0,
+          legend:{position: 'left'},
+          chartArea:{top:0,width:"500px",height:"500px"},
+          tooltip:'value'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+</script>
+<script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
           ['Approved',  <?php echo $arr_get_a_org['approved_trips']; ?>],
           ['Pending', <?php echo $arr_get_a_org['pending_trips']; ?>]
          // ['Sleep',    <?php echo $arr_get_a_org['total_trips']; ?>]
@@ -363,15 +402,15 @@ session_start();
           legend:{position: 'center'},
           chartArea:{top:0,width:"500px",height:"500px"},
           tooltip:'value'
-
-
         };
 
-        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+        var chart1 = new google.visualization.PieChart(document.getElementById('piechart1'));
 
-        chart.draw(data, options);
+        chart1.draw(data, options);
       }
 </script>
+
+
 <!-- 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js">
 </script>
