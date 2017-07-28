@@ -342,7 +342,6 @@ session_start();
 </main>
 
 <!-- Scripts -->
-<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">
         google.charts.load('current', {'packages':['corechart']});
@@ -403,8 +402,6 @@ session_start();
           legend:{position: 'center'},
           chartArea:{top:0,width:"500px",height:"500px"},
           tooltip:'value'
-
-
         };
 
         var chart1 = new google.visualization.PieChart(document.getElementById('piechart1'));
@@ -412,6 +409,7 @@ session_start();
         chart1.draw(data, options);
       }
 </script>
+
 
 <!-- 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js">
