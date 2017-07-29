@@ -352,7 +352,7 @@ session_start();
         var data = google.visualization.arrayToDataTable([
           ['Task', 'Hours per Day'],
           ['B-TRIPS',     <?php echo $arr_get_a_org['total_trips']; ?> - <?php echo $arr_get_a_org['reimbursed_trips']; ?>],
-          // ['Reimbursed',      <?php echo $arr_get_a_org['reimbursed_trips']; ?>]
+          ['Reimbursed',      <?php echo $arr_get_a_org['reimbursed_trips']; ?>]
           // ['Approved',  <?php echo $arr_get_a_org['approved_trips']; ?>],
           // ['Pending', <?php echo $arr_get_a_org['pending_trips']; ?>]
 
