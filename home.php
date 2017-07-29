@@ -350,11 +350,12 @@ session_start();
       function drawChart() {
 
         var data = google.visualization.arrayToDataTable([
-          ['Trips', 'Values'],
-          ['B-TRIPS',     <?php echo $arr_get_a_org['total_trips']; ?>],
-          ['Reimbursed',      <?php echo $arr_get_a_org['reimbursed_trips']; ?>],
-          ['Approved',  <?php echo $arr_get_a_org['approved_trips']; ?>],
-          ['Pending', <?php echo $arr_get_a_org['pending_trips']; ?>]
+          ['Task', 'Hours per Day'],
+          ['B-TRIPS',     <?php echo $arr_get_a_org['total_trips']; ?> - <?php echo $arr_get_a_org['reimbursed_trips']; ?>],
+          // ['Reimbursed',      <?php echo $arr_get_a_org['reimbursed_trips']; ?>]
+          // ['Approved',  <?php echo $arr_get_a_org['approved_trips']; ?>],
+          // ['Pending', <?php echo $arr_get_a_org['pending_trips']; ?>]
+
          // ['Sleep',    <?php echo $arr_get_a_org['total_trips']; ?>]
         ]);
 
@@ -389,6 +390,7 @@ session_start();
 
         var data = google.visualization.arrayToDataTable([
           ['Task', 'Hours per Day'],
+           ['Reimbursed',  <?php echo $arr_get_a_org['reimbursed_trips']; ?>],
           ['Approved',  <?php echo $arr_get_a_org['approved_trips']; ?>],
           ['Pending', <?php echo $arr_get_a_org['pending_trips']; ?>]
          // ['Sleep',    <?php echo $arr_get_a_org['total_trips']; ?>]
@@ -400,6 +402,11 @@ session_start();
           pieSliceText:'value',
           sliceVisibilityThreshold :0,
           legend:{position: 'center'},
+          slices: {
+            0: {color: '#B276B2'},
+            1: { color: '#50b432' },
+            2: { color: 'red' },
+          },
           chartArea:{top:0,width:"500px",height:"500px"},
           tooltip:'value'
         };
