@@ -257,8 +257,8 @@ session_start();
 
 <!--===================================================================-->
     <div class="mdl-grid">
-    <div class="mdl-components mdl-js-components mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--2-col-desktop"></div>
-    <div class="mdl-components mdl-js-components mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-desktop">
+    <div class="mdl-components mdl-js-components mdl-cell mdl-cell--1-col mdl-cell--1-col-tablet mdl-cell--1-col-desktop"></div>
+    <div class="mdl-components mdl-js-components mdl-cell mdl-cell--5-col mdl-cell--5-col-tablet mdl-cell--5-col-desktop">
     <div id="piechart" style="width: 500px; height:500px;"></div>
     </div>
       <div class="mdl-components mdl-js-components mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-desktop">
@@ -342,7 +342,6 @@ session_start();
 </main>
 
 <!-- Scripts -->
-<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">
         google.charts.load('current', {'packages':['corechart']});
@@ -356,19 +355,26 @@ session_start();
           // ['Reimbursed',      <?php echo $arr_get_a_org['reimbursed_trips']; ?>]
           // ['Approved',  <?php echo $arr_get_a_org['approved_trips']; ?>],
           // ['Pending', <?php echo $arr_get_a_org['pending_trips']; ?>]
+
          // ['Sleep',    <?php echo $arr_get_a_org['total_trips']; ?>]
         ]);
 
         var options = {
           title: 'OVERVIEW',
+        legend:{position:'left'},
+           chartArea: {
+            left: 40,
+            top: 10,
+            width: 300,
+            height: 350,
+        },
+          // legend.position:'left',
           backgroundColor:'#e2e1e0',
           pieSliceText:'value',
           sliceVisibilityThreshold :0,
-          legend:{position: 'center'},
+          legend:{position: 'left'},
           chartArea:{top:0,width:"500px",height:"500px"},
           tooltip:'value'
-
-
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
@@ -403,8 +409,6 @@ session_start();
           },
           chartArea:{top:0,width:"500px",height:"500px"},
           tooltip:'value'
-
-
         };
 
         var chart1 = new google.visualization.PieChart(document.getElementById('piechart1'));
@@ -412,6 +416,8 @@ session_start();
         chart1.draw(data, options);
       }
 </script>
+
+
 <!-- 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js">
 </script>
