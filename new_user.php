@@ -100,6 +100,7 @@ if(isset($_POST['submit'])){
                 'username' => $_POST['username'],
                 'password' => $_POST['password'],
                 'account_token' => $_SESSION['account_token'],
+                'access_token' => '',
                 'image_id' => ''
               );
 
