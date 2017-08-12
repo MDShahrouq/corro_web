@@ -104,18 +104,35 @@ $trip_id=$_GET['trip_id'];
 		    <span class="mdl-list__item-primary-content">
 		      <b>Employee ID : </b></span>
 		        <span class="mdl-list__item-secondary-content">
-			  <span class="mdl-list__item-secondary-info"><?php echo $arr_get_a_user['user_details']['uid']; ?></span>  
+			  <span class="mdl-list__item-secondary-info">
+			   <?php if($_SESSION['account_token'] == "open_account"){
+                  echo $arr_get_a_user['user_details']['pk']; 
+			   }
+			   else{ 
+			   	  echo $arr_get_a_user['user_details']['uid']; 
+			   }
+			   ?></span>  
 			  </span>
 		    </span>
 		    </li>
 
-		    <li class="mdl-list__item">
-		    <span class="mdl-list__item-primary-content">
-		      <b>Designation :</b></span>
-		        <span class="mdl-list__item-secondary-content">
-			  <span class="mdl-list__item-secondary-info"><?php echo $arr_get_a_user['user_details']['designation']; ?></span>  
-			  </span>
-		    </li>
+		   
+
+		    <?php if($_SESSION['account_token'] == "open_account"){
+                  
+			   }
+			   else{ ?>
+			     <li class="mdl-list__item">
+		          <span class="mdl-list__item-primary-content">
+			   	   <b>Designation :</b></span>
+		          <span class="mdl-list__item-secondary-content">
+			      <span class="mdl-list__item-secondary-info"><?php echo $arr_get_a_user['user_details']['designation']; ?></span>  
+			      </span>
+		         </li> 
+			<?php   }
+			?>
+
+		      
 		    <li class="mdl-list__item">
 		    <span class="mdl-list__item-primary-content">
 		      <b>Department :</b></span>

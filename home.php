@@ -313,7 +313,13 @@ session_start();
 
         <?php for($x=0;$x<count($arr_get_a_org['user and trip details']);$x++){?>
             <tr>
-              <td><?php echo $arr_get_a_org['user and trip details'][$x]['user details']['uid']; ?></td>
+              <td><?php 
+              if($_SESSION['account_token'] == "open_account"){
+               echo $arr_get_a_org['user and trip details'][$x]['user details']['pk']; 
+              }else{
+               echo $arr_get_a_org['user and trip details'][$x]['user details']['uid']; 
+              }
+              ?></td>
               <td><?php echo $arr_get_a_org['user and trip details'][$x]['user details']['name']; ?></td>
               <td><?php echo $arr_get_a_org['user and trip details'][$x]['user details']['department']; ?></td>
               <td><?php echo ($arr_get_a_org['user and trip details'][$x]['trip_details']['start_date']." - ".$arr_get_a_org['user and trip details'][$x]['trip_details']['start_date']); ?></td>
