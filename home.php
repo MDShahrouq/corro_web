@@ -17,6 +17,10 @@ if($_SESSION['login_reimburse_app'] == 1){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Profile</title>
 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
 <!-- <link rel="stylesheet" href="css/button.css"> -->
@@ -275,6 +279,26 @@ session_start();
 
         </div> -->
 
+<script>
+ function printDiv() {
+      var elements = $('input[type=search]');
+      /*alert(elements.val());*/
+      if(elements.val() == ""){
+       var divToPrint = document.getElementById('hidden_table');
+       /*alert("hi");*/
+      }
+      else{
+       var divToPrint = document.getElementById('example');
+       /*alert("hello");*/
+      }
+      newWin = window.open("");
+      newWin.document.write(divToPrint.outerHTML);
+      newWin.print();
+      newWin.close();
+   }
+</script>
+
+<button style="margin-left:25%;position:absolute;margin-top:0.2%" id="print1" class="dt-button buttons-collection buttons-page-length" onclick="printDiv()">Print</button>
 
         <div id="mdl-tab" class="mdl-components mdl-js-components mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-desktop " style="padding-left: 100px;padding-right: 100px;">
 
@@ -310,6 +334,51 @@ session_start();
 
 
         <tbody>
+
+        <?php for($x=0;$x<count($arr_get_a_org['user and trip details']);$x++){?>
+            <tr>
+              <td><?php 
+              if($_SESSION['account_token'] == "open_account"){
+               echo $arr_get_a_org['user and trip details'][$x]['user details']['pk']; 
+              }else{
+               echo $arr_get_a_org['user and trip details'][$x]['user details']['uid']; 
+              }
+              ?></td>
+              <td><?php echo $arr_get_a_org['user and trip details'][$x]['user details']['name']; ?></td>
+              <td><?php echo $arr_get_a_org['user and trip details'][$x]['user details']['department']; ?></td>
+              <td><?php echo ($arr_get_a_org['user and trip details'][$x]['trip_details']['start_date']." - ".$arr_get_a_org['user and trip details'][$x]['trip_details']['start_date']); ?></td>
+              <td><?php echo ($arr_get_a_org['user and trip details'][$x]['trip_details']['pk']); ?></td>
+              <td>Pending</td>
+              <td><?php echo $arr_get_a_org['user and trip details'][$x]['total']; ?></td>
+              <td><?php echo $arr_get_a_org['user and trip details'][$x]['trip_details']['status']; ?></td>
+              <td>
+              <form method="post" action="profile.php?pk=<?php echo $arr_get_a_org['user and trip details'][$x]['user details']['pk']; ?>&trip_id=<?php echo $arr_get_a_org['user and trip details'][$x]['trip_details']['pk']; ?>">
+              <button type="submit">View</button>
+              </form>
+
+              </td>
+            </tr>
+        <?php }?>
+        </tbody>
+      </table> 
+
+
+ <table id="hidden_table" class="visible-print">
+        <thead>
+            <tr>
+                <th>EMPLOYEE<br>ID</th>
+                <th>EMPLOYEE<br>NAME</th>
+                <th>DEPT</th>
+                <th>TRAVEL DATE</th>
+                <th>TRIP NO.</th>
+                <th>PENDING<br>DAYS</th>
+                <th>TOTAL CLAIM</th>
+                <th>STATUS</th>
+                <th>VIEW</th>
+            </tr>
+        </thead>
+
+<tbody>
 
         <?php for($x=0;$x<count($arr_get_a_org['user and trip details']);$x++){?>
             <tr>
