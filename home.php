@@ -17,9 +17,9 @@ if($_SESSION['login_reimburse_app'] == 1){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Profile</title>
 
-<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
@@ -207,7 +207,7 @@ session_start();
           <a class="mdl-navigation__link" href="#!">OVERVIEW</a>
           <a class="mdl-navigation__link" href="home.php">EXPENSE REPORT</a>
           <a class="mdl-navigation__link" href="#!">BOOKING</a>
-          <a class="mdl-navigation__link" href="new_user.php">SETTINGS</a>
+          <a class="mdl-navigation__link" href="new_user.php">SETTING's</a>
           <a class="mdl-navigation__link" href="#!">REPORT</a>
         </nav>
       </div>
@@ -417,6 +417,7 @@ session_start();
 </main>
 
 <!-- Scripts -->
+<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">
         google.charts.load('current', {'packages':['corechart']});
