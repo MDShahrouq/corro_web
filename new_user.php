@@ -46,6 +46,13 @@ if($_SESSION['login_reimburse_app'] == 1){
     margin-top: -1%;
     padding: 20px 0;
 }
+
+/*@-moz-document url-prefix(){
+  #form_new_user{
+    margin-top: 0px;
+    }
+
+}*/
 </style>
   <body>
 
@@ -158,37 +165,37 @@ if(isset($_POST['submit'])){
       </div>
       <br>
 
-       <div style="margin-top:-5%" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+       <div id="form_new_user" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
         <input class="mdl-textfield__input" type="text" id="designation" name="designation" required/>
         <label class="mdl-textfield__label" for="sample3">DESIGNATION</label>
       </div>
       <br>
 
-      <div style="margin-top:-5%" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <div id="form_new_user" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
         <input class="mdl-textfield__input" type="text" id="department" name="department" required/>
         <label class="mdl-textfield__label" for="sample3">DEPARTMENT</label>
       </div>
       <br>
 
-      <div style="margin-top:-5%" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <div id="form_new_user" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
         <input class="mdl-textfield__input" type="email" id="email" name="email" required/>
         <label class="mdl-textfield__label" for="sample3">EMAIL</label>
       </div>
       <br>
 
-      <div style="margin-top:-5%" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <div id="form_new_user" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
         <input class="mdl-textfield__input" type="text" id="phone" name="phone" minlength="12" maxlength="12" required/>
         <label class="mdl-textfield__label" for="sample3">PHONE</label>
       </div>
       <br>
 
-      <div style="margin-top:-5%" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <div id="form_new_user" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
         <input class="mdl-textfield__input" type="text" id="username" name="username" required autocomplete="off">
         <label class="mdl-textfield__label" for="sample3">USERNAME</label>
       </div>
       <br>
 
-      <div style="margin-top:-5%" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <div id="form_new_user" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
         <input class="mdl-textfield__input" type="password" id="password" name="password" required autocomplete="off">
         <label class="mdl-textfield__label" for="sample3">PASSWORD</label>
       </div>
