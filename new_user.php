@@ -147,7 +147,7 @@ if(isset($_POST['submit'])){
           <a class="mdl-navigation__link" href="#!">OVERVIEW</a>
           <a class="mdl-navigation__link" href="home.php">EXPENSE REPORT</a>
           <a class="mdl-navigation__link" href="#!">BOOKING</a>
-          <a class="mdl-navigation__link" href="new_user.php">SETTING</a>
+          <a class="mdl-navigation__link" href="new_user.php">SETTINGS</a>
           <a class="mdl-navigation__link" href="#!">REPORT</a>
         </nav>
       </div>
