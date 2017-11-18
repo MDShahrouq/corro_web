@@ -78,7 +78,7 @@ $(document).ready(function() {
 </script>
  <!-- CSS -->
 <style type="text/css">
-	mdl-layout--fixed-drawer.is-upgraded:not(.is-small-screen)>.mdl-layout__header {
+  mdl-layout--fixed-drawer.is-upgraded:not(.is-small-screen)>.mdl-layout__header {
     margin-left: 103px !important;
     width: calc(100% - 106px) !important;
 }
@@ -100,6 +100,8 @@ $(document).ready(function() {
   max-width: 102%;
 }
 </style>
+
+
 </head>
 <body>
 
@@ -203,7 +205,7 @@ $(document).ready(function() {
                     Mauris sagittis pellentesque lacus eleifend lacinia...
                   </div> -->
                   <div class="mdl-card__actions mdl-card--border">
-                  <div id="piechart" style="width: 100px;max-height: 145px;"></div>
+                  <div id="piechart"></div>
                     <!-- <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
                       Get Started
                     </a> -->
@@ -219,6 +221,8 @@ $(document).ready(function() {
                               </div>
                             
                               <div class="mdl-card__actions mdl-card--border">
+                              <div id="chart_div"></div>
+
                                 <!-- <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
                                   Get Started
                                 </a> -->
@@ -236,6 +240,7 @@ $(document).ready(function() {
                               </div>
                             
                               <div class="mdl-card__actions mdl-card--border">
+                              <div id="piechart2"></div>
                                 <!-- <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
                                   Get Started
                                 </a> -->
@@ -263,7 +268,7 @@ $(document).ready(function() {
    }
 </script>
 
-
+<div class="mdl-grid">
   <!-- Table layout -->
 <div class=" mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-desktop">
   <!--  <button style="margin-left:25%;position:relative;margin-top:0.2%" id="print1" class="dt-button buttons-collection buttons-page-length" onclick="printDiv()">Print</button>
@@ -471,7 +476,7 @@ $(document).ready(function() {
 
 
    </div>
-        
+</div>
 
 
 
@@ -488,7 +493,7 @@ $(document).ready(function() {
 <div class=" mdl-layout mdl-js-layout mdl-layout--fixed-header">
 
 <div class="mdl-components mdl-js-components mdl-cell mdl-cell--12-col">
-	  <aside class="mdl-components__nav docs-text-styling mdl-shadow--4dp" style="    position: fixed;
+    <aside class="mdl-components__nav docs-text-styling mdl-shadow--4dp" style="    position: fixed;
     width: 82px;
     z-index: 5;
     background-color: #4ab8c9;">
@@ -554,30 +559,30 @@ $(document).ready(function() {
 
 
 
-	<header style="background-color:#3f51b5;" class="mdl-layout__header mdl-layout__header--transparent mdl-shadow--4dp ">
-			    	<div class="mdl-layout__header-row">
-			        <span class=" mdl-layout-title">Corro</span>
-			        <div class="mdl-layout-spacer"></div>
-			        <a href="logout.php"><img id="logout" style="" src="images/logout_btn.png"></img></a> 
-			      </div>
-			</header>
-	      <!-- NAv bar
-	    <!--   <div class="mdl-layout__drawer">
-	        <span class="mdl-layout-title">CORRO</span>
-		        <nav class="mdl-navigation">
-		          <a class="mdl-navigation__link" href="#!">OVERVIEW</a>
-		          <a class="mdl-navigation__link" href="home.php">EXPENSE REPORT</a>
-		          <a class="mdl-navigation__link" href="#!">BOOKING</a>
-		          <a class="mdl-navigation__link" href="new_user.php">SETTINGS</a>
-		          <a class="mdl-navigation__link" href="#!">REPORT</a>
-		        </nav>
-	        </div> 
-	-->
+  <header style="background-color:#3f51b5;" class="mdl-layout__header mdl-layout__header--transparent mdl-shadow--4dp ">
+            <div class="mdl-layout__header-row">
+              <span class=" mdl-layout-title">Corro</span>
+              <div class="mdl-layout-spacer"></div>
+              <a href="logout.php"><img id="logout" style="" src="images/logout_btn.png"></img></a> 
+            </div>
+      </header>
+        <!-- NAv bar
+      <!--   <div class="mdl-layout__drawer">
+          <span class="mdl-layout-title">CORRO</span>
+            <nav class="mdl-navigation">
+              <a class="mdl-navigation__link" href="#!">OVERVIEW</a>
+              <a class="mdl-navigation__link" href="home.php">EXPENSE REPORT</a>
+              <a class="mdl-navigation__link" href="#!">BOOKING</a>
+              <a class="mdl-navigation__link" href="new_user.php">SETTINGS</a>
+              <a class="mdl-navigation__link" href="#!">REPORT</a>
+            </nav>
+          </div> 
+  -->
 
 
 
 <!-- First div end -->
-	<!-- </div>
+  <!-- </div>
 </div>
 </div>  -->
 
@@ -589,25 +594,119 @@ $(document).ready(function() {
         google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart);
 
+
       function drawChart() {
 
         var data = google.visualization.arrayToDataTable([
           ['Task', 'Hours per Day'],
-          ['Work',     11],
-          ['Eat',      2],
-          ['Commute',  2],
-          ['Watch TV', 2],
-          ['Sleep',    7]
+          ['Reimbursed',327],
+          ['Business Trips',81]
         ]);
 
     var options = {
-          title: 'Company Performance',
-          chartArea :{left:60,width:'70%',height:'50%'},
+          //title: 'Company Performance',
+          chartArea :{left:40,top:'0px',width:'70%',height:'70%'},
           hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
-          vAxis: {minValue: 0}
+          vAxis: {minValue: 0},
+         legend:{position: 'bottom'},
+         pieSliceText:'value',
+         tooltip:'value',
+         slices: {
+            0: {color: '#2D9CDB'},
+            1: { color: '#F2C94C' },
+          }
+
+
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+</script> 
+
+<script type="text/javascript">
+  
+  google.charts.load('current', {
+  packages: ['corechart', 'bar']
+});
+google.charts.setOnLoadCallback(drawStacked);
+
+function drawStacked() {
+  var data = google.visualization.arrayToDataTable([
+    ['City', 'Reimbursed', 'Approved','Pending',],
+    ['', 8175000, 8008000,3792000],
+    ['', 3792000, 3694000,3792000],
+    ['', 2695000, 2896000,3792000],
+    ['', 2099000, 1953000,3792000],
+    ['', 1526000, 1517000,3792000],
+     ['', 2690320, 2896000,533453],
+    ['', 2099000, 1953000,372030],
+    ['', 1526000, 1517000,353453],
+    
+  ]);
+
+  var options = {
+    //title: 'Population of Largest U.S. Cities',
+    chartArea: {
+      width: '50%'
+    },
+    backgroundColor: { fill:'transparent' },
+    hAxis: { textPosition: 'none' },
+    isStacked: true,
+    format: 'decimal',
+         textPosition: 'none',
+     colors: ['#23326A', '#4676B5', '#78C4ED'],
+    legend:'bottom',
+    //legend: {position: 'bottom'},
+    hAxis: {
+      //title: 'Total Population',
+     // minValue: 0,
+    },
+    vAxis: {
+     // title: 'City'
+       gridlines: {
+        color: 'transparent'
+    },    
+    }
+  };
+  var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+  chart.draw(data, options);
+}
+</script>
+
+<script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Reimbursed',81],
+          ['Approved',21],
+          ['Pending',46]
+        ]);
+
+    var options = {
+          //title: 'Company Performance',
+          chartArea :{left:40,top:'0px',width:'70%',height:'70%'},
+          hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
+          vAxis: {minValue: 0},
+         legend:{position: 'bottom'},
+         pieSliceText:'value',
+         tooltip:'value',
+         slices: {
+            0: {color: 'green'},
+            1: { color: 'red' },
+            2:{color:'yellow'},
+          }
+
+
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart2'));
 
         chart.draw(data, options);
       }
