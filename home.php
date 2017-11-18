@@ -691,16 +691,16 @@ function drawStacked() {
 
     var options = {
           //title: 'Company Performance',
-          chartArea :{left:40,top:'0px',width:'70%',height:'70%'},
+          chartArea :{left:20,top:'0px',width:'70%',height:'70%'},
           hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
           vAxis: {minValue: 0},
-         legend:{position: 'bottom'},
+         legend:{position: 'bottom',textStyle: {fontSize: 9}},
          pieSliceText:'value',
          tooltip:'value',
          slices: {
-            0: {color: 'green'},
-            1: { color: 'red' },
-            2:{color:'yellow'},
+            0: {color: '#27AE60'},
+            1: { color: '#FFA02D' },
+            2:{color:'#BD3131'},
           }
 
 
