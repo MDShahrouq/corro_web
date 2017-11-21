@@ -1,27 +1,21 @@
 <!DOCTYPE html>
-<html>
   <head>
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Profile</title>
+    <title>Table</title>
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="css/material.indigo-pink.min.css">
-<!-- <link rel="stylesheet" type="text/css" href="css/profile.css">
- -->
 
- <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.3.1/css/buttons.dataTables.min.css">
-   <!-- DATA TABLE CSS -->
-  <!--  <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.1.0/material.min.css"> -->
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
-
-<!-- Table js -->
+<!-- Table  -->
+ <!-- CSS -->
+ <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
 
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js
-"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/dataTables.material.min.js"></script>
 
 
 <script src="https://cdn.datatables.net/buttons/1.3.1/js/dataTables.buttons.min.js"></script>
@@ -31,52 +25,53 @@
 <script src="//cdn.rawgit.com/bpampuch/pdfmake/0.1.27/build/vfs_fonts.js"></script>
 <script src="//cdn.datatables.net/buttons/1.3.1/js/buttons.html5.min.js"></script>
 <script src="//cdn.datatables.net/buttons/1.3.1/js/buttons.print.min.js"></script>
+
+
 <script type="text/javascript">
-//var $ = jQuery.noConflict();
-$(document).ready(function() {
-    $('#example').DataTable();
-} );
+var $ = jQuery.noConflict();
 
-// $.fn.dataTable.ext.buttons.alert = {
-//     className: 'buttons-alert',
+
+$.fn.dataTable.ext.buttons.alert = {
+    className: 'buttons-alert',
  
-//     action: function ( e, dt, node, config ) {
-//     $('#example').dataTable().fnFilter('');
-//     }
-// };
+    action: function ( e, dt, node, config ) {
+    $('#example').dataTable().fnFilter('');
+    }
+};
 
-// $(document).ready(function() {
-//     $('#example').DataTable( {
-//       "order" : [[3,"desc"]],
-//       "oLanguage": {
-//         "sSearch": "Filter:"
-//       },
-//       "lengthMenu": [[10,25,50,-1], [10,25,50,"All"]],
-//         dom: 'Bfrtip',
+$(document).ready(function() {
+    $('#example').DataTable( {
+      "order" : [[3,"desc"]],
+      "oLanguage": {
+        "sSearch": "Filter:"
+      },
+      "lengthMenu": [[10,25,50,-1], [10,25,50,"All"]],
+        dom: 'Bfrtip',
         
-//         buttons: [
-//           'pageLength',
-//          {
-//             extend: 'excel',
-//             text: 'Download',
-//             footer: true,
-//             exportOptions: {
-//                 columns: [0,1,2,3,4,5,6,7]
-//             },
-//         },
+        buttons: [
+          'pageLength',
+         {
+            extend: 'excel',
+            text: 'Download',
+            footer: true,
+            exportOptions: {
+                columns: [0,1,2,3,4,5,6,7]
+            },
+        },
 
-//           {
-//                 extend: 'alert',
-//                 text: 'Clear Filter'
-//             }
+          {
+                extend: 'alert',
+                text: 'Clear Filter'
+            }
            
 
-//         ]
-//     });
-// });
+        ]
+    });
+});
 
 </script>
- <!-- CSS -->
+
+
 <style type="text/css">
   mdl-layout--fixed-drawer.is-upgraded:not(.is-small-screen)>.mdl-layout__header {
     margin-left: 103px !important;
@@ -99,6 +94,71 @@ $(document).ready(function() {
   min-width: 101%;
   max-width: 102%;
 }
+
+/*Datatables*/
+ @media screen and (max-width: 1024px) {
+  div.dataTables_wrapper 
+  div.mdl-grid.dt-table {
+    padding-top: 0;
+    /* margin: auto; */
+    margin-left: -4%!important;
+    /* width: 5% !important; */
+    padding-bottom: 0;
+}
+#mdl-tab{
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.mdl-components.mdl-js-components.mdl-cell.mdl-cell--12-col.mdl-cell--12-col-tablet.mdl-cell--12-col-desktop 
+{
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+
+}
+.mdl-layout__drawer-button {
+    top: 4px;
+    left: 0;
+    color: #0f00f7 !important;
+    z-index: 4;
+}
+
+     body {
+  background: #e2e1e0;
+}
+
+div.dataTables_wrapper div.dataTables_filter {
+    text-align: left !important;
+}
+
+div.dt-buttons {
+    position: relative;
+    float: right;
+}
+.dataTables_wrapper .dataTables_filter{
+  float: right !important;
+}
+
+
+.dt-buttons a:nth-child(1){
+    background-color:#3f51b5;
+}
+button.dt-button, div.dt-button, a.dt-button{
+  background-color: #3f51b5;
+}
+button.dt-button, div.dt-button, a.dt-button
+{
+  background-image:none;
+color: white !important;
+box-shadow:12px 42px -1px 3px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+button.dt-button:hover:not(.disabled),div.dt-button:hover:not(.disabled),a.dt-button:hover:not(.disabled){
+      background-color:#3f51b5;
+      background-image:none
+
+}
+
 </style>
 
 
@@ -249,83 +309,47 @@ $(document).ready(function() {
                             </div>
                         </div>
 
-<script>
- function printDiv() {
-      var elements = $('input[type=search]');
-      /*alert(elements.val());*/
-      if(elements.val() == ""){
-       var divToPrint = document.getElementById('hidden_table');
-       /*alert("hi");*/
-      }
-      else{
-       var divToPrint = document.getElementById('example');
-       /*alert("hello");*/
-      }
-      newWin = window.open("");
-      newWin.document.write(divToPrint.outerHTML);
-      newWin.print();
-      newWin.close();
-   }
-</script>
+
 
 <div class="mdl-grid">
   <!-- Table layout -->
-<div class=" mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-desktop">
-  <!--  <button style="margin-left:25%;position:relative;margin-top:0.2%" id="print1" class="dt-button buttons-collection buttons-page-length" onclick="printDiv()">Print</button>
-   <div> -->
-     
-<table id="example" class="mdl-data-table" cellspacing="0" style="white-space: pre;
-">
+<div id="mdl-tab" style="margin-top: 64px;width: 1185px;"> 
+<table id="example" class="display" cellspacing="0" width="100%">
         <thead>
-        <!-- <tr> <th>         
-<button style="margin-left:25%;position:relative;margin-top:0.2%" id="print1" class="dt-button buttons-collection buttons-page-length" onclick="printDiv()">Print</button>
-   <div>
-        </th></tr> -->
-
-            <tr style="background-color: #5eb8c8;">
-                <th>EMPLOYEE ID</th>
-                <th>EMPLOYEE NAME</th>
+            <tr>
+                 <th>EMPLOYEE<br>ID</th>
+                <th>EMPLOYEE<br>NAME</th>
                 <th>DEPT</th>
                 <th>TRAVEL DATE</th>
                 <th>TRIP NO.</th>
-                <th>PENDING DAYS</th>
-                <th>TOTAL CLAIM</th>
+                <th>PENDING<br>DAYS</th>
+              <!--   <th>TOTAL CLAIM</th>
                 <th>STATUS</th>
-                <th>VIEW</th>
+                <th>VIEW</th> -->
             </tr>
         </thead>
-
-
+      
         <tbody>
-          
-           <tr>
+            <tr>
                 <td>Tiger Nixon</td>
                 <td>System Architect</td>
                 <td>Edinburgh</td>
                 <td>61</td>
                 <td>2011/04/25</td>
                 <td>$320,800</td>
-                 <td>Charde Marshall</td>
-                <td>Regional Director</td>
-                <td>San Francisco</td>
             </tr>
             <tr>
                 <td>Garrett Winters</td>
                 <td>Accountant</td>
                 <td>Tokyo</td>
                 <td>63</td>
-                 <td>Charde Marshall</td>
-                <td>Regional Director</td>
-                <td>San Francisco</td>
                 <td>2011/07/25</td>
                 <td>$170,750</td>
             </tr>
             <tr>
                 <td>Ashton Cox</td>
                 <td>Junior Technical Author</td>
-                 <td>Charde Marshall</td>
-                <td>Regional Director</td>
-                <td>San Francisco</td><td>San Francisco</td>
+                <td>San Francisco</td>
                 <td>66</td>
                 <td>2009/01/12</td>
                 <td>$86,000</td>
@@ -335,18 +359,12 @@ $(document).ready(function() {
                 <td>Senior Javascript Developer</td>
                 <td>Edinburgh</td>
                 <td>22</td>
-                 <td>Charde Marshall</td>
-                <td>Regional Director</td>
-                <td>San Francisco</td>
                 <td>2012/03/29</td>
                 <td>$433,060</td>
             </tr>
             <tr>
                 <td>Airi Satou</td>
                 <td>Accountant</td>
-                 <td>Charde Marshall</td>
-                <td>Regional Director</td>
-                <td>San Francisco</td>
                 <td>Tokyo</td>
                 <td>33</td>
                 <td>2008/11/28</td>
@@ -356,9 +374,6 @@ $(document).ready(function() {
                 <td>Brielle Williamson</td>
                 <td>Integration Specialist</td>
                 <td>New York</td>
-                 <td>Charde Marshall</td>
-                <td>Regional Director</td>
-                <td>San Francisco</td>
                 <td>61</td>
                 <td>2012/12/02</td>
                 <td>$372,000</td>
@@ -368,17 +383,11 @@ $(document).ready(function() {
                 <td>Sales Assistant</td>
                 <td>San Francisco</td>
                 <td>59</td>
-                 <td>Charde Marshall</td>
-                <td>Regional Director</td>
-                <td>San Francisco</td>
                 <td>2012/08/06</td>
                 <td>$137,500</td>
             </tr>
             <tr>
                 <td>Rhona Davidson</td>
-                 <td>Charde Marshall</td>
-                <td>Regional Director</td>
-                <td>San Francisco</td>
                 <td>Integration Specialist</td>
                 <td>Tokyo</td>
                 <td>55</td>
@@ -391,18 +400,12 @@ $(document).ready(function() {
                 <td>San Francisco</td>
                 <td>39</td>
                 <td>2009/09/15</td>
-                 <td>Charde Marshall</td>
-                <td>Regional Director</td>
-                <td>San Francisco</td>
                 <td>$205,500</td>
             </tr>
             <tr>
                 <td>Sonya Frost</td>
                 <td>Software Engineer</td>
                 <td>Edinburgh</td>
-                 <td>Charde Marshall</td>
-                <td>Regional Director</td>
-                <td>San Francisco</td>
                 <td>23</td>
                 <td>2008/12/13</td>
                 <td>$103,600</td>
@@ -411,9 +414,6 @@ $(document).ready(function() {
                 <td>Jena Gaines</td>
                 <td>Office Manager</td>
                 <td>London</td>
-                 <td>Charde Marshall</td>
-                <td>Regional Director</td>
-                <td>San Francisco</td>
                 <td>30</td>
                 <td>2008/12/19</td>
                 <td>$90,560</td>
@@ -425,9 +425,6 @@ $(document).ready(function() {
                 <td>22</td>
                 <td>2013/03/03</td>
                 <td>$342,000</td>
-                 <td>Charde Marshall</td>
-                <td>Regional Director</td>
-                <td>San Francisco</td>
             </tr>
             <tr>
                 <td>Charde Marshall</td>
@@ -436,43 +433,361 @@ $(document).ready(function() {
                 <td>36</td>
                 <td>2008/10/16</td>
                 <td>$470,600</td>
-                 <td>Charde Marshall</td>
-                <td>Regional Director</td>
-                <td>San Francisco</td>
             </tr>
- 
-
-
-        </tbody>
-<!-- 
-        <tbody>
-
-        <?php for($x=0;$x<count($arr_get_a_org['user and trip details']);$x++){?>
             <tr>
-              <td><?php 
-              if($_SESSION['account_token'] == "open_account"){
-               echo $arr_get_a_org['user and trip details'][$x]['user details']['pk']; 
-              }else{
-               echo $arr_get_a_org['user and trip details'][$x]['user details']['uid']; 
-              }
-              ?></td>
-              <td><?php echo $arr_get_a_org['user and trip details'][$x]['user details']['name']; ?></td>
-              <td><?php echo $arr_get_a_org['user and trip details'][$x]['user details']['department']; ?></td>
-              <td><?php echo ($arr_get_a_org['user and trip details'][$x]['trip_details']['start_date']." - ".$arr_get_a_org['user and trip details'][$x]['trip_details']['start_date']); ?></td>
-              <td><?php echo ($arr_get_a_org['user and trip details'][$x]['trip_details']['pk']); ?></td>
-              <td>Pending</td>
-              <td><?php echo $arr_get_a_org['user and trip details'][$x]['total']; ?></td>
-              <td><?php echo $arr_get_a_org['user and trip details'][$x]['trip_details']['status']; ?></td>
-              <td>
-              <form method="post" action="profile.php?pk=<?php echo $arr_get_a_org['user and trip details'][$x]['user details']['pk']; ?>&trip_id=<?php echo $arr_get_a_org['user and trip details'][$x]['trip_details']['pk']; ?>">
-              <button type="submit">View</button>
-              </form>
-
-              </td>
+                <td>Haley Kennedy</td>
+                <td>Senior Marketing Designer</td>
+                <td>London</td>
+                <td>43</td>
+                <td>2012/12/18</td>
+                <td>$313,500</td>
             </tr>
-        <?php }?>
-        </tbody> -->
-      </table> 
+            <tr>
+                <td>Tatyana Fitzpatrick</td>
+                <td>Regional Director</td>
+                <td>London</td>
+                <td>19</td>
+                <td>2010/03/17</td>
+                <td>$385,750</td>
+            </tr>
+            <tr>
+                <td>Michael Silva</td>
+                <td>Marketing Designer</td>
+                <td>London</td>
+                <td>66</td>
+                <td>2012/11/27</td>
+                <td>$198,500</td>
+            </tr>
+            <tr>
+                <td>Paul Byrd</td>
+                <td>Chief Financial Officer (CFO)</td>
+                <td>New York</td>
+                <td>64</td>
+                <td>2010/06/09</td>
+                <td>$725,000</td>
+            </tr>
+            <tr>
+                <td>Gloria Little</td>
+                <td>Systems Administrator</td>
+                <td>New York</td>
+                <td>59</td>
+                <td>2009/04/10</td>
+                <td>$237,500</td>
+            </tr>
+            <tr>
+                <td>Bradley Greer</td>
+                <td>Software Engineer</td>
+                <td>London</td>
+                <td>41</td>
+                <td>2012/10/13</td>
+                <td>$132,000</td>
+            </tr>
+            <tr>
+                <td>Dai Rios</td>
+                <td>Personnel Lead</td>
+                <td>Edinburgh</td>
+                <td>35</td>
+                <td>2012/09/26</td>
+                <td>$217,500</td>
+            </tr>
+            <tr>
+                <td>Jenette Caldwell</td>
+                <td>Development Lead</td>
+                <td>New York</td>
+                <td>30</td>
+                <td>2011/09/03</td>
+                <td>$345,000</td>
+            </tr>
+            <tr>
+                <td>Yuri Berry</td>
+                <td>Chief Marketing Officer (CMO)</td>
+                <td>New York</td>
+                <td>40</td>
+                <td>2009/06/25</td>
+                <td>$675,000</td>
+            </tr>
+            <tr>
+                <td>Caesar Vance</td>
+                <td>Pre-Sales Support</td>
+                <td>New York</td>
+                <td>21</td>
+                <td>2011/12/12</td>
+                <td>$106,450</td>
+            </tr>
+            <tr>
+                <td>Doris Wilder</td>
+                <td>Sales Assistant</td>
+                <td>Sidney</td>
+                <td>23</td>
+                <td>2010/09/20</td>
+                <td>$85,600</td>
+            </tr>
+            <tr>
+                <td>Angelica Ramos</td>
+                <td>Chief Executive Officer (CEO)</td>
+                <td>London</td>
+                <td>47</td>
+                <td>2009/10/09</td>
+                <td>$1,200,000</td>
+            </tr>
+            <tr>
+                <td>Gavin Joyce</td>
+                <td>Developer</td>
+                <td>Edinburgh</td>
+                <td>42</td>
+                <td>2010/12/22</td>
+                <td>$92,575</td>
+            </tr>
+            <tr>
+                <td>Jennifer Chang</td>
+                <td>Regional Director</td>
+                <td>Singapore</td>
+                <td>28</td>
+                <td>2010/11/14</td>
+                <td>$357,650</td>
+            </tr>
+            <tr>
+                <td>Brenden Wagner</td>
+                <td>Software Engineer</td>
+                <td>San Francisco</td>
+                <td>28</td>
+                <td>2011/06/07</td>
+                <td>$206,850</td>
+            </tr>
+            <tr>
+                <td>Fiona Green</td>
+                <td>Chief Operating Officer (COO)</td>
+                <td>San Francisco</td>
+                <td>48</td>
+                <td>2010/03/11</td>
+                <td>$850,000</td>
+            </tr>
+            <tr>
+                <td>Shou Itou</td>
+                <td>Regional Marketing</td>
+                <td>Tokyo</td>
+                <td>20</td>
+                <td>2011/08/14</td>
+                <td>$163,000</td>
+            </tr>
+            <tr>
+                <td>Michelle House</td>
+                <td>Integration Specialist</td>
+                <td>Sidney</td>
+                <td>37</td>
+                <td>2011/06/02</td>
+                <td>$95,400</td>
+            </tr>
+            <tr>
+                <td>Suki Burks</td>
+                <td>Developer</td>
+                <td>London</td>
+                <td>53</td>
+                <td>2009/10/22</td>
+                <td>$114,500</td>
+            </tr>
+            <tr>
+                <td>Prescott Bartlett</td>
+                <td>Technical Author</td>
+                <td>London</td>
+                <td>27</td>
+                <td>2011/05/07</td>
+                <td>$145,000</td>
+            </tr>
+            <tr>
+                <td>Gavin Cortez</td>
+                <td>Team Leader</td>
+                <td>San Francisco</td>
+                <td>22</td>
+                <td>2008/10/26</td>
+                <td>$235,500</td>
+            </tr>
+            <tr>
+                <td>Martena Mccray</td>
+                <td>Post-Sales support</td>
+                <td>Edinburgh</td>
+                <td>46</td>
+                <td>2011/03/09</td>
+                <td>$324,050</td>
+            </tr>
+            <tr>
+                <td>Unity Butler</td>
+                <td>Marketing Designer</td>
+                <td>San Francisco</td>
+                <td>47</td>
+                <td>2009/12/09</td>
+                <td>$85,675</td>
+            </tr>
+            <tr>
+                <td>Howard Hatfield</td>
+                <td>Office Manager</td>
+                <td>San Francisco</td>
+                <td>51</td>
+                <td>2008/12/16</td>
+                <td>$164,500</td>
+            </tr>
+            <tr>
+                <td>Hope Fuentes</td>
+                <td>Secretary</td>
+                <td>San Francisco</td>
+                <td>41</td>
+                <td>2010/02/12</td>
+                <td>$109,850</td>
+            </tr>
+            <tr>
+                <td>Vivian Harrell</td>
+                <td>Financial Controller</td>
+                <td>San Francisco</td>
+                <td>62</td>
+                <td>2009/02/14</td>
+                <td>$452,500</td>
+            </tr>
+            <tr>
+                <td>Timothy Mooney</td>
+                <td>Office Manager</td>
+                <td>London</td>
+                <td>37</td>
+                <td>2008/12/11</td>
+                <td>$136,200</td>
+            </tr>
+            <tr>
+                <td>Jackson Bradshaw</td>
+                <td>Director</td>
+                <td>New York</td>
+                <td>65</td>
+                <td>2008/09/26</td>
+                <td>$645,750</td>
+            </tr>
+            <tr>
+                <td>Olivia Liang</td>
+                <td>Support Engineer</td>
+                <td>Singapore</td>
+                <td>64</td>
+                <td>2011/02/03</td>
+                <td>$234,500</td>
+            </tr>
+            <tr>
+                <td>Bruno Nash</td>
+                <td>Software Engineer</td>
+                <td>London</td>
+                <td>38</td>
+                <td>2011/05/03</td>
+                <td>$163,500</td>
+            </tr>
+            <tr>
+                <td>Sakura Yamamoto</td>
+                <td>Support Engineer</td>
+                <td>Tokyo</td>
+                <td>37</td>
+                <td>2009/08/19</td>
+                <td>$139,575</td>
+            </tr>
+            <tr>
+                <td>Thor Walton</td>
+                <td>Developer</td>
+                <td>New York</td>
+                <td>61</td>
+                <td>2013/08/11</td>
+                <td>$98,540</td>
+            </tr>
+            <tr>
+                <td>Finn Camacho</td>
+                <td>Support Engineer</td>
+                <td>San Francisco</td>
+                <td>47</td>
+                <td>2009/07/07</td>
+                <td>$87,500</td>
+            </tr>
+            <tr>
+                <td>Serge Baldwin</td>
+                <td>Data Coordinator</td>
+                <td>Singapore</td>
+                <td>64</td>
+                <td>2012/04/09</td>
+                <td>$138,575</td>
+            </tr>
+            <tr>
+                <td>Zenaida Frank</td>
+                <td>Software Engineer</td>
+                <td>New York</td>
+                <td>63</td>
+                <td>2010/01/04</td>
+                <td>$125,250</td>
+            </tr>
+            <tr>
+                <td>Zorita Serrano</td>
+                <td>Software Engineer</td>
+                <td>San Francisco</td>
+                <td>56</td>
+                <td>2012/06/01</td>
+                <td>$115,000</td>
+            </tr>
+            <tr>
+                <td>Jennifer Acosta</td>
+                <td>Junior Javascript Developer</td>
+                <td>Edinburgh</td>
+                <td>43</td>
+                <td>2013/02/01</td>
+                <td>$75,650</td>
+            </tr>
+            <tr>
+                <td>Cara Stevens</td>
+                <td>Sales Assistant</td>
+                <td>New York</td>
+                <td>46</td>
+                <td>2011/12/06</td>
+                <td>$145,600</td>
+            </tr>
+            <tr>
+                <td>Hermione Butler</td>
+                <td>Regional Director</td>
+                <td>London</td>
+                <td>47</td>
+                <td>2011/03/21</td>
+                <td>$356,250</td>
+            </tr>
+            <tr>
+                <td>Lael Greer</td>
+                <td>Systems Administrator</td>
+                <td>London</td>
+                <td>21</td>
+                <td>2009/02/27</td>
+                <td>$103,500</td>
+            </tr>
+            <tr>
+                <td>Jonas Alexander</td>
+                <td>Developer</td>
+                <td>San Francisco</td>
+                <td>30</td>
+                <td>2010/07/14</td>
+                <td>$86,500</td>
+            </tr>
+            <tr>
+                <td>Shad Decker</td>
+                <td>Regional Director</td>
+                <td>Edinburgh</td>
+                <td>51</td>
+                <td>2008/11/13</td>
+                <td>$183,000</td>
+            </tr>
+            <tr>
+                <td>Michael Bruce</td>
+                <td>Javascript Developer</td>
+                <td>Singapore</td>
+                <td>29</td>
+                <td>2011/06/27</td>
+                <td>$183,000</td>
+            </tr>
+            <tr>
+                <td>Donna Snider</td>
+                <td>Customer Support</td>
+                <td>New York</td>
+                <td>27</td>
+                <td>2011/01/25</td>
+                <td>$112,000</td>
+            </tr>
+        </tbody>
+    </table>
 
 
    </div>
@@ -487,108 +802,8 @@ $(document).ready(function() {
           </div> 
       </main>
 
-
-<!-- <div class="mdl-layout__container">
-<div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header has-drawer is-upgraded">
-<div class=" mdl-layout mdl-js-layout mdl-layout--fixed-header">
-
-<div class="mdl-components mdl-js-components mdl-cell mdl-cell--12-col">
-    <aside class="mdl-components__nav docs-text-styling mdl-shadow--4dp" style="    position: fixed;
-    width: 82px;
-    z-index: 5;
-    background-color: #4ab8c9;">
-<a href="#badges-section" class="mdl-components__link mdl-component badges">
-      <div class="mdl-components__link-image"
-           style="background-image: url('../assets/comp_badges.png')">
-      </div>
-      <span class="mdl-components__link-text">Badges</span>
-    </a>
-    <a href="#badges-section" class="mdl-components__link mdl-component badges">
-      <div class="mdl-components__link-image"
-           style="background-image: url('../assets/comp_badges.png')">
-      </div>
-      <span class="mdl-components__link-text">Badges</span>
-    </a><a href="#badges-section" class="mdl-components__link mdl-component badges">
-      <div class="mdl-components__link-image"
-           style="background-image: url('../assets/comp_badges.png')">
-      </div>
-      <span class="mdl-components__link-text">Badges</span>
-    </a><a href="#badges-section" class="mdl-components__link mdl-component badges">
-      <div class="mdl-components__link-image"
-           style="background-image: url('../assets/comp_badges.png')">
-      </div>
-      <span class="mdl-components__link-text">Badges</span>
-    </a><a href="#badges-section" class="mdl-components__link mdl-component badges">
-      <div class="mdl-components__link-image"
-           style="background-image: url('../assets/comp_badges.png')">
-      </div>
-      <span class="mdl-components__link-text">Badges</span>
-    </a><a href="#badges-section" class="mdl-components__link mdl-component badges">
-      <div class="mdl-components__link-image"
-           style="background-image: url('../assets/comp_badges.png')">
-      </div>
-      <span class="mdl-components__link-text">Badges</span>
-    </a><a href="#badges-section" class="mdl-components__link mdl-component badges">
-      <div class="mdl-components__link-image"
-           style="background-image: url('../assets/comp_badges.png')">
-      </div>
-      <span class="mdl-components__link-text">Badges</span>
-    </a><a href="#badges-section" class="mdl-components__link mdl-component badges">
-      <div class="mdl-components__link-image"
-           style="background-image: url('../assets/comp_badges.png')">
-      </div>
-      <span class="mdl-components__link-text">Badges</span>
-    </a><a href="#badges-section" class="mdl-components__link mdl-component badges">
-      <div class="mdl-components__link-image"
-           style="background-image: url('../assets/comp_badges.png')">
-      </div>
-      <span class="mdl-components__link-text">Badges</span>
-    </a><a href="#badges-section" class="mdl-components__link mdl-component badges">
-      <div class="mdl-components__link-image"
-           style="background-image: url('../assets/comp_badges.png')">
-      </div>
-      <span class="mdl-components__link-text">Badges</span>
-    </a><a href="#badges-section" class="mdl-components__link mdl-component badges">
-      <div class="mdl-components__link-image"
-           style="background-image: url('../assets/comp_badges.png')">
-      </div>
-      <span class="mdl-components__link-text">Badges</span>
-    </a>
-</aside>
-</div>
-
-
-
-  <header style="background-color:#3f51b5;" class="mdl-layout__header mdl-layout__header--transparent mdl-shadow--4dp ">
-            <div class="mdl-layout__header-row">
-              <span class=" mdl-layout-title">Corro</span>
-              <div class="mdl-layout-spacer"></div>
-              <a href="logout.php"><img id="logout" style="" src="images/logout_btn.png"></img></a> 
-            </div>
-      </header>
-        <!-- NAv bar
-      <!--   <div class="mdl-layout__drawer">
-          <span class="mdl-layout-title">CORRO</span>
-            <nav class="mdl-navigation">
-              <a class="mdl-navigation__link" href="#!">OVERVIEW</a>
-              <a class="mdl-navigation__link" href="home.php">EXPENSE REPORT</a>
-              <a class="mdl-navigation__link" href="#!">BOOKING</a>
-              <a class="mdl-navigation__link" href="new_user.php">SETTINGS</a>
-              <a class="mdl-navigation__link" href="#!">REPORT</a>
-            </nav>
-          </div> 
-  -->
-
-
-
-<!-- First div end -->
-  <!-- </div>
-</div>
-</div>  -->
-
 <!-- Scripts -->
 <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-<script data-require="jquery" data-semver="2.1.1" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">
         google.charts.load('current', {'packages':['corechart']});
